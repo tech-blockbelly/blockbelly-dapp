@@ -1,0 +1,10 @@
+[
+  "event OwnershipTransferred(address indexed,address indexed)",
+  "function addIndex(string,string,string,address,address,uint24,address,bool) returns (address)",
+  "function buyIndexWithETH(address,uint256) payable returns (uint256, uint256)",
+  "function getIndices() view returns (tuple(string,string,string,address,address,uint24,address,bool)[])",
+  "function initialize(address,uint16) returns (address)",
+  "function owner() view returns (address)",
+  "function renounceOwnership()",
+  "function transferOwnership(address)"
+]

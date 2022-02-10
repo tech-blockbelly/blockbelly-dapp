@@ -1,0 +1,79 @@
+.transaction-modal {
+    width: 70vw;
+    max-width: 70vw;
+
+    .transaction-container {
+        margin: 50px auto;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 20px 25px -15px $boxshadowgray;
+        border: solid 1px $bordergrey;
+        background-color: $bggrey;
+        .transaction-block-wrapper {
+            color: $darkgrey;
+            padding: 30px 20px;
+            border-radius: 30px;
+            .transaction-input-block {
+                .block-title {
+                    text-align: center;
+                    margin-bottom: 20px;
+										span {
+											color: $red;
+										}
+                }
+                .amount-input {
+                    text-align: center;
+                    padding: 17px 29px;
+                    color: $black;
+                    font-size: 18px;
+                    line-height: 18px;
+                    border: none;
+                    border-radius: 30px;
+                    margin: 0 auto 20px;
+                }
+                .view-details-btn {
+                    margin: 0 auto;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+		.disclaimer {
+			font-size: 14px;
+			text-align: center;
+			font-style: italic;
+			color: $red;
+		}
+    .ccy-table-container.hide{
+        display: none;
+    }
+    .ccy-table-container {
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 20px 25px -15px $boxshadowgray;
+        border: solid 1px $bordergrey;
+    }
+    .button-wrapper {
+		display: flex;
+		justify-content: space-evenly;
+		.cancel-btn {
+			background-color: $white;
+			color: $darkgrey;
+		}
+	}
+	@media #{$ipadPortrait} {
+		width: 90vw;
+		max-width: 90vw;
+		.ccy-table-container {
+			padding: 20px 0;
+		}
+	}
+	@media #{$mobile} {
+		width: 100vw;
+		max-width: 100vw;
+		margin: 0;
+		.ccy-table-container {
+			padding: 10px 0;
+		}
+	}
+}

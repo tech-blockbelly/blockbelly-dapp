@@ -1,0 +1,17 @@
+.error-container {
+	margin: 50px auto;
+	max-width: 35vw;
+	text-align: center;
+	background-color: $white;
+	border-radius: 30px;
+	color: $red;
+	padding: 53px 42px 82px;
+
+	.error-icon, .error-message {
+		margin-bottom: 30px;
+	}
+	.back-btn {
+		max-width: 100px;
+		margin: auto;
+	}
+}

@@ -1,0 +1,44 @@
+.transaction-container {
+	margin: 50px auto;
+	padding: 20px;
+	border-radius: 20px;
+	box-shadow: 0 20px 25px -15px $boxshadowgray;
+	border: solid 1px $bordergrey;
+	background-color: $bggrey;
+	.transaction-block-wrapper {
+		color: $darkgrey;
+		padding: 30px 20px;
+		border-radius: 30px;
+		.transaction-input-block {
+			margin-bottom: 20px;
+			.block-title {
+				margin-bottom: 20px;
+			}
+			.amount-input {
+				text-align: center;
+				padding: 17px 29px;
+				color: $black;
+				font-size: 18px;
+				line-height: 18px;
+				border: none;
+				border-radius: 30px;
+				margin: 0 auto 20px;
+			}
+			.view-details-btn {
+				margin: 0 auto;
+				cursor: pointer;
+			}
+		}
+		.ccy-table-container.hide{
+			display: none;
+		}
+	}
+	.button-wrapper {
+		display: flex;
+		justify-content: space-evenly;
+		.cancel-btn {
+			background-color: $white;
+			color: $darkgrey;
+		}
+	}
+}

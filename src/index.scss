@@ -1,0 +1,48 @@
+@import './assets/styles/_font';
+@import './assets/styles/_variables';
+@import './assets/styles/_general';
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+@import './assets/styles/App';
+@import './assets/styles/Modules/NavigationMenu';
+@import './assets/styles/Modules/Footer';
+
+@import './assets/styles/Modules/Login';
+@import './assets/styles/Modules/Signup';
+@import './assets/styles/Modules/ExchangeStatusBlock';
+@import './assets/styles/Modules/SearchField';
+@import './assets/styles/Modules/PortfolioModule';
+@import './assets/styles/Modules/PortfolioLink';
+@import './assets/styles/Modules/SwitchMenu';
+@import './assets/styles/Modules/CalculationTable';
+// @import './assets/styles/Modules/TransactionBlock';
+@import './assets/styles/Modules/ConnectExchange';
+@import './assets/styles/Modules/TransactionStatus';
+@import './assets/styles/Modules/SignupForm';
+@import './assets/styles/Modules/PortfolioTrend';
+@import './assets/styles/Modules/LinkCard';
+@import './assets/styles/Modules/Piechart';
+@import './assets/styles/Modules/AreaChart';
+@import './assets/styles/Modules/ReturnsTable';
+@import './assets/styles/Modules/ErrorModule';
+@import './assets/styles/Modules/Header';
+@import './assets/styles/Modules/UserSettings';
+@import './assets/styles/Modules/ExchangeSettings';
+@import './assets/styles/Modules/FundManagerSettings';
+@import './assets/styles/Modules/FundsModule';
+@import './assets/styles/Modules/FundInfoCard';
+@import './assets/styles/Modules/PortfolioInfo';
+@import './assets/styles/Modules/AccountInfoCard';
+@import './assets/styles/Modules/PortfolioForm';
+@import './assets/styles/Modules/PortfolioPreview';
+// @import './assets/styles/Modules/SelectCoins';
+@import './assets/styles/Modules/SetAllocations';
+@import './assets/styles/Modules/AllocationCard';
+@import './assets/styles/Modules/SipModule';
+@import './assets/styles/Modules/DistributionTable';
+
+@import './assets/styles/Pages/PortfolioPage';
+@import './assets/styles/Pages/DashboardPage';
+@import './assets/styles/Pages/Pages';
+@import './assets/styles/Pages/TransactionPage';

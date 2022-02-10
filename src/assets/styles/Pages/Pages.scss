@@ -1,0 +1,97 @@
+.exchange-page, .transaction-page, .login-page, .signup-page, .create-page {
+	.row {
+		justify-content: center;
+	}
+}
+.login-page, .signup-page {
+	.row .col-md-8 {
+		margin: 50px auto;
+		padding: 20px;
+		background-color: $bggrey;
+		border-radius: 20px;
+	}
+}
+.defi-exchange-page {
+	.row {
+		height: 100%;
+		.col {
+			margin: auto;
+			.connect-btn {
+				margin: auto;
+				background-color: $purple;
+				padding: 1em 2em;
+				border-radius: 10px;
+				align-items: center;
+				font-size: 24px;
+				font-weight: 500;
+				span {
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+	@media #{$ipadPortrait, $mobile} {
+		.row .col {
+			.connect-btn {
+				font-size: 20px;
+				padding: 15px 25px;
+			}
+		}
+	}
+}
+.switch-modal {
+	// .login-container, .signup-page .row .col {
+	.login-container, .signup-form-container {
+		margin: 50px 50px 20px;
+		padding: 0;
+	}
+	.link-container {
+		padding: 20px 50px;
+		display: flex;
+		align-items: baseline;
+		justify-content: center;
+		color: $darkgrey;
+		.title {
+			margin: 0 20px 0 0;
+		}
+		.link-btn {
+			text-decoration: none;
+			background-color: $white;
+			margin: 0;
+			color: $darkgrey;
+			&:hover {
+				color: $grey;
+			}
+		}
+	}
+}
+.reset-password-container {
+	.row {
+		justify-content: center;
+		form {
+			margin-top: 20px;
+		}
+	}
+}
+.landing-page {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	.finance-btn {
+		background-color: $purple;
+		padding: 1em 2em;
+		border-radius: 10px;
+		align-items: center;
+		font-size: 24px;
+		font-weight: 500;
+		width: 450px;
+		margin-top: 20px;
+	}
+	@media #{$mobile} {
+		.finance-btn {
+			font-size: 18px;
+			width: 250px;
+		}
+	}
+}

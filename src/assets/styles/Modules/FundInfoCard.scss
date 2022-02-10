@@ -1,0 +1,91 @@
+.fund-info-container {
+	background: $white;
+	padding: 0px 20px;
+	margin: 8px 0;
+	border-radius: 10px;
+	align-items: center;
+	text-align: left;
+	box-shadow: 0 20px 25px -15px $boxshadowgray;
+	.fund-title {
+		display: flex;
+		font-weight: 600;
+   		 align-items: center;
+		text-decoration: none;
+		.fund-link {
+			text-decoration: none;
+			color: $darkgrey;
+		}
+		.fund-icon {
+			width: 64px;
+			border-radius: 20px;
+			margin-right: 10px;
+		}
+	}
+	.fund-description {
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+		.fund-icon {
+			width: 64px;
+			height: 64px;
+			border-radius: 20px;
+			margin-right: 1em;
+		}
+	}
+	.card {
+		border: 0;
+		vertical-align: middle;
+		background-color: transparent;
+		.card-title {
+			margin-bottom: 0;
+		}
+		.card-header {
+			background-color: transparent;
+			text-align: center;
+			font-weight: bold;
+			border: 0;
+			color: gray;
+		}
+		.card-footer {
+			background-color: transparent;
+		}
+	}
+	.fund-statistics {
+		.card-text {
+			display: none;
+		}
+	}
+}
+@media #{$ipadLandscape} {
+	.statistics-card .card-body {
+		padding: 10px 0;
+		.card-text {
+			display: block;
+			font-size: 14px;
+		}
+		.ratings {
+			margin: 0 auto;
+		}
+	}
+}
+@media #{$ipadPortrait, $mobile} {
+	.fund-info-container {
+		padding: 20px;
+		.fund-description .card-body {
+			flex-direction: column;
+		}
+		.card {
+			.card-body {
+				display: flex;
+				align-items: baseline;
+				justify-content: space-between;
+				.card-text {
+					display: block;
+				}
+			}
+		}
+		.fund-statistics .card-body {
+			padding: 10px;
+		}
+	}
+}

@@ -1,0 +1,38 @@
+.piechart-container {
+	background-color: $bggrey;
+	margin: 0 auto;
+	padding: 20px;
+	border-radius: 20px;
+	box-shadow: 0 20px 25px -15px $boxshadowgray;
+	border: solid 1px $bordergrey;
+}
+
+.piechart-legend-container {
+	margin: 20px auto;
+	padding: 20px;
+	background-color: transparent;
+	border-radius: 20px;
+	// box-shadow: 0 20px 25px -15px $boxshadowgray;
+	.piechart-legend {
+		margin: 0 auto;
+
+		td {
+			padding: 0;
+			vertical-align: middle;
+		}
+		.ccy-info {
+			margin: 10px;
+			text-align: center;
+		}
+		.ccy-type-details {
+			display: flex;
+			align-items: center;
+			.ccy-icon {
+				margin-right: 10px;
+				width: 31px;
+				height: 31px;
+				border-radius: 30px;
+			}
+		}
+	}
+}

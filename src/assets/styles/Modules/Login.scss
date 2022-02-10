@@ -1,0 +1,83 @@
+.login-container {
+	margin: 20px auto;
+	color: $darkgrey;
+	.login-title {
+		margin-bottom: 30px;
+		text-align: center;
+	}
+	p {
+		font-size: 32px;
+		font-weight: 700;
+		line-height: 32px;
+		margin: 30px auto;
+		text-align: center;
+	}
+	.manual-login {
+		.button-wrapper {
+			display: flex;
+			justify-content: space-evenly;
+		}
+		.login-btn {
+			margin: auto;
+		}
+		.forgot-pwd-link {
+			margin: auto;
+			font-size: 18px;
+			font-weight: 700;
+			line-height: 18px;
+			color: $darkgrey;
+			text-decoration: none;
+			&:hover {
+				color: $grey;
+			}
+		}
+	}
+	.sso-login {
+		display: flex;
+		flex-direction: column;
+		.btn {
+			// width: 100%;
+			margin: 12px auto;
+			position: relative;
+		}
+		.google-btn {
+			background-color: $white;
+			color: $darkgrey;
+			&:hover {
+				color: $grey;
+			}
+		}
+		.icon-img {
+			margin-right: 20px;
+		}
+	}
+	@include media-breakpoint-down(md) {
+		max-width: 50vw;
+	}
+	@include media-breakpoint-down(sm) {
+		margin: 50px 30px;
+		max-width: 100%;
+		.button-wrapper {
+			flex-direction: column;
+			align-items: center;
+			.login-btn {
+				margin: auto 0;
+				padding: 15px 28px;
+			}
+			.forgot-pwd-link {
+				margin-top: 30px;
+				text-align: center;
+				font-size: 15px;
+			}
+		}
+		.sso-login {
+			align-items: center;
+			.google-btn {
+				max-width: 300px;
+				.icon-img {
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+}

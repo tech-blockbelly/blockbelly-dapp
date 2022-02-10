@@ -1,0 +1,52 @@
+.exchange-settings-container {
+	margin: 25px auto 50px;
+	color: $darkgrey;
+	border-radius: 20px;
+	box-shadow: 0 20px 25px -15px $boxshadowgray;
+	border: solid 1px $bordergrey;
+	padding: 30px;
+	background-color: $bggrey;
+	.table-row {
+		margin-top: 20px;
+		th {
+			text-align: center;
+		}
+	}
+	.add-btn {
+		float: right;
+	}
+	.action-btn-wrapper {
+		display: flex;
+	}
+	.delete-btn, .edit-btn {
+		margin: 0 5px;
+		min-width: 0;
+		border-radius: 25px;
+	}
+	.delete-btn {
+		padding: 8px;
+    font-size: 30px;
+	}
+	.edit-btn {
+		font-size: 20px;
+    padding: 8px 13px;
+	}
+	@media #{$mobile} {
+		padding: 15px;
+		.heading-row {
+			.col-md-8, .col-md-4 {
+				text-align: center;
+			}
+			.add-btn {
+				float: none;
+				margin-top: 10px;
+			}
+		}
+	}
+}
+.truncate {
+	width: '100%';
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

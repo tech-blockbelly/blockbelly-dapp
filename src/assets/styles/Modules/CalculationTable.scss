@@ -1,0 +1,32 @@
+.ccy-table-container {
+	margin: 20px auto;
+	padding: 20px;
+	background-color: $white;
+	border-radius: 20px;
+	box-shadow: 0 20px 25px -15px $boxshadowgray;
+	.ccy-table {
+		margin: 0 auto;
+		.ccy-header {
+			padding: 10px;
+			vertical-align: baseline;
+			text-align: center;
+		}
+		.ccy-info, .ccy-symbol {
+			margin: 10px;
+			text-align: center;
+		}
+		.ccy-symbol {
+			text-transform: uppercase;
+		}
+		.ccy-type-details {
+			display: flex;
+			align-items: center;
+			.ccy-icon {
+				margin-right: 10px;
+				width: 31px;
+				height: 31px;
+				border-radius: 30px;
+			}
+		}
+	}
+}

@@ -1,0 +1,229 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "BlockbellyBroker",
+  "sourceName": "contracts/broker/AbstractBroker.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_symbol",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_cgId",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "_tkOutAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_tkInAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "uint24",
+          "name": "_poolFee",
+          "type": "uint24"
+        },
+        {
+          "internalType": "address",
+          "name": "_prOracleAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "_invOraclePrice",
+          "type": "bool"
+        }
+      ],
+      "name": "addIndex",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "brokerIndexAddr",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_tokenOutAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_deadline",
+          "type": "uint256"
+        }
+      ],
+      "name": "buyIndexWithETH",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "amountOut",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "platformFee",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getIndices",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "symbol",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "cgId",
+              "type": "string"
+            },
+            {
+              "internalType": "address",
+              "name": "tkOutAddr",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "tkInAddr",
+              "type": "address"
+            },
+            {
+              "internalType": "uint24",
+              "name": "poolFee",
+              "type": "uint24"
+            },
+            {
+              "internalType": "address",
+              "name": "prOracleAddr",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "invOraclePrice",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct BrokerIndex[]",
+          "name": "indices",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_swapAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint16",
+          "name": "_version",
+          "type": "uint16"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "brokerAddress",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

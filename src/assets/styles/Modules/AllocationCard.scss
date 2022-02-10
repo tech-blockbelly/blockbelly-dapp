@@ -1,0 +1,83 @@
+.coin-allocation-card {
+	margin: 30px auto;
+	box-shadow: 0 20px 25px -15px $boxshadowgray;
+	border-radius: 30px;
+	background-color: $white;
+	padding: 20px;
+	.coin-details-block {
+		padding: 10px;
+		align-items: center;
+		.delete-btn {
+			font-size: 24px;
+			text-align: center;
+			color: $darkgrey;
+		}
+		.coin-title-info {
+			display: flex;
+			align-items: center;
+			.coin-logo {
+				width: 31px;
+				margin-right: 15px;
+			}
+		}
+		.coin-rating-block {
+			display: flex;
+			justify-content: flex-end;
+			align-items: baseline;
+			.allocation-range-input {
+				font-size: 20px;
+				margin: 0 10px 5px;
+				padding: 10px 20px;
+				background-color: $bggrey;
+				max-width: 100px;
+				text-align: center;
+				height: auto;
+			}
+			span {
+				font-size: 20px;
+			}
+		}
+	}
+	.allocation-range-block {
+		padding: 10px;
+		.allocation-range {
+			width: 100%;
+		}
+	}
+	@media #{$ipadPortrait, $mobile} {
+		.coin-details-block {
+			.action-btn-col {
+				text-align: end;
+				margin-bottom: 15px;
+			}
+			.coin-title-info {
+				padding: 0;
+			}
+			.coin-rating-block {
+				padding: 0;
+				.allocation-range-input {
+					font-size: 18px;
+				}
+				span {
+					font-size: 18px;
+				}
+			}
+		}
+		.allocation-range-block {
+			padding: 15px 0 0;
+		}
+	}
+	@media #{$smallMobile} {
+		.coin-details-block {
+			.coin-title-info {
+				margin-bottom: 10px;
+			}
+			.coin-rating-block {
+				justify-content: flex-start;
+				.allocation-range-input {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+[
+  "event OwnershipTransferred(address indexed,address indexed)",
+  "function getComponentDetails(string) view returns (address, uint16)",
+  "function owner() view returns (address)",
+  "function registerComponent(string,address,uint16) returns (bool)",
+  "function renounceOwnership()",
+  "function transferOwnership(address)"
+]

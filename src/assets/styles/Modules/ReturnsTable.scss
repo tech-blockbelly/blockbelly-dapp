@@ -1,0 +1,25 @@
+.returns-table-container {
+	margin: 0 auto;
+	// width: 40vw;
+	.returns-table {
+		background-color: $white;
+		color: $darkgrey2;
+		margin: 20px auto;
+		.table-header {
+			margin: 10px auto;
+			vertical-align: baseline;
+			font-family: Sofia Pro Bold;
+			padding: 10px;
+		}
+		.returns-info {
+			display: flex;
+			align-items: center;
+			margin: 10px;
+			text-align: center;
+			.ccy-icon {
+				margin-right: 10px;
+				width: 31px;
+			}
+		}
+	}
+}

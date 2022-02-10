@@ -1,0 +1,31 @@
+.portfolio-page {
+	.chart-wrapper, .investment-wrapper {
+		border-radius: 20px;
+		box-shadow: 0 20px 25px -15px $boxshadowgray;
+		border: solid 1px $bordergrey;
+		padding: 20px;
+		background-color: $bggrey;
+	}
+	.investment-wrapper {
+		background-color: $bggrey;
+		.minimum-amt-text {
+			margin-bottom: 10px;
+		}
+		.minimum-amt-value {
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.portfolio-amt {
+	margin: 1em;
+	margin-top: 2em;
+	padding: 0 1em;
+	background-color: $bggrey;
+}
+
+.defi-buy {
+	margin: 1em;
+	margin-top: 2em;
+	padding: 0 1em;
+}

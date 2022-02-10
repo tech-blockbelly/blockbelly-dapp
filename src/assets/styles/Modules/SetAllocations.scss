@@ -1,0 +1,71 @@
+.coin-allocation-container {
+	margin: 0px 15px;
+	align-items: center;
+	border-radius: 20px;
+	box-shadow: 0 20px 25px -15px $boxshadowgray;
+	border: solid 1px $bordergrey;
+	padding: 30px 20px;
+	background-color: $bggrey;
+	max-height: 950px;
+	overflow: scroll;
+	.container-title {
+		margin: 0px 10px 20px;
+	}
+	.coin-selector .css-181klts-control {
+		box-shadow: 0 20px 25px -15px $boxshadowgray;
+	}
+	.coin-info-wrapper {
+		margin: 30px auto;
+    box-shadow: 0 20px 25px -15px $boxshadowgray;
+    border-radius: 30px;
+		background-color: $white;
+		padding: 20px;
+		.coin-details-block {
+			padding: 10px;
+			align-items: center;
+			.coin-title-info {
+				display: flex;
+				align-items: center;
+				.coin-logo {
+					width: 31px;
+					margin-right: 15px;
+				}
+			}
+			.coin-rating-block {
+				h5 {
+					float: right;
+				}
+			}
+		}
+		.allocation-range-block {
+			padding: 10px;
+			.allocation-range {
+				width: 100%;
+			}
+		}
+	}
+	.button-wrapper {
+		display: flex;
+		justify-content: center;
+		.cancel-btn, .continue-btn {
+			margin: 0 20px;
+		}
+	}
+	.no-selection {
+		position: relative;
+		height: 300px;
+	}
+	.no-selection p {
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+	@media #{$mobile} {
+		.no-selection {
+			text-align: center;
+		}
+	}
+}

@@ -1,0 +1,43 @@
+.sip-container {
+	margin: 50px auto;
+	padding: 20px;
+	border-radius: 20px;
+	box-shadow: 0 20px 25px -15px $boxshadowgray;
+	border: solid 1px $bordergrey;
+	background-color: $bggrey;
+	.sip-block-wrapper {
+		color: $darkgrey;
+		padding: 30px 20px;
+		border-radius: 30px;
+		.sip-input-block {
+			margin-bottom: 20px;
+			.block-title {
+				margin-bottom: 20px;
+				text-align: center;
+			}
+			.amount-input, .select-sip-date {
+				text-align: center;
+				padding: 17px 29px;
+				color: $black;
+				font-size: 18px;
+				line-height: 18px;
+				border: none;
+				border-radius: 30px;
+				margin: 0 auto 20px;
+			}
+		}
+	}
+	.button-wrapper {
+		display: flex;
+		justify-content: space-evenly;
+		.cancel-btn {
+			background-color: $white;
+			color: $darkgrey;
+		}
+	}
+}
+.sip-modal {
+	.button-wrapper {
+		justify-content: space-evenly;
+	}
+}

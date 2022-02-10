@@ -1,0 +1,25 @@
+.areachart-container  {
+	margin: 20px auto;
+	padding: 20px;
+	background-color: transparent;
+	border-radius: 20px;
+	.area-chart {
+		margin-top: 20px;
+	}
+}
+
+.custom-tooltip {
+	background-color: $white;
+	color: $darkgrey;
+	padding: 10px;
+	.day-label, .avg-price-label {
+		font-size: 14px;
+	}
+	.avg-price-label {
+		margin-top: 5px;
+		span {
+			font-size: 16px;
+			font-weight: 500;
+		}
+	}
+}

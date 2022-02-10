@@ -1,0 +1,119 @@
+.navigation-menu-container {
+	border-right: solid 1px $bordergrey;
+	max-width: 300px;
+	width: 20%;
+	.navbar {
+		justify-content: space-between;
+		align-items: normal;
+		flex-direction: column;
+		padding-right: 0;
+		height: 80vh;
+		.navbar-collapse {
+			margin-top: 25%;
+			.header-container {
+				display: none;
+			}
+		}
+		.navbar-nav {
+			display: flex;
+			flex-direction: column;
+			text-align: left;
+			width: 100%;
+			margin-left: 0.5rem;
+		}
+		.nav-link {
+			font-family: Sofia Pro;
+			color: $darkgrey;
+			padding: 10px 0;
+			margin: 10px 0;
+			text-decoration: none;
+			font-size: 20px;
+			line-height: 20px;
+			// border-radius: 30px;
+			color: darkgrey;
+			display: flex;
+			justify-content: left;
+			align-items: center;
+			&:hover, &.active {
+				// background-color: rgba(12, 20, 62, 0.1);
+				color: black;
+				border-right: solid $purple;
+				&>svg {
+					color: $purple;
+				}
+			}
+			&>span {
+				// vertical-align: middle;
+				// line-height: normal;
+				// display: inline-block;
+				margin-left: 10px;
+			}
+		}
+		.logout-btn {
+			background-color: transparent;
+			font-weight: 500;
+			box-shadow: none;
+		}
+		.create-basket-btn {
+			background-color: $purple;
+			font-weight: 500;
+			color: white;
+			box-shadow: 0 20px 25px 0px $boxshadowgray;
+		}
+	}
+	.brand-wrapper {
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+		color: $darkgrey;
+		margin: 0;
+		.bb-logo {
+			width: 50px;
+			height: 55px;
+		}
+		.bb-title {
+			font-weight: 400;
+			text-align: center;
+			margin-left: 12px;
+		}
+		.beta-disclaimer {
+			font-size: 12px;
+			text-transform: uppercase;
+			font-style: italic;
+			margin-left: 12px;
+			font-weight: 600;
+		}
+	}
+	@media (min-width: 993px) and (max-width: 1200px) {
+		width: 24%;
+	}
+	@media #{$ipadPortrait, $mobile} {
+		border-right: none;
+		max-width: unset;
+		width: unset;
+		display: flex;
+		.navbar {
+			height: unset;
+			flex-direction: row;
+			width: 100%;
+			.navbar-toggler {
+				margin-right: 10px;
+			}
+			.navbar-collapse {
+				margin: 0;
+				.header-container {
+					display: block;
+				}
+			}
+		}
+		.brand-wrapper {
+			.bb-logo {
+				width: 35px;
+				height: 40px;
+			}
+			.beta-disclaimer {
+				font-size: 10px;
+			}
+		}
+	}
+}
