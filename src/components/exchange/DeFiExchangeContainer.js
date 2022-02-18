@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useMemo, useEffect } from 'react';
 import { useEthers } from '@usedapp/core';
 import { ChainId, DAppProvider } from '@usedapp/core';
-import { Container, Row, Col, Button, Tabs, Tab } from 'react-bootstrap';
+import { Container, Row, Col, Tabs, Tab } from 'react-bootstrap';
 import { IoWallet } from 'react-icons/io5';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import {
@@ -14,6 +14,9 @@ import { clusterApiUrl } from '@solana/web3.js';
 import { useWallet } from '@solana/wallet-adapter-react';
 import Registry from '../../abi/contracts/BlockbellyRegistry.sol/BlockbellyComponentRegistry.json';
 import EthereumBrokerList from '../deficomponents/eth/EthereumBrokerList';
+
+// import FundsModule from '../dashboard/FundsModule';
+import FundsListing from '../dashboard/newcomponents/FundsListing';
 
 require('@solana/wallet-adapter-react-ui/styles.css');
 
@@ -48,7 +51,6 @@ const EthereumContainer = (props) => {
         );
 
         const brokerDetails = await contract.getComponentDetails('broker');
-        // console.log
         return brokerDetails['contractAddress'];
     };
 
@@ -65,6 +67,7 @@ const EthereumContainer = (props) => {
                 setShowPage(false);
             });
     }, [props]);
+
     return account && showPage ? (
         <Fragment>
             <EthereumBrokerList
@@ -91,25 +94,30 @@ const SolanaContainer = () => {
     const wallet = useWallet();
 
     wallet.select('Phantom');
-    return wallet.connected ? (
-        <FundsModule type="defi" title="Explore Indices" />
-    ) : (
-        <Container className="component-container defi-exchange-page">
-            <Row>
-                <Col>
-                    <Button
-                        className="connect-btn"
-                        onClick={() => wallet.connect()}>
-                        <IoWallet /> <span>Connect to Phantom Wallet</span>
-                    </Button>
-                </Col>
-            </Row>
-        </Container>
-    );
+    // return wallet.connected ? 
+    return (
+        // <FundsModule type="defi" title="Explore Indices" />
+        <FundsListing />
+    ) 
+    // : (
+    //     <Container className="component-container defi-exchange-page">
+    //         <Row>
+    //             <Col>
+    //                 <Button
+    //                     className="connect-btn"
+    //                     onClick={() => wallet.connect()}>
+    //                     <IoWallet /> <span>Connect to Phantom Wallet</span>
+    //                 </Button>
+    //             </Col>
+    //         </Row>
+    //     </Container>
+    // );
 };
 
 const DeFiExchangeContainer = () => {
-    const [key, setKey] = useState('ethereum');
+    // const [key, setKey] = useState('ethereum');
+    const [key, setKey] = useState('solana');
+
     const endpoint = useMemo(() => clusterApiUrl(network), [network]);
     const wallets = useMemo(() => [getPhantomWallet()], [network]);
     return (
@@ -121,11 +129,11 @@ const DeFiExchangeContainer = () => {
                     activeKey={key}
                     onSelect={(k) => setKey(k)}
                     className="funds-type-tab">
-                    <Tab eventKey="ethereum" title="Ethereum">
+                    {/* <Tab eventKey="ethereum" title="Ethereum">
                         <DAppProvider config={config}>
                             <EthereumContainer />
                         </DAppProvider>
-                    </Tab>
+                    </Tab> */}
                     <Tab eventKey="solana" title="Solana">
                         <ConnectionProvider endpoint={endpoint}>
                             <WalletProvider wallets={wallets}>

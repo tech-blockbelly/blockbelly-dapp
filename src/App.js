@@ -42,7 +42,7 @@ function App() {
                                 <Redirect to="/baskets" />
                             </Route>
                             <Route exact path="/baskets">
-                                <DeFiExchangeContainer />;
+                                <DeFiExchangeContainer />
                             </Route>
                             <Route exact path="/basket/:id">
                                 {/* <BasketContainer /> */}

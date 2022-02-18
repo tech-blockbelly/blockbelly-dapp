@@ -1,0 +1,44 @@
+.fund-info-card {
+	background: $white;
+	border-radius: 10px;
+	box-shadow: 0 20px 25px -15px $boxshadowgray;
+	max-width: 450px;
+	margin: 20px;
+	.fund-title {
+		display: flex;
+		font-weight: 600;
+		align-items: center;
+		text-decoration: none;
+		.fund-icon {
+			width: 64px;
+			border-radius: 20px;
+			margin-right: 10px;
+		}
+	}
+	.fund-description {
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+		font-weight: normal;
+	}
+	.card-footer {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		.creator-icon {
+			width: 48px;
+			height: 48px;
+			border-radius: 20px;
+			margin-right: 10px;
+		}
+		.creator-name {
+			font-size: 14px;
+		}
+	}
+}
+@media #{$ipadLandscape} {
+	
+}
+@media #{$ipadPortrait, $mobile} {
+
+}

@@ -42,6 +42,10 @@
 @import './assets/styles/Modules/SipModule';
 @import './assets/styles/Modules/DistributionTable';
 
+// New css files. Remove corresponding old files during cleanup
+@import './assets/styles/Modules/FundInfoCard_new.scss';
+
+
 @import './assets/styles/Pages/PortfolioPage';
 @import './assets/styles/Pages/DashboardPage';
 @import './assets/styles/Pages/Pages';
