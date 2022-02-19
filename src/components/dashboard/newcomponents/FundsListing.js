@@ -120,11 +120,10 @@ const FundsListing = (props) => {
     };
 
     if (showPage) {
-        console.log(`basket/${eventKey}`);
         // if (props.toLedger) {
         //     return <Redirect to={{ pathname: `/ledger/${eventKey}` }} />;
         // }
-        return <Redirect to={{ pathname: `/basket/${eventKey}` }} />;
+        return <Redirect to={{ pathname: `/baskets/${eventKey}` }} />;
     }
 
     return (

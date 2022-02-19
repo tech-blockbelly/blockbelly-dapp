@@ -31,41 +31,13 @@ const tokens = [
 		allocation: '$32.97',
 		share: '9.88%',
 	}, {
-		name: 'Compound',
-		image: 'https://token-icons.s3.amazonaws.com/0xc00e94cb662c3520282e6f5717214004a7f26888.png',
-		quantity: '0.094 COMP',
-		price: '$306.24',
-		allocation: '$28.84',
-		share: '8.64%',
-	}, {
 		name: 'Synthetix Network Token',
 		image: 'https://token-icons.s3.amazonaws.com/0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f.png',
 		quantity: '2.796 SNX',
 		price: '$9.43',
 		allocation: '$26.37',
 		share: '7.9%',
-	}, {
-		name: 'yearn.finance',
-		image: 'https://token-icons.s3.amazonaws.com/0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e.png',
-		quantity: '0.00057 YFI',
-		price: '$35,187.92',
-		allocation: '$20.08',
-		share: '6.01%',
-	}, {
-		name: 'Republic Token',
-		image: 'https://token-icons.s3.amazonaws.com/0x408e41876cccdc0f92210600ef50372656052a38.png',
-		quantity: '14.086 REN',
-		price: '$0.99',
-		allocation: '$13.93',
-		share: '4.17%',
-	}, {
-		name: 'LoopringCoin v2',
-		image: 'https://token-icons.s3.amazonaws.com/0xbbbbca6a901c926f240b89eacb641d8aec7aeafd.png',
-		quantity: '19.919 LRC',
-		price: '$0.43',
-		allocation: '$8.57',
-		share: '2.57%',
-	}
+	},
 ];
 
 const DistributionTable = () => {

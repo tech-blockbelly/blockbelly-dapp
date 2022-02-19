@@ -122,7 +122,7 @@ const DeFiExchangeContainer = () => {
     const wallets = useMemo(() => [getPhantomWallet()], [network]);
     return (
         <Container fluid className="module-container">
-            <h2 className="module-title">Explore Indexes</h2>
+            <h2 className="module-title">Explore Indices</h2>
             <Container fluid className="funds-tab-container">
                 <Tabs
                     id="controlled-tab-example"
