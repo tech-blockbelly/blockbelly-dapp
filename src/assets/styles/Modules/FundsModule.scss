@@ -3,11 +3,64 @@
 		margin-top: 0.25em;
 		color: $grey;
 		font-size: 24px;
+		margin: 10px 10px 0;
+		padding: 20px 30px;
+		position: relative;
 		&.active {
 			border: none;
 			background-color: transparent;
 			font-weight: 600;
 			color: $purple;
+		}
+		.tab-title {
+			line-height: 26px;
+		}
+		.tab-logo {
+			width: 30px;
+			margin-right: 10px;
+		}
+		.coming-soon-tag {
+			position: absolute;
+			right: -5px;
+			top: -5px;
+			z-index: 1;
+			overflow: hidden;
+			width: 75px;
+			height: 75px;
+			text-align: right;
+		}
+		.coming-soon-tag span {
+			font-size: 10px;
+			color: #FFF;
+			text-align: center;
+			line-height: 15px;
+			transform: rotate(45deg);
+			-webkit-transform: rotate(45deg);
+			width: 100px;
+			display: block;
+			background: $purple;
+			box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+			position: absolute;
+			top: 19px;
+			right: -21px;
+		}
+		.coming-soon-tag span::before {
+			content: "";
+			position: absolute; left: 0px; top: 100%;
+			z-index: -1;
+			border-left: 5px solid $purple;
+			border-right: 5px solid transparent;
+			border-bottom: 5px solid transparent;
+			border-top: 5px solid $purple;
+		}
+		.coming-soon-tag span::after {
+			content: "";
+			position: absolute; right: 0px; top: 100%;
+			z-index: -1;
+			border-left: 3px solid transparent;
+			border-right: 3px solid $purple;
+			border-bottom: 3px solid transparent;
+			border-top: 3px solid $purple;
 		}
 	}
 	.heading-row {

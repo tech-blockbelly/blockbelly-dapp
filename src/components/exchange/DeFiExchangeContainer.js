@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useMemo, useEffect } from 'react';
 import { useEthers } from '@usedapp/core';
 import { ChainId, DAppProvider } from '@usedapp/core';
-import { Container, Row, Col, Tabs, Tab } from 'react-bootstrap';
+import { Container, Row, Col, Tabs, Tab, Image } from 'react-bootstrap';
 import { IoWallet } from 'react-icons/io5';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import {
@@ -18,6 +18,13 @@ import EthereumBrokerList from '../deficomponents/eth/EthereumBrokerList';
 // import FundsModule from '../dashboard/FundsModule';
 import FundsListing from '../dashboard/newcomponents/FundsListing';
 
+import ethLogo from '../../assets/images/eth.png';
+import solLogo from '../../assets/images/solana.png';
+import polygonLogo from '../../assets/images/polygon.png'
+import terraLogo from '../../assets/images/terraluna.png';
+import avaxLogo from '../../assets/images/avalanche.png';
+import nearLogo from '../../assets/images/near-protocol.svg';
+
 require('@solana/wallet-adapter-react-ui/styles.css');
 
 const config = {
@@ -29,7 +36,7 @@ const config = {
 
 const network = WalletAdapterNetwork.Devnet;
 
-const EthereumContainer = (props) => {
+const EthereumContainer = () => {
     const [showPage, setShowPage] = useState(false);
     const [brokerAddress, setBrokerAddress] = useState('');
 
@@ -66,40 +73,42 @@ const EthereumContainer = (props) => {
             .catch((err) => {
                 setShowPage(false);
             });
-    }, [props]);
+    }, []);
 
-    return account && showPage ? (
+    // return account && showPage ? (
+    return (
         <Fragment>
             <EthereumBrokerList
                 brokerAddress={brokerAddress}
                 title="Explore Indices"
             />
         </Fragment>
-    ) : (
-        <Container className="component-container defi-exchange-page">
-            <Row>
-                <Col>
-                    <Button
-                        className="connect-btn"
-                        onClick={() => activateBrowserWallet()}>
-                        <IoWallet /> <span>Connect to Metamask Wallet</span>
-                    </Button>
-                </Col>
-            </Row>
-        </Container>
-    );
+    )
+    // ) : (
+    //     <Container className="component-container defi-exchange-page">
+    //         <Row>
+    //             <Col>
+    //                 <Button
+    //                     className="connect-btn"
+    //                     onClick={() => activateBrowserWallet()}>
+    //                     <IoWallet /> <span>Connect to Metamask Wallet</span>
+    //                 </Button>
+    //             </Col>
+    //         </Row>
+    //     </Container>
+    // );
 };
 
 const SolanaContainer = () => {
     const wallet = useWallet();
 
     wallet.select('Phantom');
-    // return wallet.connected ? 
+    // return wallet.connected ? (
     return (
         // <FundsModule type="defi" title="Explore Indices" />
         <FundsListing />
     ) 
-    // : (
+    //) : (
     //     <Container className="component-container defi-exchange-page">
     //         <Row>
     //             <Col>
@@ -129,12 +138,12 @@ const DeFiExchangeContainer = () => {
                     activeKey={key}
                     onSelect={(k) => setKey(k)}
                     className="funds-type-tab">
-                    {/* <Tab eventKey="ethereum" title="Ethereum">
+                    <Tab eventKey="ethereum" title={<span className="tab-title"><Image className="tab-logo" src={ethLogo}/>Ethereum</span>}>
                         <DAppProvider config={config}>
                             <EthereumContainer />
                         </DAppProvider>
-                    </Tab> */}
-                    <Tab eventKey="solana" title="Solana">
+                    </Tab>
+                    <Tab eventKey="solana" title={<span className="tab-title"><Image className="tab-logo" src={solLogo}/>Solana</span>}>
                         <ConnectionProvider endpoint={endpoint}>
                             <WalletProvider wallets={wallets}>
                                 <WalletModalProvider>
@@ -143,9 +152,18 @@ const DeFiExchangeContainer = () => {
                             </WalletProvider>
                         </ConnectionProvider>
                     </Tab>
-                    <Tab eventKey="avalance" title="Avalanche" disabled>
+                    <Tab eventKey="avalance" title={<span className="tab-title"><Image className="tab-logo" src={avaxLogo}/>Avalanche<div className="coming-soon-tag"><span>Coming soon!</span></div></span>} disabled>
                         <Fragment />
                     </Tab>
+                    <Tab eventKey="near" title={<span className="tab-title"><Image className="tab-logo" src={nearLogo}/>Near<div className="coming-soon-tag"><span>Coming soon!</span></div></span>} disabled>
+                        <Fragment />
+                    </Tab>
+                    {/* <Tab eventKey="polygon" title={<span className="tab-title"><Image className="tab-logo" src={polygonLogo}/>Polygon<div className="coming-soon-tag"><span>Coming soon!</span></div></span>} disabled>
+                        <Fragment />
+                    </Tab>
+                    <Tab eventKey="terra" title={<span className="tab-title"><Image className="tab-logo" src={terraLogo}/>Terra<div className="coming-soon-tag"><span>Coming soon!</span></div></span>} disabled>
+                        <Fragment />
+                    </Tab> */}
                 </Tabs>
             </Container>
         </Container>
