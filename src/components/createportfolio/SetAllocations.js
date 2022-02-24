@@ -49,6 +49,7 @@ const SetAllocations = ({
     removeCoinFromSelection,
     changeCoinDistribution,
     className,
+    defaultValue
 }) => {
     const coinSymbols = Object.keys(selectedCoins);
     const coinsList = coins.filter((coin) =>
@@ -63,9 +64,10 @@ const SetAllocations = ({
                 className="coin-selector"
                 onChange={onCoinSelect}
                 options={coins}
-                components={{ Option }}
-                isClearable
-                isSearchable
+                // components={{ Option }}
+                // isClearable
+                // isSearchable
+                value={defaultValue}
                 styles={{
                     control: (styles) => ({
                         ...styles,

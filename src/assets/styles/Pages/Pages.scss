@@ -78,20 +78,31 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	.finance-btn {
-		background-color: $purple;
-		padding: 1em 2em;
-		border-radius: 10px;
-		align-items: center;
-		font-size: 24px;
-		font-weight: 500;
-		width: 450px;
-		margin-top: 20px;
-	}
-	@media #{$mobile} {
+	.link-wrapper {
+		display: flex;
+		justify-content: space-evenly;
+		margin-top: 50px;
 		.finance-btn {
-			font-size: 18px;
-			width: 250px;
+			background-color: $purple;
+			padding: 1em 2em;
+			border-radius: 10px;
+			align-items: center;
+			font-size: 24px;
+			font-weight: 500;
+			width: 350px;
+			margin: 20px;
+			color: $white;
+			text-align: center;
+			text-decoration: none;
+			&:hover {
+				opacity: 0.9;
+			}
+		}
+		@media #{$mobile} {
+			.finance-btn {
+				font-size: 18px;
+				width: 250px;
+			}
 		}
 	}
 }

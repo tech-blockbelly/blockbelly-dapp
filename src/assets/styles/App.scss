@@ -4,7 +4,7 @@
 	flex-direction: column;
 	min-height: 100vh;
 
-	.page-container, .component-container, .content-container, .module-container, .reset-password-container, .authentication-container {
+	.page-container,.component-container, .content-container, .module-container, .reset-password-container, .authentication-container {
 		flex: 1;
 	}
 	.content-container {
@@ -14,8 +14,8 @@
 	}
 	.login-page {
 		display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 
 	.authentication-container {

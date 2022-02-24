@@ -39,7 +39,8 @@ function App() {
                         <Header></Header>
                         <Switch>
                             <Route exact path="/">
-                                <Redirect to="/baskets" />
+                                {/* <Redirect to="/baskets" /> */}
+                                <LandingPage />
                             </Route>
                             <Route exact path="/baskets">
                                 <DeFiExchangeContainer />
@@ -69,9 +70,9 @@ function App() {
                             <Route path="/error">
                                 <ErrorPage />
                             </Route>
-                            <Route path="/landing">
+                            {/* <Route path="/landing">
                                 <LandingPage />
-                            </Route>
+                            </Route> */}
                         </Switch>
                         <Footer />
                         <ToastContainer

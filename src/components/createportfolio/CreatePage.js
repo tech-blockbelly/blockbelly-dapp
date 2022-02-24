@@ -1,81 +1,87 @@
 import React, { useState, useEffect } from 'react';
 import PortfolioForm from './PortfolioForm';
 import { Container, Row, Col, ListGroup } from 'react-bootstrap';
+import Select, { components } from 'react-select';
 // import PortfolioPreview from './PortfolioPreview';
 // import SelectCoins from './SelectCoins';
 import SetAllocations from './SetAllocations';
-
 import { getAPIClient } from '../../httpClient';
 import SuccessModal from '../common/SuccessModal';
 import ErrorModal from '../common/ErrorModal';
 import { Redirect } from 'react-router-dom';
 
-const COINS = [
-    {
-        sym: 'BCO',
-        name: 'BananaCoin',
-        image: 'https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@d5c68edec1f5eaec59ac77ff2b48144679cebca1/svg/color/bco.svg',
-    },
-    {
-        sym: 'ANT',
-        name: 'Aragon',
-        image: 'https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@d5c68edec1f5eaec59ac77ff2b48144679cebca1/svg/color/ant.svg',
-    },
-    {
-        sym: 'XPR',
-        name: 'Proton',
-        image: 'https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@d5c68edec1f5eaec59ac77ff2b48144679cebca1/svg/color/xpr.svg',
-    },
-    {
-        sym: 'UNI',
-        name: 'UniSwap',
-        image: 'https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@d5c68edec1f5eaec59ac77ff2b48144679cebca1/svg/color/uni.svg',
-    },
-    {
-        sym: 'ELIX',
-        name: 'Elixir',
-        image: 'https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@d5c68edec1f5eaec59ac77ff2b48144679cebca1/svg/color/elix.svg',
-    },
-    {
-        sym: 'CMT',
-        name: 'Comet',
-        image: 'https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@d5c68edec1f5eaec59ac77ff2b48144679cebca1/svg/color/cmt.svg',
-    },
-    {
-        sym: 'ARK',
-        name: 'Ark',
-        image: 'https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@d5c68edec1f5eaec59ac77ff2b48144679cebca1/svg/color/ark.svg',
-    },
-    {
-        sym: 'ADA',
-        name: 'Cardano',
-        image: 'https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@d5c68edec1f5eaec59ac77ff2b48144679cebca1/svg/color/ada.svg',
-    },
-];
+const chains = [
+    { value: 'Ethereum', label: 'Ethereum' },
+    { value: 'Solana', label: 'Solana' },
+    { value: 'Polygon', label: 'Polygon' },
+    { value: 'Avalanche', label: 'Avalanche' },
+]
+
+const chainCoins = {
+    'Ethereum': [
+        { value: 'Coin1', label: 'Coin1' },
+        { value: 'Coin2', label: 'Coin2' },
+        { value: 'Coin3', label: 'Coin3' },
+        { value: 'Coin4', label: 'Coin4' },
+        { value: 'Coin5', label: 'Coin5' },
+    ],
+    'Solana': [
+        { value: 'Coin1', label: 'Coin1' },
+        { value: 'Coin2', label: 'Coin2' },
+        { value: 'Coin3', label: 'Coin3' },
+        { value: 'Coin4', label: 'Coin4' },
+        { value: 'Coin5', label: 'Coin5' },
+    ],
+    'Polygon': [
+        { value: 'Coin1', label: 'Coin1' },
+        { value: 'Coin2', label: 'Coin2' },
+        { value: 'Coin3', label: 'Coin3' },
+        { value: 'Coin4', label: 'Coin4' },
+        { value: 'Coin5', label: 'Coin5' },
+    ],
+    'Avalanche': [
+        { value: 'Coin1', label: 'Coin1' },
+        { value: 'Coin2', label: 'Coin2' },
+        { value: 'Coin3', label: 'Coin3' },
+        { value: 'Coin4', label: 'Coin4' },
+        { value: 'Coin5', label: 'Coin5' },
+    ],
+};
 
 const CreatePage = () => {
     const [appState, setAppState] = useState({
         loading: true,
-        coins: [],
+        // coins: [],
     });
 
-    useEffect(() => {
-        setAppState({ ...appState, loading: true });
-        getAPIClient()
-            .get('portfolio/coins/')
-            .then((res) => {
-                const allCoins = res.data || COINS;
-                setAppState({
-                    ...appState,
-                    loading: false,
-                    coins: allCoins.map(({ sym, name, icon }) => ({
-                        value: sym,
-                        label: name,
-                        image: icon,
-                    })),
-                });
-            });
-    }, [setAppState]);
+    const [coins, setCoins] = useState([]);
+    const [defaultCoinValue, setDefaultCoinValue] = useState('');
+
+    const onChainSelect = (chain) => {
+        let selectedChain = chain.value;
+        setCoins(chainCoins[selectedChain])
+        setSelectedCoins({})
+        setDefaultCoinValue('')
+    };
+
+    /** Temporarily disabled  */
+    // useEffect(() => {
+    //     setAppState({ ...appState, loading: true });
+    //     getAPIClient()
+    //         .get('portfolio/coins/')
+    //         .then((res) => {
+    //             const allCoins = res.data || COINS;
+    //             setAppState({
+    //                 ...appState,
+    //                 loading: false,
+    //                 coins: allCoins.map(({ sym, name, icon }) => ({
+    //                     value: sym,
+    //                     label: name,
+    //                     image: icon,
+    //                 })),
+    //             });
+    //         });
+    // }, [setAppState]);
 
     const [selectedCoins, setSelectedCoins] = useState({});
 
@@ -162,27 +168,65 @@ const CreatePage = () => {
     }
 
     return (
-        <Container fluid className="module-container">
-            <h2 className="module-title">New Basket</h2>
-            <Row>
+        <Container fluid className="module-container create-index-container">
+            <Row className="header-row">
                 <Col lg={5} sm={12}>
+                    <h2 className="module-title">New Index</h2>
+                </Col>
+                <Col lg={7} sm={12}>
+                    <Row  className="chain-selector-wrapper">
+                        <Col lg={4} sm={12}>
+                            <h4 className="container-title">Select Chain</h4>
+                        </Col>
+                        <Col lg={8} sm={12}>
+                            <Select
+                                className="chain-selector"
+                                onChange={onChainSelect}
+                                options={chains}
+                                // isClearable
+                                styles={{
+                                    control: (styles) => ({
+                                        ...styles,
+                                        border: 'none',
+                                        borderRadius: '30px',
+                                        padding: '15px',
+                                        width: '100%',
+                                        '&:active, &:focus, &:hover': {
+                                            border: 'none',
+                                        },
+                                    }),
+                                    options: (styles) => ({
+                                        ...styles,
+                                        fontSize: '16px',
+                                    }),
+                                }}
+                            />
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
+            <Row>
+                <Col lg={6} sm={12}>    
                     <PortfolioForm
                         name={name}
                         desc={desc}
                         min_invest={min_invest}
-                        coins={appState.coins}
+                        // coins={appState.coins}
+                        coins={coins}
                         onFormChange={onFormChange}
                         handleImageChange={handleImageChange}
                     />
                 </Col>
-                <Col lg={7} sm={12}>
+                <Col lg={6} sm={12}>
                     <SetAllocations
-                        coins={appState.coins}
+                        // coins={appState.coins}
+                        coins={coins}
                         onCoinSelect={onCoinSelect}
                         selectedCoins={selectedCoins}
                         removeCoinFromSelection={removeCoinFromSelection}
                         changeCoinDistribution={changeCoinDistribution}
                         className={`${selectedCoins.length ? '' : ''}`}
+                        defaultValue={defaultCoinValue}
                     />
                 </Col>
             </Row>

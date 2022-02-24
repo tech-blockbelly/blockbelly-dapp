@@ -29,7 +29,7 @@ const AllocationCard = (props) => {
                         <Col sm={6}  className="coin-title-info">
                             {/* <Image src={coin.image} className="coin-logo" /> */}
 														{/* placeholder image. to be removed when correct images are being loaded */}
-                            <Image src={'https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@d5c68edec1f5eaec59ac77ff2b48144679cebca1/32/color/eth.png'} className="coin-logo" />
+                            {/* <Image src={'https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@d5c68edec1f5eaec59ac77ff2b48144679cebca1/32/color/eth.png'} className="coin-logo" /> */}
                             <h4>{coin.label}</h4>
                         </Col>
                         <Col sm={6} className="coin-rating-block">

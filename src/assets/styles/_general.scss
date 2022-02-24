@@ -181,8 +181,12 @@ input:focus, textarea:focus, select:focus{
 	.accent {
 		background-color: $purple;
 		color: white;
+		&:hover {
+			opacity: 0.9;
+		}
 	}
 }
+
 @media #{$mobile} {
 	h1 {
 		font-size: 32px;
