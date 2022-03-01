@@ -21,13 +21,13 @@ const AllocationCard = (props) => {
                             e.preventDefault();
                             props.removeCoinFromSelection(coin.value);
                         }}>
-												<RiDeleteBin6Line />
+                        <RiDeleteBin6Line />
                     </a>
                 </Col>
                 <Col lg={11} sm={12} >
                     <Row>
                         <Col sm={6}  className="coin-title-info">
-                            {/* <Image src={coin.image} className="coin-logo" /> */}
+                            <Image src={coin.icon} className="coin-logo" />
 														{/* placeholder image. to be removed when correct images are being loaded */}
                             {/* <Image src={'https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@d5c68edec1f5eaec59ac77ff2b48144679cebca1/32/color/eth.png'} className="coin-logo" /> */}
                             <h4>{coin.label}</h4>

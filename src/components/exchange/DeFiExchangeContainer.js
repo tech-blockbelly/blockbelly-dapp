@@ -23,7 +23,7 @@ import solLogo from '../../assets/images/solana.png';
 import polygonLogo from '../../assets/images/polygon.png'
 import terraLogo from '../../assets/images/terraluna.png';
 import avaxLogo from '../../assets/images/avalanche.png';
-import nearLogo from '../../assets/images/near-protocol.svg';
+// import nearLogo from '../../assets/images/near-protocol.svg';
 
 require('@solana/wallet-adapter-react-ui/styles.css');
 
@@ -152,13 +152,14 @@ const DeFiExchangeContainer = () => {
                             </WalletProvider>
                         </ConnectionProvider>
                     </Tab>
+                    <Tab eventKey="polygon" title={<span className="tab-title"><Image className="tab-logo" src={polygonLogo}/>Polygon</span>}>
+                        <Fragment />
+                    </Tab>
                     <Tab eventKey="avalance" title={<span className="tab-title"><Image className="tab-logo" src={avaxLogo}/>Avalanche<div className="coming-soon-tag"><span>Coming soon!</span></div></span>} disabled>
                         <Fragment />
                     </Tab>
-                    <Tab eventKey="near" title={<span className="tab-title"><Image className="tab-logo" src={nearLogo}/>Near<div className="coming-soon-tag"><span>Coming soon!</span></div></span>} disabled>
-                        <Fragment />
-                    </Tab>
-                    {/* <Tab eventKey="polygon" title={<span className="tab-title"><Image className="tab-logo" src={polygonLogo}/>Polygon<div className="coming-soon-tag"><span>Coming soon!</span></div></span>} disabled>
+                    
+                    {/* <Tab eventKey="near" title={<span className="tab-title"><Image className="tab-logo" src={nearLogo}/>Near<div className="coming-soon-tag"><span>Coming soon!</span></div></span>} disabled>
                         <Fragment />
                     </Tab>
                     <Tab eventKey="terra" title={<span className="tab-title"><Image className="tab-logo" src={terraLogo}/>Terra<div className="coming-soon-tag"><span>Coming soon!</span></div></span>} disabled>
