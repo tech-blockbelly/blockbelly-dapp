@@ -4,7 +4,11 @@
 	flex-direction: column;
 	min-height: 100vh;
 
-	.page-container,.component-container, .content-container, .module-container, .reset-password-container, .authentication-container {
+	// .page-container {
+	// 	display: flex;
+	// 	flex: 1;
+	// }
+	.component-container, .content-container, .module-container, .reset-password-container, .authentication-container {
 		flex: 1;
 	}
 	.content-container {

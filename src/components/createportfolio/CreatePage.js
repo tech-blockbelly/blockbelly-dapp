@@ -13,22 +13,16 @@ import { Redirect } from 'react-router-dom';
 import ethLogo from '../../assets/images/eth.png';
 import solLogo from '../../assets/images/solana.png';
 import polygonLogo from '../../assets/images/polygon.png';
-import avaxLogo from '../../assets/images/avalanche.png';
 import nearLogo from '../../assets/images/near-protocol.svg';
-
 
 const chains = [
     { value: 'Ethereum', label: 'Ethereum', icon: ethLogo },
     { value: 'Solana', label: 'Solana', icon: solLogo },
     { value: 'Polygon', label: 'Polygon', icon: polygonLogo },
-    // { value: 'Avalanche', label: 'Avalanche', icon: avaxLogo },
 ]
-
-
 const exchange = [
     { value: 'Binance', label: 'Binance', icon: 'https://www.logo.wine/a/logo/Binance/Binance-Icon-Logo.wine.svg' },
 ]
-
 const chainCoins = {
     'Ethereum': [
         { value: 'ETH', label: 'Ethereum', icon: "https://dynamic-assets.coinbase.com/dbb4b4983bde81309ddab83eb598358eb44375b930b94687ebe38bc22e52c3b2125258ffb8477a5ef22e33d6bd72e32a506c391caa13af64c00e46613c3e5806/asset_icons/4113b082d21cc5fab17fc8f2d19fb996165bcce635e6900f7fc2d57c4ef33ae9.png" },
