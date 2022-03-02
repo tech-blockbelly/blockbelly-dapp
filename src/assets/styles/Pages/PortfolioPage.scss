@@ -32,6 +32,9 @@
 
 .portfolio-page-container {
 	padding: 20px 0;
+	.row {
+		justify-content: center;
+	}
 	.information-column {
 		
 		.title-info-row {
@@ -81,17 +84,37 @@
 	}
 	.transaction-column {
 		padding: 10px 0;
-		.fixed-column {
-			position: fixed;
+		max-width: 450px;
+		//.fixed-column {
+			//position: fixed;
 			.defi-buy .fund-action-list-group {
-				padding: 1em;
+				// padding: 1em;
+				padding: 0;
 				.list-group-item {
 					padding: 0.75em 0;
 					input {
 						border: solid 0.5px $boxshadowgray;
+						border-radius: 10px;
 					}
 				}
 			}
-		}
+			.transaction-breakup-block {
+				background-color: $bggrey;
+				border-radius: 10px;
+				padding: 10px 0;
+				border: solid 0.5px $boxshadowgray;
+				.list-group-item {
+					display: flex;
+					justify-content: space-between;
+					background-color: transparent;
+					border: 0;
+					font-weight: 300;
+					padding: 0.25rem .75rem;
+					p {
+						font-weight: 600;
+					}
+				}
+			}
+		//}
 	}
 } 
