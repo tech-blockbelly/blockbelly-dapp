@@ -1,78 +1,78 @@
 .portfolio-info-container {
-	margin: 0 15px;
-	align-items: center;
-	border-radius: 20px;
-	box-shadow: 0 20px 25px -15px $boxshadowgray;
-	border: solid 1px $bordergrey;
-	// padding: 30px 20px;
-	// background-color: $bggrey;
+    margin: 0 15px;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 20px 25px -15px $boxshadowgray;
+    border: solid 1px $bordergrey;
+    // padding: 30px 20px;
+    // background-color: $bggrey;
 
-	// .image-title-wrapper {
-	// 	display: flex;
-	// 	align-items: center;
-		.portfolio-icon {
-			margin: 20px 10px;
-			width: 120px;
-			border-radius: 20px;
-		}
-	// }
-	.preamble {
-		margin: 10px auto;
-	}
-	.title-wrapper {
-		text-align: left;
-		h2 {
-			margin-bottom: 10px;
-		}
-	}
-	.positive {
-		color: $green2;
-		margin-left: 10px;
-	}
-	.negative {
-		color: $red;
-		margin-left: 10px;
-	}
+    // .image-title-wrapper {
+    // 	display: flex;
+    // 	align-items: center;
+    .portfolio-icon {
+        margin: 20px 10px;
+        width: 120px;
+        border-radius: 20px;
+    }
+    // }
+    .preamble {
+        margin: 10px auto;
+    }
+    .title-wrapper {
+        text-align: left;
+        h2 {
+            margin-bottom: 10px;
+        }
+    }
+    .positive {
+        color: $green2;
+        margin-left: 10px;
+    }
+    .negative {
+        color: $red;
+        margin-left: 10px;
+    }
 
-	.card {
-		background-color: transparent;
-		padding: 0;
-		border: 0;
+    .card {
+        background-color: transparent;
+        padding: 0;
+        border: 0;
 
-		.card-header {
-			padding: 0;
-			background-color: transparent;
-			border: 0;
-		}
+        .card-header {
+            padding: 0;
+            background-color: transparent;
+            border: 0;
+        }
 
-		.card-footer {
-			border: 0;
-			border-radius: 0.5em;
-			margin-top: 0.5em
-		}
-	}
-	.title-desc-card {
-		margin: 20px 10px;
-	}
-	@media #{$ipadPortrait, $mobile} {
-		.portfolio-icon-wrapper {
-			text-align: center;
-			.portfolio-icon {
-				width: 80px;
-			}
-		}
-		.card .portfolio-info {
-			display: flex;
-			justify-content: center;
-			&:not(:last-child) {
-				margin-bottom: 10px;
-			}
-			div {
-				margin-right: 10px;
-			}
-			h4 {
-				margin-left: 10px;
-			}
-		}
-	}
+        .card-footer {
+            border: 0;
+            border-radius: 0.5em;
+            margin-top: 0.5em;
+        }
+    }
+    .title-desc-card {
+        margin: 20px 10px;
+    }
+    @media #{$ipadPortrait, $mobile} {
+        .portfolio-icon-wrapper {
+            text-align: center;
+            .portfolio-icon {
+                width: 80px;
+            }
+        }
+        .card .portfolio-info {
+            display: flex;
+            justify-content: center;
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+            div {
+                margin-right: 10px;
+            }
+            h4 {
+                margin-left: 10px;
+            }
+        }
+    }
 }

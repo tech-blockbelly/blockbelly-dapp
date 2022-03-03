@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useMemo, useEffect } from 'react';
 import { useEthers } from '@usedapp/core';
 import { ChainId, DAppProvider } from '@usedapp/core';
-import { Container, Row, Col, Tabs, Tab, Image } from 'react-bootstrap';
+import { Container, Row, Col, Tabs, Tab, Image, Button } from 'react-bootstrap';
 import { IoWallet } from 'react-icons/io5';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import {
@@ -20,7 +20,7 @@ import FundsListing from '../dashboard/newcomponents/FundsListing';
 
 import ethLogo from '../../assets/images/eth.png';
 import solLogo from '../../assets/images/solana.png';
-import polygonLogo from '../../assets/images/polygon.png'
+import polygonLogo from '../../assets/images/polygon.png';
 import terraLogo from '../../assets/images/terraluna.png';
 import avaxLogo from '../../assets/images/avalanche.png';
 import nearLogo from '../../assets/images/near-protocol.svg';
@@ -30,7 +30,8 @@ require('@solana/wallet-adapter-react-ui/styles.css');
 const config = {
     readOnlyChainId: ChainId.Rinkeby,
     readOnlyUrls: {
-        [ChainId.Rinkeby]: '',
+        [ChainId.Rinkeby]:
+            'https://rinkeby.infura.io/v3/d7d8279a49d6443cb30249eab2cdb5e6',
     },
 };
 
@@ -61,41 +62,36 @@ const EthereumContainer = () => {
         return brokerDetails['contractAddress'];
     };
 
-    useEffect(async () => {
-        getBrokerAddress()
-            .then((address) => {
-                if (!address) {
-                    throw new Error('Broker address not found');
-                }
-                setBrokerAddress(brokerAddress);
-                setShowPage(true);
-            })
-            .catch((err) => {
-                setShowPage(false);
-            });
-    }, []);
+    // useEffect(async () => {
+    //     console.log(account);
+    //     getBrokerAddress()
+    //         .then((address) => {
+    //             if (!address) {
+    //                 throw new Error('Broker address not found');
+    //             }
+    //             setBrokerAddress(brokerAddress);
+    //             setShowPage(true);
+    //         })
+    //         .catch((err) => {
+    //             setShowPage(false);
+    //         });
+    // }, [account]);
 
-    // return account && showPage ? (
-    return (
-        <Fragment>
-            <EthereumBrokerList
-                brokerAddress={brokerAddress}
-                title="Explore Indices"
-            />
-        </Fragment>
-    )
-    // ) : (
-    //     <Container className="component-container defi-exchange-page">
-    //         <Row>
-    //             <Col>
-    //                 <Button
-    //                     className="connect-btn"
-    //                     onClick={() => activateBrowserWallet()}>
-    //                     <IoWallet /> <span>Connect to Metamask Wallet</span>
-    //                 </Button>
-    //             </Col>
-    //         </Row>
-    //     </Container>
+    return true ? (
+        <FundsListing />
+    ) : (
+        <Container className="component-container defi-exchange-page">
+            <Row>
+                <Col>
+                    <Button
+                        className="connect-btn"
+                        onClick={() => activateBrowserWallet()}>
+                        <IoWallet /> <span>Connect to Metamask Wallet</span>
+                    </Button>
+                </Col>
+            </Row>
+        </Container>
+    );
     // );
 };
 
@@ -107,7 +103,7 @@ const SolanaContainer = () => {
     return (
         // <FundsModule type="defi" title="Explore Indices" />
         <FundsListing />
-    ) 
+    );
     //) : (
     //     <Container className="component-container defi-exchange-page">
     //         <Row>
@@ -125,7 +121,7 @@ const SolanaContainer = () => {
 
 const DeFiExchangeContainer = () => {
     // const [key, setKey] = useState('ethereum');
-    const [key, setKey] = useState('solana');
+    const [key, setKey] = useState('ethereum');
 
     const endpoint = useMemo(() => clusterApiUrl(network), [network]);
     const wallets = useMemo(() => [getPhantomWallet()], [network]);
@@ -138,12 +134,26 @@ const DeFiExchangeContainer = () => {
                     activeKey={key}
                     onSelect={(k) => setKey(k)}
                     className="funds-type-tab">
-                    <Tab eventKey="ethereum" title={<span className="tab-title"><Image className="tab-logo" src={ethLogo}/>Ethereum</span>}>
+                    <Tab
+                        eventKey="ethereum"
+                        title={
+                            <span className="tab-title">
+                                <Image className="tab-logo" src={ethLogo} />
+                                Ethereum
+                            </span>
+                        }>
                         <DAppProvider config={config}>
                             <EthereumContainer />
                         </DAppProvider>
                     </Tab>
-                    <Tab eventKey="solana" title={<span className="tab-title"><Image className="tab-logo" src={solLogo}/>Solana</span>}>
+                    <Tab
+                        eventKey="solana"
+                        title={
+                            <span className="tab-title">
+                                <Image className="tab-logo" src={solLogo} />
+                                Solana
+                            </span>
+                        }>
                         <ConnectionProvider endpoint={endpoint}>
                             <WalletProvider wallets={wallets}>
                                 <WalletModalProvider>
@@ -152,10 +162,32 @@ const DeFiExchangeContainer = () => {
                             </WalletProvider>
                         </ConnectionProvider>
                     </Tab>
-                    <Tab eventKey="avalance" title={<span className="tab-title"><Image className="tab-logo" src={avaxLogo}/>Avalanche<div className="coming-soon-tag"><span>Coming soon!</span></div></span>} disabled>
+                    <Tab
+                        eventKey="avalance"
+                        title={
+                            <span className="tab-title">
+                                <Image className="tab-logo" src={avaxLogo} />
+                                Avalanche
+                                <div className="coming-soon-tag">
+                                    <span>Coming soon!</span>
+                                </div>
+                            </span>
+                        }
+                        disabled>
                         <Fragment />
                     </Tab>
-                    <Tab eventKey="near" title={<span className="tab-title"><Image className="tab-logo" src={nearLogo}/>Near<div className="coming-soon-tag"><span>Coming soon!</span></div></span>} disabled>
+                    <Tab
+                        eventKey="near"
+                        title={
+                            <span className="tab-title">
+                                <Image className="tab-logo" src={nearLogo} />
+                                Near
+                                <div className="coming-soon-tag">
+                                    <span>Coming soon!</span>
+                                </div>
+                            </span>
+                        }
+                        disabled>
                         <Fragment />
                     </Tab>
                     {/* <Tab eventKey="polygon" title={<span className="tab-title"><Image className="tab-logo" src={polygonLogo}/>Polygon<div className="coming-soon-tag"><span>Coming soon!</span></div></span>} disabled>

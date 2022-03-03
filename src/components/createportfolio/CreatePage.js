@@ -15,31 +15,31 @@ const chains = [
     { value: 'Solana', label: 'Solana' },
     { value: 'Polygon', label: 'Polygon' },
     { value: 'Avalanche', label: 'Avalanche' },
-]
+];
 
 const chainCoins = {
-    'Ethereum': [
+    Ethereum: [
         { value: 'Coin1', label: 'Coin1' },
         { value: 'Coin2', label: 'Coin2' },
         { value: 'Coin3', label: 'Coin3' },
         { value: 'Coin4', label: 'Coin4' },
         { value: 'Coin5', label: 'Coin5' },
     ],
-    'Solana': [
+    Solana: [
         { value: 'Coin1', label: 'Coin1' },
         { value: 'Coin2', label: 'Coin2' },
         { value: 'Coin3', label: 'Coin3' },
         { value: 'Coin4', label: 'Coin4' },
         { value: 'Coin5', label: 'Coin5' },
     ],
-    'Polygon': [
+    Polygon: [
         { value: 'Coin1', label: 'Coin1' },
         { value: 'Coin2', label: 'Coin2' },
         { value: 'Coin3', label: 'Coin3' },
         { value: 'Coin4', label: 'Coin4' },
         { value: 'Coin5', label: 'Coin5' },
     ],
-    'Avalanche': [
+    Avalanche: [
         { value: 'Coin1', label: 'Coin1' },
         { value: 'Coin2', label: 'Coin2' },
         { value: 'Coin3', label: 'Coin3' },
@@ -59,9 +59,9 @@ const CreatePage = () => {
 
     const onChainSelect = (chain) => {
         let selectedChain = chain.value;
-        setCoins(chainCoins[selectedChain])
-        setSelectedCoins({})
-        setDefaultCoinValue('')
+        setCoins(chainCoins[selectedChain]);
+        setSelectedCoins({});
+        setDefaultCoinValue('');
     };
 
     /** Temporarily disabled  */
@@ -174,7 +174,7 @@ const CreatePage = () => {
                     <h2 className="module-title">New Index</h2>
                 </Col>
                 <Col lg={7} sm={12}>
-                    <Row  className="chain-selector-wrapper">
+                    <Row className="chain-selector-wrapper">
                         <Col lg={4} sm={12}>
                             <h4 className="container-title">Select Chain</h4>
                         </Col>
@@ -206,7 +206,7 @@ const CreatePage = () => {
                 </Col>
             </Row>
             <Row>
-                <Col lg={6} sm={12}>    
+                <Col lg={6} sm={12}>
                     <PortfolioForm
                         name={name}
                         desc={desc}

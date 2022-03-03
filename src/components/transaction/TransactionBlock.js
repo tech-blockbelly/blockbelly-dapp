@@ -138,7 +138,8 @@ const TransactionBlock = ({ id, action }) => {
                     />
                     <Button
                         className="view-details-btn"
-                        onClick={getInvestmentDetails}>
+                        onClick={getInvestmentDetails}
+                    >
                         View Details
                     </Button>
                 </div>

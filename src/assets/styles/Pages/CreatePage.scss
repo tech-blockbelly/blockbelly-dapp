@@ -1,81 +1,80 @@
 .create-index-container {
-	.header-row {
-		margin-bottom: 10px;
-		.chain-selector-wrapper {
-			// display: flex;
-			align-items: center;
-			// border-radius: 20px;
-			// box-shadow: 0 20px 25px -15px $boxshadowgray;
-			// border: solid 1px $bordergrey;
-			// background-color: $bggrey;
-			.chain-selector  .css-181klts-control {
-				box-shadow: 0 20px 25px -15px $boxshadowgray;
-				border: solid 0.5px $boxshadowgray;
-				width: 100%;
-			}
-		}
-		.chain-selector  .css-181klts-control {
-			box-shadow: 0 20px 25px -15px $boxshadowgray;
-		}
-	}
-	.basket-create-container {
-		.coin-selector {
-			margin-top: 0.25em;
-			color: $grey;
-			font-size: 24px;
-		}
-		.coin-allocation-container.hide{
-			display: none;
-		}
-	}
-	
-	.portfolio-page {
-		.chart-wrapper, .investment-wrapper {
-			border-radius: 20px;
-			box-shadow: 0 20px 25px -15px $boxshadowgray;
-			border: solid 1px $bordergrey;
-			padding: 20px;
-			background-color: $bggrey;
-		}
-		.investment-wrapper {
-			background-color: $bggrey;
-			.minimum-amt-text {
-				margin-bottom: 10px;
-			}
-			.minimum-amt-value {
-				margin-bottom: 10px;
-			}
-		}
-	}
-	
-	.portfolio-amt {
-		margin: 1em;
-		margin-top: 2em;
-		padding: 0 1em;
-		background-color: $bggrey;
-	}
-	
-	.fund-action-list-group {
-		padding: 0 1em;
-		background-color: transparent;
-	
-		.fund-action-container {
-			background: $white;
-			padding: 1em;
-			margin: 0.5em 0;
-			border-radius: 10px;
-			align-items: center;
-			text-align: center;
-			font-size: 24px;
-			color: $purple;
-			box-shadow: 0 20px 25px -15px $boxshadowgray;
-		}
-	
-		.accent {
-			background-color: $purple;
-			color: white;
-		}
-	}
-	
-}
+    .header-row {
+        margin-bottom: 10px;
+        .chain-selector-wrapper {
+            // display: flex;
+            align-items: center;
+            // border-radius: 20px;
+            // box-shadow: 0 20px 25px -15px $boxshadowgray;
+            // border: solid 1px $bordergrey;
+            // background-color: $bggrey;
+            .chain-selector .css-181klts-control {
+                box-shadow: 0 20px 25px -15px $boxshadowgray;
+                border: solid 0.5px $boxshadowgray;
+                width: 100%;
+            }
+        }
+        .chain-selector .css-181klts-control {
+            box-shadow: 0 20px 25px -15px $boxshadowgray;
+        }
+    }
+    .basket-create-container {
+        .coin-selector {
+            margin-top: 0.25em;
+            color: $grey;
+            font-size: 24px;
+        }
+        .coin-allocation-container.hide {
+            display: none;
+        }
+    }
 
+    .portfolio-page {
+        .chart-wrapper,
+        .investment-wrapper {
+            border-radius: 20px;
+            box-shadow: 0 20px 25px -15px $boxshadowgray;
+            border: solid 1px $bordergrey;
+            padding: 20px;
+            background-color: $bggrey;
+        }
+        .investment-wrapper {
+            background-color: $bggrey;
+            .minimum-amt-text {
+                margin-bottom: 10px;
+            }
+            .minimum-amt-value {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .portfolio-amt {
+        margin: 1em;
+        margin-top: 2em;
+        padding: 0 1em;
+        background-color: $bggrey;
+    }
+
+    .fund-action-list-group {
+        padding: 0 1em;
+        background-color: transparent;
+
+        .fund-action-container {
+            background: $white;
+            padding: 1em;
+            margin: 0.5em 0;
+            border-radius: 10px;
+            align-items: center;
+            text-align: center;
+            font-size: 24px;
+            color: $purple;
+            box-shadow: 0 20px 25px -15px $boxshadowgray;
+        }
+
+        .accent {
+            background-color: $purple;
+            color: white;
+        }
+    }
+}

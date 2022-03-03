@@ -1,24 +1,24 @@
 .user-settings-container {
-	margin: 50px auto 25px;
-	color: $darkgrey;
-	border-radius: 20px;
-	box-shadow: 0 20px 25px -15px $boxshadowgray;
-	border: solid 1px $bordergrey;
-	background-color: $bggrey;
-	.profile-info-row {
-		padding: 30px 10px;
-		align-items: flex-start;
-	}
-	.profile-img-col {
-		text-align: center;
-		.profile-img {
-			width: 150px;
-		}
-	}
-	.profile-info-col {
-		.form-input {
-			background-color: $white;
-			transition: none;
-		}
-	}
+    margin: 50px auto 25px;
+    color: $darkgrey;
+    border-radius: 20px;
+    box-shadow: 0 20px 25px -15px $boxshadowgray;
+    border: solid 1px $bordergrey;
+    background-color: $bggrey;
+    .profile-info-row {
+        padding: 30px 10px;
+        align-items: flex-start;
+    }
+    .profile-img-col {
+        text-align: center;
+        .profile-img {
+            width: 150px;
+        }
+    }
+    .profile-info-col {
+        .form-input {
+            background-color: $white;
+            transition: none;
+        }
+    }
 }

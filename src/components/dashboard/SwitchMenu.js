@@ -17,7 +17,8 @@ const SwitchMenu = (props) => {
                         className={`switch-btn ${
                             index === active ? 'selected' : 'not-selected'
                         }`}
-                        onClick={() => setActive(index)}>
+                        onClick={() => setActive(index)}
+                    >
                         {element.title}
                     </Button>
                 ))}
@@ -29,7 +30,8 @@ const SwitchMenu = (props) => {
                         className={`portfolio-list ${
                             index === active ? 'selected' : 'not-selected'
                         }`}
-                        key={index}>
+                        key={index}
+                    >
                         {element.portfolios.map((portfolio, index) => (
                             <PortfolioLink
                                 key={index}

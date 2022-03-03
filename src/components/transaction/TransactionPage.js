@@ -97,7 +97,8 @@ const TransactionPage = (props) => {
                     className="proceed-btn btn"
                     onClick={() => {
                         setViewLedger(true);
-                    }}>
+                    }}
+                >
                     View
                 </Button>
             );
@@ -167,7 +168,8 @@ const TransactionPage = (props) => {
                                         />
                                         <Button
                                             className="view-details-btn"
-                                            onClick={getInvestmentDetails}>
+                                            onClick={getInvestmentDetails}
+                                        >
                                             View Details
                                         </Button>
                                     </div>
@@ -213,7 +215,8 @@ const TransactionPage = (props) => {
             dialogClassName="transaction-modal"
             backdrop="static"
             keyboard={false}
-            centered>
+            centered
+        >
             <Modal.Body>{content()}</Modal.Body>
             <Modal.Footer className="button-wrapper">{actions()}</Modal.Footer>
         </Modal>

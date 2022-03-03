@@ -56,7 +56,8 @@ const LoginPage = ({ login, isAuthenticated }) => {
                         onChange={onChange}
                         continueWithGoogle={continueWithGoogle}
                         email={email}
-                        password={password}></Login>
+                        password={password}
+                    ></Login>
                     {/* <Signup /> */}
                 </Col>
             </Row>

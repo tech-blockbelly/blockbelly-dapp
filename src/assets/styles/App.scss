@@ -1,68 +1,73 @@
-
 .App {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 
-	.page-container,.component-container, .content-container, .module-container, .reset-password-container, .authentication-container {
-		flex: 1;
-	}
-	.content-container {
-		display: flex;
-		flex-direction: column;
-		// background-color: $bggrey;
-	}
-	.login-page {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-	}
+    .page-container,
+    .component-container,
+    .content-container,
+    .module-container,
+    .reset-password-container,
+    .authentication-container {
+        flex: 1;
+    }
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        // background-color: $bggrey;
+    }
+    .login-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 
-	.authentication-container {
-		.authentication-block {
-			background-color: $bggrey;
-			border-radius: 20px;
-			margin: 50px auto auto;
-			padding: 50px 30px;
-			.auth-title {
-				margin-bottom: 20px;
-				text-align: center;
-			}
-			.btn {
-				max-width: 350px;
-				margin: 0 auto;
-			}
-		}
-	}
+    .authentication-container {
+        .authentication-block {
+            background-color: $bggrey;
+            border-radius: 20px;
+            margin: 50px auto auto;
+            padding: 50px 30px;
+            .auth-title {
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            .btn {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+        }
+    }
 
-	.module-container {
-		.module-title {
-			margin: 0.5em;
-		}
-		.accent-text {
-			color: $purple;
-			font-weight: bold;
-		}
-	}
+    .module-container {
+        .module-title {
+            margin: 0.5em;
+        }
+        .accent-text {
+            color: $purple;
+            font-weight: bold;
+        }
+    }
 
-	.loader-container {
-		text-align: center;
-		.loader {
-			margin: 100px auto;
-			width: 50px;
-			height: 50px;
-			color: $purple;
-		}
-	}
-	@media #{$ipadPortrait, $mobile} {
-		.page-container {
-			flex-direction: column;
-		}
-		.content-container .header-container {
-			display: none;
-		}
-		.portfolio-page-container, .settings-page {
-			padding: 0;
-		}
-	}
+    .loader-container {
+        text-align: center;
+        .loader {
+            margin: 100px auto;
+            width: 50px;
+            height: 50px;
+            color: $purple;
+        }
+    }
+    @media #{$ipadPortrait, $mobile} {
+        .page-container {
+            flex-direction: column;
+        }
+        .content-container .header-container {
+            display: none;
+        }
+        .portfolio-page-container,
+        .settings-page {
+            padding: 0;
+        }
+    }
 }

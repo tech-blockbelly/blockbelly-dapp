@@ -49,12 +49,10 @@ const SetAllocations = ({
     removeCoinFromSelection,
     changeCoinDistribution,
     className,
-    defaultValue
+    defaultValue,
 }) => {
     const coinSymbols = Object.keys(selectedCoins);
-    const coinsList = coins.filter((coin) =>
-        coinSymbols.includes(coin.value),
-    );
+    const coinsList = coins.filter((coin) => coinSymbols.includes(coin.value));
 
     return (
         <div className={`coin-allocation-container ${className}`}>

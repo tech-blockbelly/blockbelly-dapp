@@ -14,9 +14,13 @@ const LandingPage = () => {
                 <span>DeFi Exchange</span>
             </Button> */}
             <h2>Choose your role</h2>
-            <div className='link-wrapper'>
-                <Link to={`/baskets`} className="finance-btn">Investor</Link>
-                <Link to={`/create`} className="finance-btn">Methodologist</Link>
+            <div className="link-wrapper">
+                <Link to={`/baskets`} className="finance-btn">
+                    Investor
+                </Link>
+                <Link to={`/create`} className="finance-btn">
+                    Methodologist
+                </Link>
             </div>
         </Container>
     );

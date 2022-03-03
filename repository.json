@@ -1,0 +1,61 @@
+[
+    {
+        "chn": "ethereum",
+        "chnId": 1,
+        "iName": "DeFi Pulse Index",
+        "iSym": "DPI",
+        "iDesc": "The DeFi Pulse Index is a capitalization-weighted index that tracks the performance of decentralized financial assets across the market.",
+        "iCgId": "dpi",
+        "iAddr": "0x1494CA1F11D487c2bBe4543E90080AeBa4BA3C2b",
+        "iCmp": [
+            {
+                "addr": "",
+                "wt": 24.50
+            },
+            {
+                "addr": "",
+                "wt": 24.50
+            },
+            {
+                "addr": "",
+                "wt": 24.50
+            },
+            {
+                "addr": "",
+                "wt": 24.50
+            },
+            {
+                "addr": "",
+                "wt": 24.50
+            },
+            {
+                "addr": "",
+                "wt": 24.50
+            },
+            {
+                "addr": "",
+                "wt": 24.50
+            },
+            {
+                "addr": "",
+                "wt": 24.50
+            },
+            {
+                "addr": "",
+                "wt": 24.50
+            },
+            {
+                "addr": "",
+                "wt": 24.50
+            },
+            {
+                "addr": "",
+                "wt": 24.50
+            },
+            {
+                "addr": "",
+                "wt": 24.50
+            }
+        ]
+    }
+]

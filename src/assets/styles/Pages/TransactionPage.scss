@@ -17,9 +17,9 @@
                 .block-title {
                     text-align: center;
                     margin-bottom: 20px;
-										span {
-											color: $red;
-										}
+                    span {
+                        color: $red;
+                    }
                 }
                 .amount-input {
                     text-align: center;
@@ -38,13 +38,13 @@
             }
         }
     }
-		.disclaimer {
-			font-size: 14px;
-			text-align: center;
-			font-style: italic;
-			color: $red;
-		}
-    .ccy-table-container.hide{
+    .disclaimer {
+        font-size: 14px;
+        text-align: center;
+        font-style: italic;
+        color: $red;
+    }
+    .ccy-table-container.hide {
         display: none;
     }
     .ccy-table-container {
@@ -54,26 +54,26 @@
         border: solid 1px $bordergrey;
     }
     .button-wrapper {
-		display: flex;
-		justify-content: space-evenly;
-		.cancel-btn {
-			background-color: $white;
-			color: $darkgrey;
-		}
-	}
-	@media #{$ipadPortrait} {
-		width: 90vw;
-		max-width: 90vw;
-		.ccy-table-container {
-			padding: 20px 0;
-		}
-	}
-	@media #{$mobile} {
-		width: 100vw;
-		max-width: 100vw;
-		margin: 0;
-		.ccy-table-container {
-			padding: 10px 0;
-		}
-	}
+        display: flex;
+        justify-content: space-evenly;
+        .cancel-btn {
+            background-color: $white;
+            color: $darkgrey;
+        }
+    }
+    @media #{$ipadPortrait} {
+        width: 90vw;
+        max-width: 90vw;
+        .ccy-table-container {
+            padding: 20px 0;
+        }
+    }
+    @media #{$mobile} {
+        width: 100vw;
+        max-width: 100vw;
+        margin: 0;
+        .ccy-table-container {
+            padding: 10px 0;
+        }
+    }
 }

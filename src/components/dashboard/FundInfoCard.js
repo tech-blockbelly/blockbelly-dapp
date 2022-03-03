@@ -34,7 +34,9 @@ const FundsInfoCard = (props) => {
                     <Card style={{ width: '100%' }} className="statistics-card">
                         <Card.Body>
                             <Card.Text>AUM</Card.Text>
-                            <Card.Title>$ {(fund.value || 0).toFixed(2)}</Card.Title>
+                            <Card.Title>
+                                $ {(fund.value || 0).toFixed(2)}
+                            </Card.Title>
                         </Card.Body>
                     </Card>
                 </Col>

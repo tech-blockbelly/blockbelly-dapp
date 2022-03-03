@@ -9,14 +9,10 @@ const Footer = () => {
             </div>
 
             <div className="footer-links footer-right">
-                <a
-                    href="/"
-                    className="footer-text privacy-link">
+                <a href="/" className="footer-text privacy-link">
                     Privacy Notice
                 </a>
-                <a
-                    href="/"
-                    className="footer-text status-link">
+                <a href="/" className="footer-text status-link">
                     Status
                 </a>
             </div>

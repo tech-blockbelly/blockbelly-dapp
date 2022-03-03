@@ -13,7 +13,8 @@ const SipModule = (props) => {
             dialogClassName="sip-modal"
             backdrop="static"
             keyboard={false}
-            centered>
+            centered
+        >
             <Modal.Body>
                 <Container className="component-container sip-modal-container">
                     <Row>
@@ -38,7 +39,8 @@ const SipModule = (props) => {
                                         <Form.Control
                                             as="select"
                                             className="select-sip-date form-select"
-                                            data-style="btn-info">
+                                            data-style="btn-info"
+                                        >
                                             {[...Array(28)].map((e, i) => {
                                                 return (
                                                     <option key={i}>

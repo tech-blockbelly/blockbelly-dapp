@@ -10,7 +10,8 @@ const PortfolioTrend = (props) => {
             <div
                 className={`trend-card ${
                     props.status ? 'positive-trend' : 'negative-trend'
-                }`}>
+                }`}
+            >
                 <div className="trend-section">
                     <h4 className="card-title">Index</h4>
                     <Image src={arrow} className="trend-icon"></Image>
@@ -19,7 +20,8 @@ const PortfolioTrend = (props) => {
                 <div className="transaction-btn-wrapper">
                     <Link
                         className="transaction-btn btn"
-                        to={`/invest/${props.id}`}>
+                        to={`/invest/${props.id}`}
+                    >
                         Invest
                     </Link>
                     {/* <a
@@ -29,12 +31,14 @@ const PortfolioTrend = (props) => {
                     </a> */}
                     <a
                         href={`/invest/${props.id}`}
-                        className="transaction-btn btn">
+                        className="transaction-btn btn"
+                    >
                         Withdraw
                     </a>
                     <a
                         href="https://blockbelly.com/"
-                        className="transaction-btn btn inactive-btn">
+                        className="transaction-btn btn inactive-btn"
+                    >
                         Stake
                     </a>
                 </div>

@@ -1,44 +1,41 @@
 .trend-container {
-	margin: 50px auto;
-	max-width: 35vw;
-	text-align: center;
-	.container-title {
-		margin-bottom: 25px;
-	}
-	.trend-card {
-		border-radius: 30px;
-		color: $darkgrey;
-		.trend-section {
-			display: flex;
-			justify-content: space-between;
-			padding: 30px 20px 15px;
-			align-items: center;
-			.trend-percentage {
-				font-size: 40px;
-				font-weight: 700;
-				line-height: 40px;
-			}
-		}
-		.transaction-btn-wrapper {
-			display: flex;
-			justify-content: space-between;
-			padding: 20px;
-		}
-	}
+    margin: 50px auto;
+    max-width: 35vw;
+    text-align: center;
+    .container-title {
+        margin-bottom: 25px;
+    }
+    .trend-card {
+        border-radius: 30px;
+        color: $darkgrey;
+        .trend-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 20px 15px;
+            align-items: center;
+            .trend-percentage {
+                font-size: 40px;
+                font-weight: 700;
+                line-height: 40px;
+            }
+        }
+        .transaction-btn-wrapper {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+    }
 
-	.positive-trend {
-		background-color: $green2;
-	}
-	.negative-trend {
-		background-color: $red;
-		.trend-icon {
-			transform: rotate(180deg);
-		}
-	}
+    .positive-trend {
+        background-color: $green2;
+    }
+    .negative-trend {
+        background-color: $red;
+        .trend-icon {
+            transform: rotate(180deg);
+        }
+    }
 
-
-
-	@include media-breakpoint-down(sm) {
-
-	}
+    @include media-breakpoint-down(sm) {
+    }
 }

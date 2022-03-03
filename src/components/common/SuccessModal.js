@@ -14,7 +14,7 @@ const SuccessModal = (props) => {
             <Modal.Body className="text-center">
                 <div className="no-selection">
                     <h1 className="text-success">
-                        <BiBadgeCheck size={70}/>
+                        <BiBadgeCheck size={70} />
                     </h1>
                     <p>{props.msg}</p>
                 </div>

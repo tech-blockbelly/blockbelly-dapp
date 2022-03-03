@@ -1,14 +1,14 @@
 .dashboard-page {
-	.account-overview-wrapper {
-		border-radius: 20px;
-		box-shadow: 0 20px 25px -15px $boxshadowgray;
-		border: solid 1px $bordergrey;
-		padding: 20px;
-		background-color: $bggrey;
-		margin: 50px auto;
-		.container-title {
-			margin-bottom: 25px;
-			padding-left: 15px;
-		}
-	}
+    .account-overview-wrapper {
+        border-radius: 20px;
+        box-shadow: 0 20px 25px -15px $boxshadowgray;
+        border: solid 1px $bordergrey;
+        padding: 20px;
+        background-color: $bggrey;
+        margin: 50px auto;
+        .container-title {
+            margin-bottom: 25px;
+            padding-left: 15px;
+        }
+    }
 }

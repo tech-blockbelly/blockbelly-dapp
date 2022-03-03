@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { getAPIClient } from '../../httpClient';
 import {
     Container,
     Tabs,
@@ -11,12 +10,12 @@ import {
     Button,
     Spinner,
 } from 'react-bootstrap';
-import FundsInfoCard from './FundInfoCard';
+import FundsInfoCard from '../../dashboard/FundInfoCard';
 import { FaSort } from 'react-icons/fa';
 import { Redirect } from 'react-router-dom';
 import { useContractFunction } from '@usedapp/core';
 import { ethers } from 'ethers';
-import Broker from '../../abi/contracts/broker/UniswapBroker.sol/BlockbellyUniswapBroker.json';
+import Broker from '../../../abi/contracts/broker/UniswapBroker.sol/BlockbellyUniswapBroker.json';
 import { utils } from 'ethers';
 import { Contract } from '@ethersproject/contracts';
 

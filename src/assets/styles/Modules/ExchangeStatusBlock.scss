@@ -1,52 +1,52 @@
 .investment-summary-container {
-	margin: 50px auto;
-	max-width: 35vw;
-	text-align: center;
-	.container-title {
-		color: $darkgrey;
-		margin-bottom: 25px;
-	}
-	.summary-card {
-		background-color: $white;
-		border-radius: 30px;
-		color: $darkgrey;
-		box-shadow: 0 20px 25px -15px rgba(104, 100, 100, 0.2);
-		.portfolio-value {
-			padding-top: 40px;
-		}
-		.exchange-connect-text {
-			margin-bottom: 20px;
-		}
-	}
-	.exchange-connect-wrapper {
-		padding: 30px 50px 20px;
-	}
-	.transaction-btn-wrapper {
-		display: flex;
-		justify-content: center;
-		padding: 20px;
-	}
-	.exchange-status-wrapper {
-		background-color: rgba(51, 51, 51, 0.2);
-		padding: 20px;
-		color: $darkgrey;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-		.status-icon {
-			background-color: $green;
-			border-radius: 25px;
-			margin-right: 20px;
-		}
-		.status-positive-icon {
-			padding: 12px 10px;
-			background-color: $green;
-		}
-		.status-negative-icon {
-			padding: 7px;
-			background-color: $red;
-		}
-	}
+    margin: 50px auto;
+    max-width: 35vw;
+    text-align: center;
+    .container-title {
+        color: $darkgrey;
+        margin-bottom: 25px;
+    }
+    .summary-card {
+        background-color: $white;
+        border-radius: 30px;
+        color: $darkgrey;
+        box-shadow: 0 20px 25px -15px rgba(104, 100, 100, 0.2);
+        .portfolio-value {
+            padding-top: 40px;
+        }
+        .exchange-connect-text {
+            margin-bottom: 20px;
+        }
+    }
+    .exchange-connect-wrapper {
+        padding: 30px 50px 20px;
+    }
+    .transaction-btn-wrapper {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+    .exchange-status-wrapper {
+        background-color: rgba(51, 51, 51, 0.2);
+        padding: 20px;
+        color: $darkgrey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        .status-icon {
+            background-color: $green;
+            border-radius: 25px;
+            margin-right: 20px;
+        }
+        .status-positive-icon {
+            padding: 12px 10px;
+            background-color: $green;
+        }
+        .status-negative-icon {
+            padding: 7px;
+            background-color: $red;
+        }
+    }
 }

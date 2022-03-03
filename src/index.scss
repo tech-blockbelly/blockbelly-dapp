@@ -3,7 +3,6 @@
 @import './assets/styles/_general';
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 @import './assets/styles/App';
 @import './assets/styles/Modules/NavigationMenu';
 @import './assets/styles/Modules/Footer';
@@ -44,7 +43,6 @@
 
 // New css files. Remove corresponding old files during cleanup
 @import './assets/styles/Modules/FundInfoCard_new.scss';
-
 
 @import './assets/styles/Pages/PortfolioPage';
 @import './assets/styles/Pages/DashboardPage';

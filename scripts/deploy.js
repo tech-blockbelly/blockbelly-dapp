@@ -1,4 +1,4 @@
-async function main () {
+async function main() {
     // We get the contract to deploy
     const Contract = await ethers.getContractFactory('BlockbellyUniswapBroker');
     console.log('Deploying Contract...');
@@ -9,7 +9,7 @@ async function main () {
 
 main()
     .then(() => process.exit(0))
-    .catch(error => {
+    .catch((error) => {
         console.error(error);
         process.exit(1);
     });
