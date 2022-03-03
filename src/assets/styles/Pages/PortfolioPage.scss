@@ -31,65 +31,90 @@
 // }
 
 .portfolio-page-container {
-    padding: 20px 0;
-    .information-column {
-        .title-info-row {
-            display: flex;
-            // border-bottom: solid 1px $bordergrey;
-            .icon {
-                max-width: 64px;
-                max-height: 64px;
-                margin: 10px;
-            }
-            .title-block {
-                margin: 10px;
-            }
-        }
-        .general-info-row {
-            // border-bottom: solid 1px $bordergrey;
-            padding: 20px 0;
-            .subtext {
-                font-size: 12px;
-                color: $grey;
-            }
-            .creator-info-column {
-                display: flex;
-                align-items: center;
-                .creator-icon {
-                    width: 36px;
-                    height: 36px;
-                    margin-right: 10px;
-                }
-                .creator-name {
-                    font-size: 16px;
-                }
-            }
-            .market-info-column {
-                .market-cap {
-                    font-size: 16px;
-                }
-            }
-        }
-        .information-row {
-            padding: 20px;
-            .title {
-                margin-bottom: 15px;
-            }
-        }
-    }
-    .transaction-column {
-        padding: 10px 0;
-        .fixed-column {
-            position: fixed;
-            .defi-buy .fund-action-list-group {
-                padding: 1em;
-                .list-group-item {
-                    padding: 0.75em 0;
-                    input {
-                        border: solid 0.5px $boxshadowgray;
-                    }
-                }
-            }
-        }
-    }
-}
+	padding: 20px 0;
+	.row {
+		justify-content: center;
+	}
+	.information-column {
+		
+		.title-info-row {
+			display: flex;
+			// border-bottom: solid 1px $bordergrey;
+			.icon {
+				max-width: 64px;
+				max-height: 64px;
+				margin: 10px;
+			}
+			.title-block {
+				margin: 10px;
+			}
+		}
+		.general-info-row {
+			// border-bottom: solid 1px $bordergrey;
+			padding: 20px 0;
+			.subtext {
+				font-size: 12px;
+				color: $grey;
+			}
+			.creator-info-column {
+				display: flex;
+				align-items: center;
+				.creator-icon {
+					width: 36px;
+					height: 36px;
+					margin-right: 10px;
+				}
+				.creator-name {
+					font-size: 16px;
+				}
+			}
+			.market-info-column {
+				.market-cap {
+					font-size: 16px;
+				}
+			}
+
+		}
+		.information-row {
+			padding: 20px;
+			.title {
+				margin-bottom: 15px;
+			}
+		}
+	}
+	.transaction-column {
+		padding: 10px 0;
+		max-width: 450px;
+		//.fixed-column {
+			//position: fixed;
+			.defi-buy .fund-action-list-group {
+				// padding: 1em;
+				padding: 0;
+				.list-group-item {
+					padding: 0.75em 0;
+					input {
+						border: solid 0.5px $boxshadowgray;
+						border-radius: 10px;
+					}
+				}
+			}
+			.transaction-breakup-block {
+				background-color: $bggrey;
+				border-radius: 10px;
+				padding: 10px 0;
+				border: solid 0.5px $boxshadowgray;
+				.list-group-item {
+					display: flex;
+					justify-content: space-between;
+					background-color: transparent;
+					border: 0;
+					font-weight: 300;
+					padding: 0.25rem .75rem;
+					p {
+						font-weight: 600;
+					}
+				}
+			}
+		//}
+	}
+} 

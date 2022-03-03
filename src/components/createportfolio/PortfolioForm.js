@@ -23,7 +23,7 @@ const BasketForm = (props) => {
 
     return (
         <div className="coin-selection-container">
-            <h3 className="container-title">Create Index</h3>
+            <h3 className="container-title">Index Details</h3>
             <Form className="Basket-form">
                 <Form.Group controlId="Basket-ticker-input">
                     <Form.Label>Ticker</Form.Label>
@@ -41,7 +41,7 @@ const BasketForm = (props) => {
                     <Form.Control
                         className="Basket-name-input form-input"
                         type="text"
-                        placeholder="Basket Name"
+                        placeholder="Index Name"
                         name="name"
                         onChange={onChange}
                         required
@@ -51,7 +51,7 @@ const BasketForm = (props) => {
                     <Form.Label>Description</Form.Label>
                     <Form.Control
                         as="textarea"
-                        placeholder="Basket description"
+                        placeholder="Index description"
                         className="Basket-desc-input  form-input"
                         name="desc"
                         onChange={onChange}
@@ -61,7 +61,7 @@ const BasketForm = (props) => {
                 <hr></hr>
                 {/* <h3 className="container-title">Fee Structure</h3> */}
                 <Form.Group controlId="min-amount-input">
-                    <Form.Label>Initial Investment</Form.Label>
+                    <Form.Label>Initial Price (0-20)</Form.Label>
                     <Form.Control
                         className="min-amount-input form-input"
                         type="number"
@@ -99,11 +99,11 @@ const BasketForm = (props) => {
                         data-style="btn-info"
                         required>
                         <option>Select fee currency</option>
-                        {/* <option>USD</option>
-                        <option>BUSD</option> */}
-                        {coins.map((coin, index) => (
+                        <option>USDC</option>
+                        <option>ETH</option>
+                        {/* {coins.map((coin, index) => (
                             <option value={coin.value}>{coin.label}</option>
-                        ))}
+                        ))} */}
                     </Form.Control>
                 </Form.Group>
                 <Form.Group controlId="managment-fee-input">

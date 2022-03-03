@@ -36,7 +36,7 @@ function App() {
                 <div className="page-container">
                     <NavigationMenu />
                     <div className="content-container">
-                        <Header></Header>
+                        {/* <Header></Header> */}
                         <Switch>
                             <Route exact path="/">
                                 {/* <Redirect to="/baskets" /> */}

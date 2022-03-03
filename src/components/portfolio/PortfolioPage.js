@@ -159,124 +159,96 @@ const PortfolioPage = (props) => {
                         </Row>
                     </Col>
                     <Col xl={5} className="transaction-column">
-                        <div className="fixed-column">
-                            <Row>
-                                <Col className="portfolio-info-container defi-buy">
-                                    <ListGroup className="fund-action-list-group">
-                                        <ListGroup.Item style={{ border: '0' }}>
-                                            <Form.Group controlId="pay-with-input">
-                                                <Form.Label
-                                                    style={{
-                                                        'font-size': 'larger',
-                                                    }}>
-                                                    Pay With
-                                                </Form.Label>
-                                                <Form.Control
-                                                    className="pay-with-input form-input"
-                                                    type="text"
-                                                    placeholder="1.000000 ETH"
-                                                    name="paymentIndex"
-                                                    required
-                                                />
-                                            </Form.Group>
-                                        </ListGroup.Item>
-                                        <ListGroup.Item style={{ border: '0' }}>
-                                            <Form.Group controlId="buy-input">
-                                                <Form.Label
-                                                    style={{
-                                                        'font-size': 'larger',
-                                                    }}>
-                                                    Buy
-                                                </Form.Label>
-                                                <Form.Control
-                                                    className="buy-input form-input"
-                                                    type="text"
-                                                    placeholder="11.787357 DPI"
-                                                    name="buyIndex"
-                                                    required
-                                                />
-                                            </Form.Group>
-                                        </ListGroup.Item>
-                                    </ListGroup>
-                                </Col>
-                                <Col className="portfolio-info-container portfolio-amt">
-                                    <ListGroup
-                                        flush
-                                        style={{
-                                            'background-color': 'transparent',
-                                        }}>
-                                        <ListGroupItem
-                                            style={{
-                                                'background-color':
-                                                    'transparent',
-                                                border: '0',
-                                            }}>
-                                            Minimum Receive
-                                            <h4>11.787357</h4>
-                                        </ListGroupItem>
-                                        <ListGroupItem
-                                            style={{
-                                                'background-color':
-                                                    'transparent',
-                                                border: '0',
-                                            }}>
-                                            Network Fee
-                                            <h4>0.0159 ETH</h4>
-                                        </ListGroupItem>
-                                        <ListGroupItem
-                                            style={{
-                                                'background-color':
-                                                    'transparent',
-                                                border: '0',
-                                            }}>
-                                            Platform Fee
-                                            <h4>0.0159 ETH</h4>
-                                        </ListGroupItem>
-                                        <ListGroupItem
-                                            style={{
-                                                'background-color':
-                                                    'transparent',
-                                                border: '0',
-                                            }}>
-                                            Offered By
-                                            <h4>Uniswap v4</h4>
-                                        </ListGroupItem>
-                                    </ListGroup>
-                                </Col>
-                            </Row>
-                            <ListGroup className="fund-action-list-group">
-                                {account ? (
-                                    <Fragment>
-                                        <ListGroup.Item
-                                            action
-                                            // onClick={(e) => {
-                                            //     e.preventDefault();
-                                            //     window.location.href = `/invest/${id}`;
-                                            // }}
-                                            // onClick={handleShow}
-                                            className="fund-action-container accent"
-                                            eventKey="buy">
-                                            <IoBagCheck /> Buy
-                                        </ListGroup.Item>
-                                        <ListGroup.Item
-                                            action
-                                            // onClick={handleSipShow}
-                                            className="fund-action-container"
-                                            eventKey="stake">
-                                            <IoCalendar /> Recurring Invest
-                                        </ListGroup.Item>
-                                    </Fragment>
-                                ) : (
+                        {/* <div className="fixed-column"> */}
+                        <Row>
+                            <Col className="portfolio-info-container defi-buy">
+                                <ListGroup className="fund-action-list-group">
+                                    <ListGroup.Item style={{ border: '0' }}>
+                                        <Form.Group controlId="pay-with-input">
+                                            <Form.Label
+                                                style={{
+                                                    'font-size': 'larger',
+                                                }}>
+                                                Pay With
+                                            </Form.Label>
+                                            <Form.Control
+                                                className="pay-with-input form-input"
+                                                type="text"
+                                                placeholder="0.000000 ETH"
+                                                name="paymentIndex"
+                                                required
+                                            />
+                                        </Form.Group>
+                                    </ListGroup.Item>
+                                    <ListGroup.Item style={{ border: '0' }}>
+                                        <Form.Group controlId="buy-input">
+                                            <Form.Label
+                                                style={{
+                                                    'font-size': 'larger',
+                                                }}>
+                                                Bid
+                                            </Form.Label>
+                                            <Form.Control
+                                                className="buy-input form-input"
+                                                type="text"
+                                                placeholder="0.000000 BED"
+                                                name="buyIndex"
+                                                readOnly
+                                            />
+                                        </Form.Group>
+                                    </ListGroup.Item>
+                                </ListGroup>
+                                <ListGroup
+                                    flush
+                                    className="transaction-breakup-block">
+                                    <ListGroupItem>
+                                        Minimum Receive
+                                        <p>0.00000</p>
+                                    </ListGroupItem>
+                                    <ListGroupItem>
+                                        Network Fee
+                                        <p>0.000 ETH</p>
+                                    </ListGroupItem>
+                                    <ListGroupItem>
+                                        Platform Fee
+                                        <p>0.000 ETH</p>
+                                    </ListGroupItem>
+                                </ListGroup>
+                            </Col>
+                        </Row>
+                        <ListGroup className="fund-action-list-group">
+                            {account ? (
+                                <Fragment>
                                     <ListGroup.Item
                                         action
+                                        // onClick={(e) => {
+                                        //     e.preventDefault();
+                                        //     window.location.href = `/invest/${id}`;
+                                        // }}
+                                        // onClick={handleShow}
                                         className="fund-action-container accent"
-                                        onClick={() => activateBrowserWallet()}>
-                                        <IoWallet />{' '}
-                                        <span>Connect to Metamask Wallet</span>
+                                        eventKey="buy">
+                                        <IoBagCheck /> Buy
                                     </ListGroup.Item>
-                                )}
-                            </ListGroup>
-                        </div>
+                                    <ListGroup.Item
+                                        action
+                                        // onClick={handleSipShow}
+                                        className="fund-action-container"
+                                        eventKey="stake">
+                                        <IoCalendar /> Recurring Invest
+                                    </ListGroup.Item>
+                                </Fragment>
+                            ) : (
+                                <ListGroup.Item
+                                    action
+                                    className="fund-action-container accent"
+                                    onClick={() => activateBrowserWallet()}>
+                                    <IoWallet />{' '}
+                                    <span>Connect to Metamask Wallet</span>
+                                </ListGroup.Item>
+                            )}
+                        </ListGroup>
+                        {/* </div>  */}
                     </Col>
                 </Row>
             )}

@@ -35,7 +35,11 @@ const Option = (props) => {
     return (
         <components.Option {...props}>
             <div className="coin-info">
-                <Image src={props.data.image} className="coin-logo" />
+                <Image 
+                    src={props.data.icon} 
+                    className="coin-logo" 
+                    style={{ 'width': 36 , 'margin-right': 10}}
+                />
                 {props.data.label}
             </div>
         </components.Option>
@@ -62,7 +66,7 @@ const SetAllocations = ({
                 className="coin-selector"
                 onChange={onCoinSelect}
                 options={coins}
-                // components={{ Option }}
+                components={{ Option }}
                 // isClearable
                 // isSearchable
                 value={defaultValue}
@@ -90,6 +94,7 @@ const SetAllocations = ({
                         defaultValue={selectedCoins[coin.value]}
                         removeCoinFromSelection={removeCoinFromSelection}
                         changeCoinDistribution={changeCoinDistribution}
+                        key={index}
                     />
                 ))
             ) : (
