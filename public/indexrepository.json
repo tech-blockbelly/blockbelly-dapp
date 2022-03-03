@@ -64,7 +64,10 @@
                         "cName": "Curve",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6538.png"
                     }
-                ]
+                ],
+                "creator": "Blockbelly",
+                "icon": "",
+                "creatorIcon": ""
             },
             {
                 "chn": "ethereum",
@@ -123,7 +126,10 @@
                         "cName": "The Graph",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6719.png"
                     }
-                ]
+                ],
+                "creator": "Amun",
+                "icon": "https://cdn.lima.amun.com/ethereum/0xa9536b9c75a9e0fae3b56a96ac8edf76abc91978.svg",
+                "creatorIcon": "https://artwork.captivate.fm/3924a107-34ff-438d-89f5-f4c3f40fd938/hbqfupb_V6U9IPXHCAcY4HuF.jpg"
             },
             {
                 "chn": "ethereum",
@@ -180,7 +186,7 @@
                         "addr": "",
                         "wt": 5.53,
                         "cName": "Sushi",
-                        "cLogo": "https://dynamic-assets.coinbase.com/cede43e837596061c7e2290c725be20ee0eb000eb76937c879289ccf08f5941f9c1d76e3f3dd8cb0e67f53d0f4adc48286516200e7db5bd6bc403fcd9d318449/asset_icons/483b36b14a995b07c7883d0647903f77d8feafe1f685b55a0334b8788b151194.png",
+                        "cLogo": "https://dynamic-assets.coinbase.com/cede43e837596061c7e2290c725be20ee0eb000eb76937c879289ccf08f5941f9c1d76e3f3dd8cb0e67f53d0f4adc48286516200e7db5bd6bc403fcd9d318449/asset_icons/483b36b14a995b07c7883d0647903f77d8feafe1f685b55a0334b8788b151194.png"
                     },
                     {
                         "addr": "",
@@ -230,17 +236,162 @@
                         "cName": "Wrapped ETH",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png"
                     }
-                ]
+                ],
+                "creator": "Defi Pulse",
+                "icon": "https://set-core.s3.amazonaws.com/img/social_trader_set_icons/defi_pulse_index_set.svg",
+                "creatorIcon": "https://set-core.s3.amazonaws.com/img/social_traders/defi_pulse.png"
             }
         ],
         "Solana": [
-
+            {
+                "chn": "solana",
+                "chnId": 1,
+                "iName": "Solana Universe Index",
+                "iSym": "SOLU",
+                "iDesc": "Solana Universe Index (SOLU) is an index  that tracks quality crypto token projects that are primarily focused for the Solana ecosystem.. As one of the leading onchains in Crypto and Web3, EVM projects focus on next-generation applications and infrastructure being built in decentralised technology and Web3.",
+                "iCgId": "solu",
+                "iAddr": "",
+                "iCmp": [
+                    {
+                        "addr": "",
+                        "wt": 25.00,
+                        "cName": "Solana",
+                        "cLogo": "https://dynamic-assets.coinbase.com/d2ba1ad058b9b0eb4de5f0ccbf0e4aecb8d73d3a183dbaeabbec2b6fd77b0a636598e08467a05da7e69f39c65693f627edf7414145ee6c61e01efc831652ca0f/asset_icons/8733712db93f857c04b7c58fb35eafb3be360a183966a1e57a6e22ee5f78c96d.png"
+                    },
+                    {
+                        "addr": "",
+                        "wt": 25.00,
+                        "cName": "BTC",
+                        "cLogo": "https://dynamic-assets.coinbase.com/e785e0181f1a23a30d9476038d9be91e9f6c63959b538eabbc51a1abc8898940383291eede695c3b8dfaa1829a9b57f5a2d0a16b0523580346c6b8fab67af14b/asset_icons/b57ac673f06a4b0338a596817eb0a50ce16e2059f327dc117744449a47915cb2.png"
+                    },
+                    {
+                        "addr": "",
+                        "wt": 15.96,
+                        "cName": "Raydium",
+                        "cLogo": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R/logo.png"
+                    },
+                    {
+                        "addr": "",
+                        "wt": 22.44,
+                        "cName": "Serum",
+                        "cLogo": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt/logo.png"
+                    },
+                    {
+                        "addr": "",
+                        "wt": 8.63,
+                        "cName": "Atlas",
+                        "cLogo": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/ATLASXmbPQxBUYbxPsV97usA3fPQYEqzQBUHgiFCUsXx/logo.png"
+                    },
+                    {
+                        "addr": "",
+                        "wt": 2.98,
+                        "cName": "Tulip",
+                        "cLogo": "https://dynamic-assets.coinbase.com/7706f2473db43128b2b17966ac259d53f127253c7c4a276feea28c8505be21ff37f0de8ff07930b5de01dba1c866f48767eaa34e6abcf363252838abba11021e/asset_icons/6afb21b77505e8de3cfed028ce5c64930baee49a3a282f5ac5063bf72bb182b4.png"
+                    }
+                ],
+                "creator": "Blockbelly",
+                "icon": "",
+                "creatorIcon": ""
+            },
+            {
+                "chn": "solana",
+                "chnId": 1,
+                "iName": "Solana Ecosystem Index",
+                "iSym": "SOLI",
+                "iDesc": "SOLI provides holders with a weighted index containing Solana Native tokens & Staked SOL for users to gain diversified exposure to the Solana Ecosystem.",
+                "iCgId": "solu",
+                "iAddr": "",
+                "iCmp": [
+                    {
+                        "addr": "",
+                        "wt": 35.31,
+                        "cName": "Marinade staked SOL (mSOL)",
+                        "cLogo": "https://cdn.lima.amun.com/solana/msolzycxhdygdzu16g5qsh3i5k3z3kzk7ytfqcjm7so.png"
+                    },
+                    {
+                        "addr": "",
+                        "wt": 32.00,
+                        "cName": "Serum",
+                        "cLogo": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt/logo.png"
+                    },
+                    {
+                        "addr": "",
+                        "wt": 26.23,
+                        "cName": "Raydium",
+                        "cLogo": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R/logo.png"
+                    },
+                    {
+                        "addr": "",
+                        "wt": 3.88,
+                        "cName": "Tulip",
+                        "cLogo": "https://dynamic-assets.coinbase.com/7706f2473db43128b2b17966ac259d53f127253c7c4a276feea28c8505be21ff37f0de8ff07930b5de01dba1c866f48767eaa34e6abcf363252838abba11021e/asset_icons/6afb21b77505e8de3cfed028ce5c64930baee49a3a282f5ac5063bf72bb182b4.png"
+                    },
+                    {
+                        "addr": "",
+                        "wt": 2.58,
+                        "cName": "Solend",
+                        "cLogo": "https://cdn.lima.amun.com/solana/slndpmowtvadgedndyvwzronl7zsi1df9pc3xhgtpwp.png"
+                    }
+                ],
+                "creator": "Amun",
+                "icon": "https://cdn.lima.amun.com/solana/apygy51vntbqqsymgkf1cemsan5tv1rsvub6nee3wjpy.svg",
+                "creatorIcon": "https://artwork.captivate.fm/3924a107-34ff-438d-89f5-f4c3f40fd938/hbqfupb_V6U9IPXHCAcY4HuF.jpg"
+            }
         ],
         "Polygon": [
 
         ],
         "Near": [
-
+            {
+                "chn": "near",
+                "chnId": 1,
+                "iName": "NEAR Ecosystem Tracker Index",
+                "iSym": "NECO",
+                "iDesc": "NEAR Ecosystem Tracker Index (NECO) is an index that tracks quality crypto token projects that are primarily focused on the NEAR ecosystem. As one of the leading upcoming chains in Crypto and Web3, NEAR projects focus on next-generation applications and infrastructure being built in decentralized technology and Web3.",
+                "iCgId": "neco",
+                "iAddr": "",
+                "iCmp": [
+                    {
+                        "addr": "",
+                        "wt": 26.12,
+                        "cName": "Ethereum (WETH)",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png"
+                    },
+                    {
+                        "addr": "",
+                        "wt": 20.07,
+                        "cName": "Ref",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/11809.png"
+                    },
+                    {
+                        "addr": "",
+                        "wt": 17.57,
+                        "cName": "Skyward",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/11798.png"
+                    },
+                    {
+                        "addr": "",
+                        "wt": 16.14,
+                        "cName": "Aurora",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/14803.png"
+                    },
+                    {
+                        "addr": "",
+                        "wt": 11.05,
+                        "cName": "Celo",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5567.png"
+                    },
+                    {
+                        "addr": "",
+                        "wt": 9.05,
+                        "cName": "Octopus",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/10494.png"
+                    }
+                ],
+                "creator": "Blockbelly",
+                "icon": "",
+                "creatorIcon": ""
+            }
         ]
     }
 ]

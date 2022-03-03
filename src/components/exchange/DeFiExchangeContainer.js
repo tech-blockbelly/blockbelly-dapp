@@ -14,8 +14,6 @@ import { clusterApiUrl } from '@solana/web3.js';
 import { useWallet } from '@solana/wallet-adapter-react';
 import Registry from '../../abi/contracts/BlockbellyRegistry.sol/BlockbellyComponentRegistry.json';
 import EthereumBrokerList from '../deficomponents/eth/EthereumBrokerList';
-
-// import FundsModule from '../dashboard/FundsModule';
 import FundsListing from '../dashboard/newcomponents/FundsListing';
 
 import ethLogo from '../../assets/images/eth.png';
@@ -23,7 +21,7 @@ import solLogo from '../../assets/images/solana.png';
 import polygonLogo from '../../assets/images/polygon.png';
 import terraLogo from '../../assets/images/terraluna.png';
 import avaxLogo from '../../assets/images/avalanche.png';
-// import nearLogo from '../../assets/images/near-protocol.svg';
+import nearLogo from '../../assets/images/near-protocol.svg';
 
 require('@solana/wallet-adapter-react-ui/styles.css');
 
@@ -37,7 +35,7 @@ const config = {
 
 const network = WalletAdapterNetwork.Devnet;
 
-const EthereumContainer = () => {
+const EthereumContainer = (props) => {
     const [showPage, setShowPage] = useState(false);
     const [brokerAddress, setBrokerAddress] = useState('');
 
@@ -78,7 +76,7 @@ const EthereumContainer = () => {
     // }, [account]);
 
     return true ? (
-        <FundsListing />
+        <FundsListing {...props} />
     ) : (
         <Container className="component-container defi-exchange-page">
             <Row>
@@ -95,14 +93,14 @@ const EthereumContainer = () => {
     // );
 };
 
-const SolanaContainer = () => {
+const SolanaContainer = (props) => {
     const wallet = useWallet();
 
     wallet.select('Phantom');
     // return wallet.connected ? (
     return (
         // <FundsModule type="defi" title="Explore Indices" />
-        <FundsListing />
+        <FundsListing {...props} />
     );
     //) : (
     //     <Container className="component-container defi-exchange-page">
@@ -119,12 +117,42 @@ const SolanaContainer = () => {
     // );
 };
 
+const PolygonContainer = (props) => {
+    return (
+        <FundsListing {...props} />
+    );
+};
+
+const NearContainer = (props) => {
+    return (
+        <FundsListing {...props} />
+    );
+};
+
+
 const DeFiExchangeContainer = () => {
-    // const [key, setKey] = useState('ethereum');
     const [key, setKey] = useState('ethereum');
+    const [fundsRepo, setFundsRepo] = useState({});
 
     const endpoint = useMemo(() => clusterApiUrl(network), [network]);
     const wallets = useMemo(() => [getPhantomWallet()], [network]);
+
+    const fetchRepository = () => {
+        fetch("indexrepository.json")
+            .then(response => {
+                return response.json()})
+            .then(data => {
+                setFundsRepo(data[0])
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+
+    useEffect(() => {
+        fetchRepository()
+    }, []);
+
     return (
         <Container fluid className="module-container">
             <h2 className="module-title">Explore Indices</h2>
@@ -143,7 +171,7 @@ const DeFiExchangeContainer = () => {
                             </span>
                         }>
                         <DAppProvider config={config}>
-                            <EthereumContainer />
+                            <EthereumContainer funds={fundsRepo.Ethereum} />
                         </DAppProvider>
                     </Tab>
                     <Tab
@@ -157,7 +185,7 @@ const DeFiExchangeContainer = () => {
                         <ConnectionProvider endpoint={endpoint}>
                             <WalletProvider wallets={wallets}>
                                 <WalletModalProvider>
-                                    <SolanaContainer />
+                                    <SolanaContainer funds={fundsRepo.Solana} />
                                 </WalletModalProvider>
                             </WalletProvider>
                         </ConnectionProvider>
@@ -168,9 +196,25 @@ const DeFiExchangeContainer = () => {
                             <span className="tab-title">
                                 <Image className="tab-logo" src={polygonLogo} />
                                 Polygon
+                                <div className="coming-soon-tag">
+                                    <span>Coming soon!</span>
+                                </div>
                             </span>
                         }>
-                        <Fragment />
+                        <PolygonContainer funds={fundsRepo.Polygon} />
+                    </Tab>
+                    <Tab 
+                        eventKey="near" 
+                        title={
+                            <span className="tab-title">
+                                <Image className="tab-logo" src={nearLogo}/>
+                                Near
+                                <div className="coming-soon-tag">
+                                    <span>Coming soon!</span>
+                                </div>
+                            </span>
+                    }>
+                        <NearContainer funds={fundsRepo.Near} />
                     </Tab>
                     <Tab
                         eventKey="avalance"
@@ -186,11 +230,7 @@ const DeFiExchangeContainer = () => {
                         disabled>
                         <Fragment />
                     </Tab>
-
-                    {/* <Tab eventKey="near" title={<span className="tab-title"><Image className="tab-logo" src={nearLogo}/>Near<div className="coming-soon-tag"><span>Coming soon!</span></div></span>} disabled>
-                        <Fragment />
-                    </Tab>
-                    <Tab eventKey="terra" title={<span className="tab-title"><Image className="tab-logo" src={terraLogo}/>Terra<div className="coming-soon-tag"><span>Coming soon!</span></div></span>} disabled>
+                    {/* <Tab eventKey="terra" title={<span className="tab-title"><Image className="tab-logo" src={terraLogo}/>Terra<div className="coming-soon-tag"><span>Coming soon!</span></div></span>} disabled>
                         <Fragment />
                     </Tab> */}
                 </Tabs>
