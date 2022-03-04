@@ -137,101 +137,101 @@
                 "iName": "DeFi Pulse Index",
                 "iSym": "DPI",
                 "iDesc": "The DeFi Pulse Index is a capitalization-weighted index that tracks the performance of decentralized financial assets across the market.",
-                "iCgId": "dpi",
+                "iCgId": "defipulse-index",
                 "iAddr": "0x1494CA1F11D487c2bBe4543E90080AeBa4BA3C2b",
                 "iCmp": [
                     {
-                        "addr": "",
+                        "addr": "uniswap",
                         "wt": 24.46,
                         "cName": "Uniswap",
                         "cLogo": "https://dynamic-assets.coinbase.com/a1f4b7b34069888e313f284b49012a01b3bbc37b5113319c7105170a8fe268de8f60be5a0af7a8dafa8aba31fcc21ef44bc30c1e8bbb8379064ac94965bccf26/asset_icons/aafc2f5fff21664213e2a5a2c6e31aa055f277d1069b16745d54f84c0e94f1f3.png"
                     },
                     {
-                        "addr": "",
+                        "addr": "maker",
                         "wt": 15.52,
                         "cName": "Maker",
                         "cLogo": "https://dynamic-assets.coinbase.com/72be4627a61ff07a564bc85f46f20e926b0a578ee791e91ef73eb477b5bcd176edadb63b3474f82b98e1cc83ba23b1d170a539356ed8e809937f76a13580bfad/asset_icons/debfcbc694825f71051ce956aeae3a4bb197437756d4fc5cd1a207b8ea135ab6.png"
                     },
                     {
-                        "addr": "",
+                        "addr": "aave",
                         "wt": 15.41,
                         "cName": "Aave",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/7278.png"
                     },
                     {
-                        "addr": "",
+                        "addr": "loopring",
                         "wt": 8.48,
                         "cName": "LoopringCoin",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1934.png"
                     },
                     {
-                        "addr": "",
+                        "addr": "compound-coin",
                         "wt": 6.83,
                         "cName": "Compound",
                         "cLogo": "https://dynamic-assets.coinbase.com/b0d22ef41d2fa2ecbb6c116ab9aa5f0ec6541cc63cffd922dd1f1564eda40e20e69cdafd8044c0d512e906b99dcdf0eade4251fe0ca3edd4dfa1ba2e6145cdf4/asset_icons/fed5c36d72b459ebe60c190c315bde2266ae24ff445f5cf599f124ac4fa21713.png"
                     },
                     {
-                        "addr": "",
+                        "addr": "havven",
                         "wt": 6.80,
                         "cName": "Synthetix",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2586.png"
                     },
                     {
-                        "addr": "",
+                        "addr": "yearn-finance",
                         "wt": 6.61,
                         "cName": "Yearn",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5864.png"
                     },
                     {
-                        "addr": "",
+                        "addr": "sushi",
                         "wt": 5.53,
                         "cName": "Sushi",
                         "cLogo": "https://dynamic-assets.coinbase.com/cede43e837596061c7e2290c725be20ee0eb000eb76937c879289ccf08f5941f9c1d76e3f3dd8cb0e67f53d0f4adc48286516200e7db5bd6bc403fcd9d318449/asset_icons/483b36b14a995b07c7883d0647903f77d8feafe1f685b55a0334b8788b151194.png"
                     },
                     {
-                        "addr": "",
+                        "addr": "republic-protocol",
                         "wt": 3.44,
                         "cName": "REN",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2539.png"
                     },
                     {
-                        "addr": "",
+                        "addr": "kyber-network-crystal",
                         "wt": 2.48,
                         "cName": "Kyber Network Cryst",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/9444.png"
                     },
                     {
-                        "addr": "",
+                        "addr": "rari-token",
                         "wt": 1.69,
                         "cName": "Rari",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6977.png"
                     },
                     {
-                        "addr": "",
+                        "addr": "balancer",
                         "wt": 1.19,
                         "cName": "Balancer",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5728.png"
                     },
                     {
-                        "addr": "",
+                        "addr": "badger-dao",
                         "wt": 0.74,
                         "cName": "Badger DAO",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/7859.png"
                     },
                     {
-                        "addr": "",
+                        "addr": "harvest-finance",
                         "wt": 0.53,
                         "cName": "Harvest",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6859.png"
                     },
                     {
-                        "addr": "",
+                        "addr": "instadapp",
                         "wt": 0.15,
                         "cName": "Instadapp",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/10508.png"
                     },
                     {
-                        "addr": "",
+                        "addr": "weth",
                         "wt": 0.13,
                         "cName": "Wrapped ETH",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png"
@@ -338,9 +338,7 @@
                 "creatorIcon": "https://artwork.captivate.fm/3924a107-34ff-438d-89f5-f4c3f40fd938/hbqfupb_V6U9IPXHCAcY4HuF.jpg"
             }
         ],
-        "Polygon": [
-
-        ],
+        "Polygon": [],
         "Near": [
             {
                 "chn": "near",
