@@ -23,7 +23,7 @@ const BasketForm = (props) => {
 
     return (
         <div className="coin-selection-container">
-            <h3 className="container-title">Create Basket</h3>
+            <h3 className="container-title">Index Details</h3>
             <Form className="Basket-form">
                 <Form.Group controlId="Basket-ticker-input">
                     <Form.Label>Ticker</Form.Label>
@@ -41,7 +41,7 @@ const BasketForm = (props) => {
                     <Form.Control
                         className="Basket-name-input form-input"
                         type="text"
-                        placeholder="Basket Name"
+                        placeholder="Index Name"
                         name="name"
                         onChange={onChange}
                         required
@@ -51,7 +51,7 @@ const BasketForm = (props) => {
                     <Form.Label>Description</Form.Label>
                     <Form.Control
                         as="textarea"
-                        placeholder="Basket description"
+                        placeholder="Index description"
                         className="Basket-desc-input  form-input"
                         name="desc"
                         onChange={onChange}
@@ -59,9 +59,9 @@ const BasketForm = (props) => {
                     />
                 </Form.Group>
                 <hr></hr>
-                <h3 className="container-title">Fee Structure</h3>
+                {/* <h3 className="container-title">Fee Structure</h3> */}
                 <Form.Group controlId="min-amount-input">
-                    <Form.Label>Minimum Investment</Form.Label>
+                    <Form.Label>Initial Price (0-20)</Form.Label>
                     <Form.Control
                         className="min-amount-input form-input"
                         type="number"
@@ -71,6 +71,40 @@ const BasketForm = (props) => {
                         onChange={onChange}
                         required
                     />
+                </Form.Group>
+                <Form.Group controlId="distribution-fee-input">
+                    <Form.Label>Distribution Fee (%)</Form.Label>
+                    <Form.Control
+                        className="distribution-fee-input form-input"
+                        type="number"
+                        placeholder="Distribution Fee"
+                        name="distribution_fee"
+                        onChange={onChange}
+                        required
+                    />
+                </Form.Group>
+                <Form.Group controlId="distribution-payment-wallet">
+                    <Form.Label>Distribution Wallet Address</Form.Label>
+                    <Form.Control
+                        className="wallet form-input"
+                        type="text"
+                        required
+                    />
+                </Form.Group>
+                <Form.Group controlId="payment-currency">
+                    <Form.Label>Select Payout Currency</Form.Label>
+                    <Form.Control
+                        as="select"
+                        className="select-currency form-select"
+                        data-style="btn-info"
+                        required>
+                        <option>Select fee currency</option>
+                        <option>USDC</option>
+                        <option>ETH</option>
+                        {/* {coins.map((coin, index) => (
+                            <option value={coin.value}>{coin.label}</option>
+                        ))} */}
+                    </Form.Control>
                 </Form.Group>
                 <Form.Group controlId="managment-fee-input">
                     <Form.Label>Management Fee (%)</Form.Label>
@@ -83,23 +117,8 @@ const BasketForm = (props) => {
                         required
                     />
                 </Form.Group>
-                <Form.Group controlId="payment-currency">
-                    <Form.Label>Select Payout Currency</Form.Label>
-                    <Form.Control
-                        as="select"
-                        className="select-currency form-select"
-                        data-style="btn-info"
-                        required>
-                        <option>Select fee currency</option>
-                        {/* <option>USD</option>
-                        <option>BUSD</option> */}
-                        {coins.map((coin, index) => (
-                            <option value={coin.value}>{coin.label}</option>
-                        ))}
-                    </Form.Control>
-                </Form.Group>
-                <Form.Group controlId="payment-wallet">
-                    <Form.Label>Wallet Public Key</Form.Label>
+                <Form.Group controlId="managment-payment-wallet">
+                    <Form.Label>Management Wallet Address</Form.Label>
                     <Form.Control
                         className="wallet form-input"
                         type="text"
@@ -110,10 +129,10 @@ const BasketForm = (props) => {
                     <Form.Label>Image</Form.Label>
                     <Form.Control
                         type="file"
-                        id="image"
+                        // id="image"
                         accept="image/png, image/jpeg"
                         onChange={props.handleImageChange}
-                        required
+                        // required
                     />
                 </Form.Group>
 

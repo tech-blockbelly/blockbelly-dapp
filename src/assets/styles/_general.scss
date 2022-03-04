@@ -1,222 +1,232 @@
 body {
-	background-image: linear-gradient(120deg, #ffffff 0%, #fdfbfb 100%);
-	color: $darkgrey;
-	margin: 0;
+    background-image: linear-gradient(120deg, #ffffff 0%, #fdfbfb 100%);
+    color: $darkgrey;
+    margin: 0;
 }
 
 h1 {
-	font-size: 56px;
-	line-height: 1.2;
-	font-weight: 700;
-	letter-spacing: 0em;
-	font-family: Sofia Pro;
-	margin: 0;
+    font-size: 56px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: 0em;
+    font-family: Sofia Pro;
+    margin: 0;
 }
 
 h2 {
-	font-size: 32px;
-	line-height: 1.2;
-	font-weight: 700;
-	letter-spacing: 0em;
-	font-family: Sofia Pro;
-	margin: 0;
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: 0em;
+    font-family: Sofia Pro;
+    margin: 0;
 }
 
 h3 {
-	font-size: 28px;
-	line-height: 1.2;
-	font-weight: 700;
-	font-family: Sofia Pro;
-	letter-spacing: 0em;
-	margin: 0;
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 700;
+    font-family: Sofia Pro;
+    letter-spacing: 0em;
+    margin: 0;
 }
 
 h4 {
-	font-size: 23px;
-	font-weight: 500;
-	line-height: 1.2;
-	letter-spacing: 0em;
-	font-family: Sofia Pro;
-	margin: 0;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0em;
+    font-family: Sofia Pro;
+    margin: 0;
 }
 
 h5 {
-	font-size: 20px;
-	font-weight: 500;
-	line-height: 1.2;
-	letter-spacing: 0em;
-	font-family: Sofia Pro;
-	margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0em;
+    font-family: Sofia Pro;
+    margin: 0;
 }
 
 .preamble {
-	font-size: 20px;
-	line-height: 1.3;
+    font-size: 20px;
+    line-height: 1.3;
 }
 
-p, a {
-	margin: 0;
-	padding: 0;
-	font-family: Sofia Pro;
-	font-size: 16px;
-	line-height: 1.2;
+p,
+a {
+    margin: 0;
+    padding: 0;
+    font-family: Sofia Pro;
+    font-size: 16px;
+    line-height: 1.2;
 }
 
 .form-control {
-	height: 52px;
-	&:active, &:focus, &:hover {
-		outline: none;
-		border: none;
-		box-shadow: 0 20px 25px -15px $boxshadowgray;
-	}
+    height: 52px;
+    &:active,
+    &:focus,
+    &:hover {
+        outline: none;
+        border: none;
+        box-shadow: 0 20px 25px -15px $boxshadowgray;
+    }
 }
-input, label, select {
-	font-family: Sofia Pro;
-	box-shadow: 0 20px 25px -15px $boxshadowgray;
+input,
+label,
+select {
+    font-family: Sofia Pro;
+    box-shadow: 0 20px 25px -15px $boxshadowgray;
 }
-input:focus, textarea:focus, select:focus{
-	outline: none;
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
 }
 
 .btn {
-	border-radius: 30px;
-	background-color: $green;
-	margin: 0;
-	color: $white;
-	border: none;
-	font-size: 16px;
-	font-weight: 700;
-	line-height: 24px;
-	align-items: center;
-	padding: 15px 28px;
-	display: flex;
-	justify-content: center;
-	text-decoration: none;
-	min-width: 150px;
-	font-family: Sofia Pro;
-	box-sizing: border-box;
-	cursor: pointer;
-	box-shadow: 0 20px 25px -15px $boxshadowgray;
-	&:active, &:focus, &:hover {
-		outline: none;
-		background-color: $lightgreen;
-		color: $white;
-		border: none;
-		box-shadow: 0 20px 25px -15px $boxshadowgray;
-	}
+    border-radius: 30px;
+    background-color: $green;
+    margin: 0;
+    color: $white;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    align-items: center;
+    padding: 15px 28px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    min-width: 150px;
+    font-family: Sofia Pro;
+    box-sizing: border-box;
+    cursor: pointer;
+    box-shadow: 0 20px 25px -15px $boxshadowgray;
+    &:active,
+    &:focus,
+    &:hover {
+        outline: none;
+        background-color: $lightgreen;
+        color: $white;
+        border: none;
+        box-shadow: 0 20px 25px -15px $boxshadowgray;
+    }
 }
 .form-label {
-	display: block;
-	font-size: 16px;
-	font-weight: 700;
-	line-height: 16px;
-	margin-bottom: 15px;
-	margin-left: 10px;
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+    margin-bottom: 15px;
+    margin-left: 10px;
 }
 .form-input {
-	align-items: center;
-	padding: 20px 30px;
-	border: none;
-	border-radius: 25px;
-	margin-bottom: 20px;
-	background-color: $white;
-	font-size: 16px;
-	line-height: 24px;
-	width: 100%;
-	box-sizing: border-box;
-	color: $darkgrey;
+    align-items: center;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    background-color: $white;
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+    box-sizing: border-box;
+    color: $darkgrey;
 }
 .form-select {
-	padding: 15px 15px;
-	border: none;
-	border-radius: 30px;
-	margin-bottom: 20px;
-	background-color: $white;
-	font-size: 16px;
-	width: 100%;
-	box-sizing: border-box;
+    padding: 15px 15px;
+    border: none;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    background-color: $white;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
 }
 .btn.inactive-btn {
-	pointer-events: none;
-	background-color: $grey;
-}
-
-.page-container {
-	display: flex;
+    pointer-events: none;
+    background-color: $grey;
 }
 .row {
-	margin: 0;
+    margin: 0;
 }
 .col {
-	padding: 0;
+    padding: 0;
 }
 .row-wrapper {
-	margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 .hide {
-	display: none !important;
+    display: none !important;
 }
 .modal-dialog {
-	max-width: 800px;
+    max-width: 800px;
 }
 .modal-content {
-	background-color: $bggrey;
-	border-radius: 20px;
+    background-color: $bggrey;
+    border-radius: 20px;
 }
 
 .fund-action-list-group {
-	padding: 0 1em;
-	background-color: transparent;
-	.fund-action-container {
-		background: $white;
-		padding: 1em;
-		margin: 0.5em 0;
-		border-radius: 10px;
-		align-items: center;
-		text-align: center;
-		font-size: 24px;
-		color: $purple;
-		box-shadow: 0 20px 25px -15px $boxshadowgray;
-	}
-	.accent {
-		background-color: $purple;
-		color: white;
-	}
+    padding: 0 1em;
+    background-color: transparent;
+    .fund-action-container {
+        background: $white;
+        padding: 1em;
+        margin: 0.5em 0;
+        border-radius: 10px;
+        align-items: center;
+        text-align: center;
+        font-size: 24px;
+        color: $purple;
+        box-shadow: 0 20px 25px -15px $boxshadowgray;
+    }
+    .accent {
+        background-color: $purple;
+        color: white;
+        &:hover {
+            opacity: 0.9;
+        }
+    }
 }
+
 @media #{$mobile} {
-	h1 {
-		font-size: 32px;
-	}
-	h2 {
-		font-size: 28px;
-	}
-	h3 {
-		font-size: 26px;
-	}
-	h4 {
-		font-size: 20px;
-	}
-	h5 {
-		font-size: 18px;
-	}
-	.preamble {
-		font-size: 18px;
-	}
-	p, a {
-		font-size: 16px;
-	}
-	.fund-action-list-group .fund-action-container {
-		padding: 10px;
-    font-size: 20px;
-	}
-	.modal-dialog {
-		margin: 0;
-	}
+    h1 {
+        font-size: 32px;
+    }
+    h2 {
+        font-size: 28px;
+    }
+    h3 {
+        font-size: 26px;
+    }
+    h4 {
+        font-size: 20px;
+    }
+    h5 {
+        font-size: 18px;
+    }
+    .preamble {
+        font-size: 18px;
+    }
+    p,
+    a {
+        font-size: 16px;
+    }
+    .fund-action-list-group .fund-action-container {
+        padding: 10px;
+        font-size: 20px;
+    }
+    .modal-dialog {
+        margin: 0;
+    }
 }
 
 @media #{$ipadPortrait} {
-	.fund-action-list-group .fund-action-container {
-		padding: 10px;
-		font-size: 20px;
-	}
+    .fund-action-list-group .fund-action-container {
+        padding: 10px;
+        font-size: 20px;
+    }
 }

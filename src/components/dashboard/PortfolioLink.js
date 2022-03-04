@@ -9,7 +9,8 @@ const PortfolioLink = (props) => {
     return (
         <a
             className={`portfolio-link ${icon ? 'image-link' : ''}`}
-            href={props.link}>
+            href={props.link}
+        >
             {icon && <Image src={icon} className="portfolio-icon"></Image>}
             <p className="link-title">{props.name}</p>
             {followers && <p className="followers-count">{followers}</p>}

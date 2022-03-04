@@ -19,7 +19,8 @@ const ReturnsTable = () => {
                                     src={
                                         'https://i1.wp.com/euanabolic.com/wp-content/uploads/2020/08/bitcoin_PNG48.png?w=968&ssl=1'
                                     }
-                                    className="ccy-icon"></Image>
+                                    className="ccy-icon"
+                                ></Image>
                                 <p className="ccy-name">Bitcoin</p>
                             </div>
                         </td>
@@ -34,7 +35,8 @@ const ReturnsTable = () => {
                                     src={
                                         'https://cryptologos.cc/logos/cardano-ada-logo.svg?v=012'
                                     }
-                                    className="ccy-icon"></Image>
+                                    className="ccy-icon"
+                                ></Image>
                                 <p className="ccy-name">Bitcoin Cash</p>
                             </div>
                         </td>

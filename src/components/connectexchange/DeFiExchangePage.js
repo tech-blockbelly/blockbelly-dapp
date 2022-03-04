@@ -8,8 +8,8 @@ const DeFiExchangePage = () => {
             <Row>
                 <Col>
                     <Button className="connect-btn">
-											<IoWallet /> <span>Connect to DeFi Wallet</span>
-										</Button>
+                        <IoWallet /> <span>Connect to DeFi Wallet</span>
+                    </Button>
                 </Col>
             </Row>
         </Container>

@@ -1,61 +1,73 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
+import { useEthers } from '@usedapp/core';
+import { useLocation, useHistory, useParams } from 'react-router-dom';
 import {
+    Col,
     Container,
     Row,
-    Col,
-    ListGroup,
-    Card,
     Spinner,
-    ListGroupItem,
-    InputGroup,
+    Image,
+    ListGroup,
     Form,
+    ListGroupItem,
 } from 'react-bootstrap';
-import PortfolioInfo from './PortfolioInfo';
-import PortfolioFinancials from './PortfolioFinancials';
-import { IoBagCheck, IoCalendar, IoChevronBack } from 'react-icons/io5';
-
-import { getAPIClient } from '../../httpClient';
-import { useParams, useHistory } from 'react-router-dom';
-import TransactionPage from '../transaction/TransactionPage';
-import SipModule from '../transaction/SipModule';
+import { IoChevronBack, IoBagCheck, IoCalendar } from 'react-icons/io5';
 import DistributionTable from './DistributionTable';
+import PortfolioFinancials from './PortfolioFinancials';
+import axios from 'axios';
+import { ChainId, DAppProvider } from '@usedapp/core';
+import { IoWallet } from 'react-icons/io5';
+
+// A custom hook that builds on useLocation to parse
+// the query string for you.
+function useQuery() {
+    const { search } = useLocation();
+
+    return React.useMemo(() => new URLSearchParams(search), [search]);
+}
+
+const config = {
+    readOnlyChainId: ChainId.Rinkeby,
+    readOnlyUrls: {
+        [ChainId.Rinkeby]:
+            'https://rinkeby.infura.io/v3/d7d8279a49d6443cb30249eab2cdb5e6',
+    },
+};
 
 const PortfolioPage = (props) => {
-    let { type, id } = useParams();
+    let { i } = useQuery();
+    let { id } = useParams();
     const history = useHistory();
 
     const [appState, setAppState] = useState({
         loading: true,
+        // loading: false,
         fund: {},
     });
 
-    const [modalShow, setModalShow] = useState(false);
-    const [sipModalShow, setSipModalShow] = useState(false);
-
-    const handleShow = () => setModalShow(true);
-    const handleSipShow = () => setSipModalShow(true);
-
-    const endpoint = type == 'cefi' ? 'portfolio' : 'indices';
+    const { activateBrowserWallet, account } = useEthers();
 
     useEffect(() => {
-        getAPIClient()
-            .get(`${endpoint}/${id}`)
+        setAppState({ ...appState, loading: true });
+        axios
+            .get(`https://api.coingecko.com/api/v3/coins/${id}`)
             .then((res) => {
-                const fund = res.data;
-                setAppState({ loading: false, fund: fund || {} });
-                console.log(fund);
-            });
-    }, [setAppState]);
+                console.log(res.data);
+                setAppState({ ...appState, loading: false, fund: res.data });
+            })
+            .catch((err) => console.log(err));
+    }, [id, i, props]);
+
+    console.log(appState);
 
     return (
         <Container fluid className="module-container portfolio-page-container">
             <a onClick={history.goBack}>
                 <h2 className="module-title">
-                    <IoChevronBack />
-                    Explore
+                    <IoChevronBack /> Explore
                 </h2>
             </a>
-            {appState.loading ? (
+            {appState.loading && appState.fund ? (
                 <div className="loader-container">
                     <Spinner
                         className="loader"
@@ -64,36 +76,95 @@ const PortfolioPage = (props) => {
                 </div>
             ) : (
                 <Row>
-                    <Col xl={5}>
-                        <PortfolioInfo
-                            fund={appState.fund}
-                            type={type}></PortfolioInfo>
-                        {/* <Row className="portfolio-info-container portfolio-amt">
-                            <Card border="light" style={{ width: '100%' }}>
-                                {type == 'cefi' ? (
-                                    <Card.Body className="text-center">
-                                        <Card.Title>
-                                            <h2>
-                                                $ {appState.fund.min_invest}
-                                            </h2>
-                                        </Card.Title>
-                                        <Card.Text>Min. Invest Amt.</Card.Text>
-                                    </Card.Body>
-                                ) : (
-                                    <Card.Body className="text-center">
-                                        <Card.Title>
-                                            <h2>$ {appState.fund.value}</h2>
-                                        </Card.Title>
-                                        <Card.Text>Current Value</Card.Text>
-                                    </Card.Body>
-                                )}
-                            </Card>
-                        </Row> */}
+                    <Col xl={7} className="information-column">
+                        <Row className="title-info-row">
+                            <Image
+                                src={appState.fund['image']['large']}
+                                roundedCircle
+                                className="icon"
+                            />
+                            <div className="title-block">
+                                <h2>{appState.fund['name']}</h2>
+                                <h5>{appState.fund['symbol']}</h5>
+                            </div>
+                        </Row>
+                        <Row className="general-info-row">
+                            <Col className="creator-info-column" xl={4}>
+                                <Image
+                                    className="creator-icon"
+                                    src="https://raw.githubusercontent.com/SetProtocol/uniswap-tokenlist/main/assets/managers/bankless_logo.jpeg"
+                                    roundedCircle
+                                />
+                                <div>
+                                    <p className="creator-name">Bankless HQ</p>
+                                    <p className="subtext">Creator</p>
+                                </div>
+                            </Col>
+                            <Col className="market-info-column" xl={4}>
+                                <p className="market-cap">
+                                    $
+                                    {
+                                        appState.fund['market_data'][
+                                            'market_cap'
+                                        ]['usd']
+                                    }
+                                </p>
+                                <p className="subtext">Market Cap</p>
+                            </Col>
+                        </Row>
+                        <Row className="information-row">
+                            {/* <PortfolioFinancials 
+                                fund={appState.fund}
+                                endpoint={""}
+                                type={"defi"}
+                            /> */}
+                            <h4 className="title">Allocations</h4>
+                            <DistributionTable />
+                        </Row>
+                        <Row className="information-row">
+                            <h4 className="title">Overview</h4>
+                            <div className="information-text">
+                                {appState.fund['description']['en']}
+                            </div>
+                        </Row>
+                        <Row className="information-row">
+                            <h4 className="title">Methodology</h4>
+                            <div className="information-text">
+                                The BED index is meant to track crypto’s top 3
+                                investable assets.
+                                <br />
+                                <br />
+                                1. Scope: The index includes the top 3
+                                investable assets with real usage and large
+                                capitalizations around the theme of blockchain:
+                                BTC, ETH, DeFi (DPI). 2. Weighting: Neutral
+                                construction, equal weight 3. Rebalancing: First
+                                Friday of every month
+                                <br />
+                                <br />
+                                The composition is:
+                                <br />
+                                - 33.3% Bitcoin
+                                <br />
+                                - 33.3% Ether
+                                <br />
+                                - 33.3% DPI
+                                <br />
+                                <br />
+                                The underlying index is rebalanced after the
+                                close of trading on the first Friday of each
+                                calendar month. The Fund is rebalanced in
+                                accordance with its Underlying Index.
+                            </div>
+                        </Row>
+                    </Col>
+                    <Col xl={5} className="transaction-column">
+                        {/* <div className="fixed-column"> */}
                         <Row>
                             <Col className="portfolio-info-container defi-buy">
                                 <ListGroup className="fund-action-list-group">
                                     <ListGroup.Item style={{ border: '0' }}>
-                                        <Form.Group controlId="Basket-ticker-input">
+                                        <Form.Group controlId="pay-with-input">
                                             <Form.Label
                                                 style={{
                                                     'font-size': 'larger',
@@ -101,141 +172,96 @@ const PortfolioPage = (props) => {
                                                 Pay With
                                             </Form.Label>
                                             <Form.Control
-                                                className="Basket-ticker-input form-input"
+                                                className="pay-with-input form-input"
                                                 type="text"
-                                                placeholder="Ticker Symbol"
-                                                name="ticker"
+                                                placeholder="0.000000 ETH"
+                                                name="paymentIndex"
                                                 required
                                             />
                                         </Form.Group>
                                     </ListGroup.Item>
                                     <ListGroup.Item style={{ border: '0' }}>
-                                        <Form.Group controlId="Basket-name-input">
+                                        <Form.Group controlId="buy-input">
                                             <Form.Label
                                                 style={{
                                                     'font-size': 'larger',
                                                 }}>
-                                                Buy
+                                                Bid
                                             </Form.Label>
                                             <Form.Control
-                                                className="Basket-name-input form-input"
+                                                className="buy-input form-input"
                                                 type="text"
-                                                placeholder="Basket Name"
-                                                name="name"
-                                                required
+                                                placeholder="0.000000 BED"
+                                                name="buyIndex"
+                                                readOnly
                                             />
                                         </Form.Group>
                                     </ListGroup.Item>
                                 </ListGroup>
-                                {/* <ListGroup className="fund-action-list-group">
-                                    <ListGroup.Item className="fund-action-container">
-                                        
-                                    </ListGroup.Item>
-                                    <ListGroup.Item className="fund-action-container">
-                                        <Card
-                                            border="light"
-                                            style={{ width: '100%' }}>
-                                            <Card.Body>
-                                                <Card.Subtitle>Buy</Card.Subtitle>
-                                            </Card.Body>
-                                        </Card>
-                                    </ListGroup.Item>
-                                </ListGroup> */}
-                            </Col>
-                            <Col className="portfolio-info-container portfolio-amt">
                                 <ListGroup
                                     flush
-                                    style={{
-                                        'background-color': 'transparent',
-                                    }}>
-                                    <ListGroupItem
-                                        style={{
-                                            'background-color': 'transparent',
-                                            border: '0',
-                                        }}>
+                                    className="transaction-breakup-block">
+                                    <ListGroupItem>
                                         Minimum Receive
-                                        <h4>11.808902</h4>
+                                        <p>0.00000</p>
                                     </ListGroupItem>
-                                    <ListGroupItem
-                                        style={{
-                                            'background-color': 'transparent',
-                                            border: '0',
-                                        }}>
+                                    <ListGroupItem>
                                         Network Fee
-                                        <h4>0.0102 ETH</h4>
+                                        <p>0.000 ETH</p>
                                     </ListGroupItem>
-                                    <ListGroupItem
-                                        style={{
-                                            'background-color': 'transparent',
-                                            border: '0',
-                                        }}>
+                                    <ListGroupItem>
                                         Platform Fee
-                                        <h4>0.0102 ETH</h4>
-                                    </ListGroupItem>
-                                    <ListGroupItem
-                                        style={{
-                                            'background-color': 'transparent',
-                                            border: '0',
-                                        }}>
-                                        Offered By
-                                        <h4>Uniswap v4</h4>
+                                        <p>0.000 ETH</p>
                                     </ListGroupItem>
                                 </ListGroup>
                             </Col>
                         </Row>
                         <ListGroup className="fund-action-list-group">
-                            <ListGroup.Item
-                                action
-                                // onClick={(e) => {
-                                //     e.preventDefault();
-                                //     window.location.href = `/invest/${id}`;
-                                // }}
-                                onClick={handleShow}
-                                className="fund-action-container accent"
-                                eventKey="buy">
-                                <IoBagCheck /> Buy
-                            </ListGroup.Item>
-                            <ListGroup.Item
-                                action
-                                onClick={handleSipShow}
-                                className="fund-action-container"
-                                eventKey="stake">
-                                <IoCalendar /> SIP
-                            </ListGroup.Item>
+                            {account ? (
+                                <Fragment>
+                                    <ListGroup.Item
+                                        action
+                                        // onClick={(e) => {
+                                        //     e.preventDefault();
+                                        //     window.location.href = `/invest/${id}`;
+                                        // }}
+                                        // onClick={handleShow}
+                                        className="fund-action-container accent"
+                                        eventKey="buy">
+                                        <IoBagCheck /> Buy
+                                    </ListGroup.Item>
+                                    <ListGroup.Item
+                                        action
+                                        // onClick={handleSipShow}
+                                        className="fund-action-container"
+                                        eventKey="stake">
+                                        <IoCalendar /> Recurring Invest
+                                    </ListGroup.Item>
+                                </Fragment>
+                            ) : (
+                                <ListGroup.Item
+                                    action
+                                    className="fund-action-container accent"
+                                    onClick={() => activateBrowserWallet()}>
+                                    <IoWallet />{' '}
+                                    <span>Connect to Metamask Wallet</span>
+                                </ListGroup.Item>
+                            )}
                         </ListGroup>
-                    </Col>
-                    <Col xl={7}>
-                        <PortfolioFinancials
-                            fund={appState.fund}
-                            endpoint={endpoint}
-                            type={type}
-                        />
-                        {type == 'defi' ? (
-                            <div>
-                                <DistributionTable />
-                            </div>
-                        ) : (
-                            ''
-                        )}
+                        {/* </div>  */}
                     </Col>
                 </Row>
             )}
-
-            <TransactionPage
-                show={modalShow}
-                onHide={() => setModalShow(false)}
-                id={id}
-                action="buy"
-                type={endpoint}
-            />
-            <SipModule
-                show={sipModalShow}
-                onHide={() => setSipModalShow(false)}
-                id={id}
-                action="stake"
-            />
         </Container>
     );
 };
 
-export default PortfolioPage;
+const PortfolioContainer = (props) => {
+    return (
+        <DAppProvider config={config}>
+            <PortfolioPage {...props} />
+        </DAppProvider>
+    );
+};
+
+export default PortfolioContainer;

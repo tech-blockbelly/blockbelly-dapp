@@ -60,14 +60,16 @@ const CustomAreaChart = ({ fund, endpoint, type }) => {
                         };
                     }),
                 );
-								(type == 'cefi') ? setNewData(localData.slice(0, localData.length - 2)) : setNewData(localData.slice(0, localData.length))
+                type == 'cefi'
+                    ? setNewData(localData.slice(0, localData.length - 2))
+                    : setNewData(localData.slice(0, localData.length));
             });
     }, [fund]);
 
     let indexValue = data.length
-        ? (data[data.length - 1].avg_price).toFixed(2)
+        ? data[data.length - 1].avg_price.toFixed(2)
         : 0;
-		indexValue = (type == 'cefi') ? (indexValue/1000) : indexValue
+    indexValue = type == 'cefi' ? indexValue / 1000 : indexValue;
     const day_delta = data.length
         ? ((data[data.length - 1].avg_price - data[data.length - 2].avg_price) /
               data[data.length - 1].avg_price) *
@@ -86,7 +88,9 @@ const CustomAreaChart = ({ fund, endpoint, type }) => {
                 <div>
                     <div className="text-left">
                         <p style={{ display: 'inline' }}>
-                            <h1 style={{ display: 'inline' }}>{type == 'defi' ? ('$'):('')} {indexValue}</h1>
+                            <h1 style={{ display: 'inline' }}>
+                                {type == 'defi' ? '$' : ''} {indexValue}
+                            </h1>
                             <h4
                                 style={{ display: 'inline' }}
                                 className={

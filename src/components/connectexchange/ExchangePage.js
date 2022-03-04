@@ -2,7 +2,10 @@ import React from 'react';
 import ConnectExchange from './ConnectExchange';
 import { Container, Row, Col } from 'react-bootstrap';
 
-const exchanges = [{value: 'Select an exchange', key: ''}, {value: 'Binance', key: 'binance'}];
+const exchanges = [
+    { value: 'Select an exchange', key: '' },
+    { value: 'Binance', key: 'binance' },
+];
 
 const ExchangePage = () => {
     return (

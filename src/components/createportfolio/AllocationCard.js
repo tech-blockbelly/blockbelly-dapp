@@ -10,36 +10,38 @@ const AllocationCard = (props) => {
     const updateRange = (e) => {
         props.changeCoinDistribution(coin.value, e.currentTarget.value);
         setRatingValue(e.currentTarget.value);
-    }
+    };
 
     return (
         <div className="coin-allocation-card">
             <Row className="coin-details-block">
-                <Col lg={1} sm={12} className="action-btn-col" >
-                    <a className="delete-btn"
+                <Col lg={1} sm={12} className="action-btn-col">
+                    <a
+                        className="delete-btn"
                         onClick={(e) => {
                             e.preventDefault();
                             props.removeCoinFromSelection(coin.value);
                         }}>
-												<RiDeleteBin6Line />
+                        <RiDeleteBin6Line />
                     </a>
                 </Col>
-                <Col lg={11} sm={12} >
+                <Col lg={11} sm={12}>
                     <Row>
-                        <Col sm={6}  className="coin-title-info">
-                            {/* <Image src={coin.image} className="coin-logo" /> */}
-														{/* placeholder image. to be removed when correct images are being loaded */}
-                            <Image src={'https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@d5c68edec1f5eaec59ac77ff2b48144679cebca1/32/color/eth.png'} className="coin-logo" />
+                        <Col sm={6} className="coin-title-info">
+                            <Image src={coin.icon} className="coin-logo" />
+                            {/* placeholder image. to be removed when correct images are being loaded */}
+                            {/* <Image src={'https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@d5c68edec1f5eaec59ac77ff2b48144679cebca1/32/color/eth.png'} className="coin-logo" /> */}
                             <h4>{coin.label}</h4>
                         </Col>
                         <Col sm={6} className="coin-rating-block">
-														<Form.Control
-																className="allocation-range-input form-input"
-																type="text"
-																value={ratingValue}
-																onChange={updateRange}
-																required
-														/><span>%</span>
+                            <Form.Control
+                                className="allocation-range-input form-input"
+                                type="text"
+                                value={ratingValue}
+                                onChange={updateRange}
+                                required
+                            />
+                            <span>%</span>
                         </Col>
                     </Row>
                     <Row className="allocation-range-block">

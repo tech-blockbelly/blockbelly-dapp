@@ -27,18 +27,18 @@ const ConnectExchange = (props) => {
             api_key,
             api_secret,
         });
-        getAPIClient().post(`profile/linked-exchanges/`, body).then((res) => {
-            setExchangeLinked(true);
-        });
+        getAPIClient()
+            .post(`profile/linked-exchanges/`, body)
+            .then((res) => {
+                setExchangeLinked(true);
+            });
     };
     if (linked) {
         return <Redirect to={{ pathname: '/settings' }} />;
     }
     return (
         <div className="connect-exchange-container">
-            <h2 className="container-title">
-                Connect to an Exchange
-            </h2>
+            <h2 className="container-title">Connect to an Exchange</h2>
             <Form className="connect-exchange-form" onSubmit={onSubmit}>
                 <Form.Group controlId="exchange">
                     <Form.Label>Exchange</Form.Label>
@@ -47,9 +47,12 @@ const ConnectExchange = (props) => {
                         className="select-exchange form-select"
                         data-style="btn-info"
                         name="exchange"
-                        onChange={onChange}>
+                        onChange={onChange}
+                    >
                         {props.exchanges.map(({ key, value }) => (
-                            <option key={key} value={key}>{value}</option>
+                            <option key={key} value={key}>
+                                {value}
+                            </option>
                         ))}
                     </Form.Control>
                 </Form.Group>

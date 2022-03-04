@@ -1,49 +1,49 @@
 .header-container {
-	padding: 20px 30px;
-	// border-bottom: solid 1px $bordergrey;
-	// background-color: $bggrey;
-	.header-wrapper {
-		display: flex;
-		justify-content: flex-end;
-		align-items: center;
-		.welcome-user {
-			font-size: 20px;
-			padding: 10px;
-			// border-right: 2px $darkgrey solid;
-			margin: 0 10px;
-			.username {
-				font-weight: 500;
-			}
-		}
-	}
-	.action-btn {
-		background-color: $purple;
-		color: white;
-		font-family: Sofia Pro;
-		float: right;
-	}
-	@media #{$ipadPortrait} {
-		padding: 15px 0;
-		.header-wrapper {
-			justify-content: space-between;
-			.welcome-user {
-				border: none;
-				margin: 0;
-			}
-			.action-btn {
-				margin-right: 20px;
-			}
-		}
-	}
-	@media #{$mobile} {
-		padding: 0;
-		.header-wrapper {
-			flex-direction: column;
-			align-items: flex-start;
-			.welcome-user {
-				border: none;
-				margin: 0;
-			}
-		}
-	}
+    padding: 20px 30px;
+    // border-bottom: solid 1px $bordergrey;
+    // background-color: $bggrey;
+    .header-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .welcome-user {
+            font-size: 20px;
+            padding: 10px;
+            // border-right: 2px $darkgrey solid;
+            margin: 0 10px;
+            .username {
+                font-weight: 500;
+            }
+        }
+    }
+    .action-btn {
+        background-color: $purple;
+        color: white;
+        font-family: Sofia Pro;
+        float: right;
+    }
+    @media #{$ipadPortrait} {
+        padding: 15px 0;
+        .header-wrapper {
+            justify-content: space-between;
+            .welcome-user {
+                border: none;
+                margin: 0;
+            }
+            .action-btn {
+                margin-right: 20px;
+            }
+        }
+    }
+    @media #{$mobile} {
+        padding: 0;
+        .header-wrapper {
+            flex-direction: column;
+            align-items: flex-start;
+            .welcome-user {
+                border: none;
+                margin: 0;
+            }
+        }
+    }
 }

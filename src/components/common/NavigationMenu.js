@@ -66,7 +66,7 @@ const NavigationMenu = () => {
                 className="navbar navbar-light bg-light"
                 expanded={expanded}>
                 <Navbar.Brand href="/" className="brand-wrapper">
-                    <Image src={bbLogo} className="bb-logo"></Image>
+                    {/* <Image src={bbLogo} className="bb-logo"></Image> */}
                     <div>
                         <h2 className="bb-title">Blockbelly</h2>
                         <p className="beta-disclaimer">Beta version</p>
@@ -76,12 +76,12 @@ const NavigationMenu = () => {
                     onClick={() => setExpanded(expanded ? false : 'expanded')}
                     aria-controls="responsive-navbar-nav"
                 />
-                <Navbar.Collapse id="basic-navbar-nav">
+                {/* <Navbar.Collapse id="basic-navbar-nav">
                     <Header></Header>
                     <Nav className="mr-auto">
                         {authLinks()}
                     </Nav>
-                </Navbar.Collapse>
+                </Navbar.Collapse> */}
             </Navbar>
             {/* <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">

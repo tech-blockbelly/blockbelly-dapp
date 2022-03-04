@@ -57,7 +57,8 @@ const Candlestick = ({ fund }) => {
                     <Spinner
                         className="loader"
                         animation="border"
-                        role="status"></Spinner>
+                        role="status"
+                    ></Spinner>
                 </div>
             ) : (
                 <div>
@@ -72,7 +73,8 @@ const Candlestick = ({ fund }) => {
                                         : day_delta < 0
                                         ? 'negative'
                                         : 'text-secondary'
-                                }>
+                                }
+                            >
                                 {day_delta.toFixed(2)} %
                             </h4>
                         </p>

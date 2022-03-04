@@ -22,16 +22,18 @@ const Google = ({ googleAuthenticate }) => {
     }, [location]);
 
     return (
-			<Container className="page-container">
-        <Row className="authentication-container">
-            <Col md={8} className="authentication-block">
-                <h2 className="auth-title">Click below to authenticate and login</h2>
-                <Link className="btn btn-primary" to="/login" role="button">
-                    Login
-                </Link>
-            </Col>
-        </Row>
-			</Container>
+        <Container className="page-container">
+            <Row className="authentication-container">
+                <Col md={8} className="authentication-block">
+                    <h2 className="auth-title">
+                        Click below to authenticate and login
+                    </h2>
+                    <Link className="btn btn-primary" to="/login" role="button">
+                        Login
+                    </Link>
+                </Col>
+            </Row>
+        </Container>
     );
 };
 

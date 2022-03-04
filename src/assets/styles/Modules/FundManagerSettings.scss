@@ -1,19 +1,20 @@
 .fm-settings-container {
-	margin: 25px auto 50px;
-	color: $darkgrey;
-	border-radius: 20px;
-	box-shadow: 0 20px 25px -15px $boxshadowgray;
-	border: solid 1px $bordergrey;
-	padding: 30px;
-	background: $bggrey;
-	.payment-setup-wrapper {
-		flex-direction: column;
-    margin: 20px auto;
-		.payment-setup-form {
-			.form-input, .form-select {
-				background-color: $white;
-				transition: none;
-			}
-		}
-	}
+    margin: 25px auto 50px;
+    color: $darkgrey;
+    border-radius: 20px;
+    box-shadow: 0 20px 25px -15px $boxshadowgray;
+    border: solid 1px $bordergrey;
+    padding: 30px;
+    background: $bggrey;
+    .payment-setup-wrapper {
+        flex-direction: column;
+        margin: 20px auto;
+        .payment-setup-form {
+            .form-input,
+            .form-select {
+                background-color: $white;
+                transition: none;
+            }
+        }
+    }
 }
