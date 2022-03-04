@@ -10,4 +10,6 @@ struct BrokerIndex {
     uint24 poolFee;
     address prOracleAddr;
     bool invOraclePrice;
+    uint8 platformFee;
+    uint8 managerFee;
 }

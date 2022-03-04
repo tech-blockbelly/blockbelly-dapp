@@ -40,7 +40,8 @@ const SettingsPage = ({ user }) => {
             <Row>
                 <Col md={12}>
                     <ExchangeSettings
-                        exchanges={appState.exchanges}></ExchangeSettings>
+                        exchanges={appState.exchanges}
+                    ></ExchangeSettings>
                 </Col>
             </Row>
         </Container>

@@ -35,7 +35,11 @@ const Option = (props) => {
     return (
         <components.Option {...props}>
             <div className="coin-info">
-                <Image src={props.data.image} className="coin-logo" />
+                <Image 
+                    src={props.data.icon} 
+                    className="coin-logo" 
+                    style={{ 'width': 36 , 'margin-right': 10}}
+                />
                 {props.data.label}
             </div>
         </components.Option>
@@ -49,11 +53,10 @@ const SetAllocations = ({
     removeCoinFromSelection,
     changeCoinDistribution,
     className,
+    defaultValue,
 }) => {
     const coinSymbols = Object.keys(selectedCoins);
-    const coinsList = coins.filter((coin) =>
-        coinSymbols.includes(coin.value),
-    );
+    const coinsList = coins.filter((coin) => coinSymbols.includes(coin.value));
 
     return (
         <div className={`coin-allocation-container ${className}`}>
@@ -64,8 +67,9 @@ const SetAllocations = ({
                 onChange={onCoinSelect}
                 options={coins}
                 components={{ Option }}
-                isClearable
-                isSearchable
+                // isClearable
+                // isSearchable
+                value={defaultValue}
                 styles={{
                     control: (styles) => ({
                         ...styles,
@@ -90,6 +94,7 @@ const SetAllocations = ({
                         defaultValue={selectedCoins[coin.value]}
                         removeCoinFromSelection={removeCoinFromSelection}
                         changeCoinDistribution={changeCoinDistribution}
+                        key={index}
                     />
                 ))
             ) : (

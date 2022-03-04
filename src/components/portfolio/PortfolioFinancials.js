@@ -19,11 +19,14 @@ const PortfolioFinancials = (props) => {
                     </Card.Header>
                     <Card.Text>
                         <div className="chart-wrapper">
-                            <AreaChart fund={fund} endpoint={endpoint} type={type}></AreaChart>
+                            <AreaChart
+                                fund={fund}
+                                endpoint={endpoint}
+                                type={type}></AreaChart>
                         </div>
-												<div className="chart-wrapper">
-														<PieChart coins={fund.coin_details} />
-												</div>
+                        <div className="chart-wrapper">
+                            <PieChart coins={fund.coin_details} />
+                        </div>
                     </Card.Text>
                 </Card.Body>
             </Card>

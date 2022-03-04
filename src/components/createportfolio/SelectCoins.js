@@ -15,7 +15,6 @@ const Option = (props) => {
 };
 
 const SelectCoins = ({ coins, onCoinSelect }) => {
-
     return (
         <div className="coin-selection-container">
             <h3 className="container-title">

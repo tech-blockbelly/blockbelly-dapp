@@ -98,7 +98,8 @@ function App() {
                     display: 'flex',
                     justifyContent: 'center',
                     marginTop: '100px',
-                }}>
+                }}
+            >
                 <WalletMultiButton />
             </div>
         );

@@ -6,7 +6,7 @@
 	border: solid 1px $bordergrey;
 	padding: 30px 20px;
 	background-color: $bggrey;
-	max-height: 950px;
+	// max-height: 950px;
 	overflow: scroll;
 	.container-title {
 		margin: 0px 10px 20px;
@@ -16,8 +16,8 @@
 	}
 	.coin-info-wrapper {
 		margin: 30px auto;
-    box-shadow: 0 20px 25px -15px $boxshadowgray;
-    border-radius: 30px;
+		box-shadow: 0 20px 25px -15px $boxshadowgray;
+		border-radius: 30px;
 		background-color: $white;
 		padding: 20px;
 		.coin-details-block {

@@ -22,9 +22,7 @@ const ExchangeStatusBlock = (props) => {
                 <div className="portfolio-wrapper">
                     <h1 className="portfolio-value">{props.value}</h1>
                     <div className="transaction-btn-wrapper">
-                        <a
-                            href="/portfolio"
-                            className="transaction-btn btn">
+                        <a href="/portfolio" className="transaction-btn btn">
                             View Portfolio
                         </a>
                     </div>
@@ -36,9 +34,7 @@ const ExchangeStatusBlock = (props) => {
                     <h3 className="exchange-connect-text">
                         Looks like we you need to connect to an exchange!
                     </h3>
-                    <a
-                        href="/exchange"
-                        className="exchange-btn btn">
+                    <a href="/exchange" className="exchange-btn btn">
                         Connect to an exchange
                     </a>
                 </div>
@@ -54,7 +50,8 @@ const ExchangeStatusBlock = (props) => {
                 <div className="exchange-status-wrapper">
                     <Image
                         src={statusIcon}
-                        className={`status-icon ${iconClass}`}></Image>
+                        className={`status-icon ${iconClass}`}
+                    ></Image>
                     <p className="exchange-status">{statusText}</p>
                 </div>
             </div>

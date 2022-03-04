@@ -36,15 +36,16 @@ function App() {
                 <div className="page-container">
                     <NavigationMenu />
                     <div className="content-container">
-                        <Header></Header>
+                        {/* <Header></Header> */}
                         <Switch>
                             <Route exact path="/">
-                                <Redirect to="/baskets" />
+                                {/* <Redirect to="/baskets" /> */}
+                                <LandingPage />
                             </Route>
                             <Route exact path="/baskets">
-                                <DeFiExchangeContainer />;
+                                <DeFiExchangeContainer />
                             </Route>
-                            <Route exact path="/basket/:id">
+                            <Route exact path="/baskets/:id">
                                 {/* <BasketContainer /> */}
                                 <PortfolioPage />
                             </Route>
@@ -69,9 +70,9 @@ function App() {
                             <Route path="/error">
                                 <ErrorPage />
                             </Route>
-                            <Route path="/landing">
+                            {/* <Route path="/landing">
                                 <LandingPage />
-                            </Route>
+                            </Route> */}
                         </Switch>
                         <Footer />
                         <ToastContainer
