@@ -7,6 +7,7 @@
                 "iName": "EVM Universe",
                 "iSym": "EVMU",
                 "iDesc": "EVM Universe Tracker Index (EVMU) is an index  that tracks quality crypto token projects that are primarily focused for the Ethereum and EVM ecosystem.. As one of the leading onchains in Crypto and Web3, EVM projects focus on next-generation applications and infrastructure being built in decentralised technology and Web3.",
+                "iMethodology": "The following criteria have been considered in the iMethodology and evaluation:<br><br><ul><li>Tokens have been listed for at least 6 months<\/li><li>Tokens hold a marketCap of > $350M<\/li><li>Tokens offer an average daily on volume of > $20K  on a decentralised exchange*<\/li><li>Tokens are not wrapped tokens<\/li><li>The weightage between tokens is > $100B is at least 20%<\/li><li>The weightage between remainder tokens is calculated based on weightage of market cap and liquidity on exchanges<\/li><li>Tokens closely track or a part of Ethereum‘s ecosystem <\/li><li>Tokens would be rebalanced quarterly <\/li><\/ul>",
                 "iCgId": "evmu",
                 "iAddr": "",
                 "iCmp": [
@@ -75,6 +76,7 @@
                 "iName": "DeFi Index Token",
                 "iSym": "DFI",
                 "iDesc": "Amun’s DeFi Index Token (DFI) is composed of the top eight DeFi tokens in the Ethereum ecosystem by market capitalization. DFI provides investors with exposure to protocols that provide trading, lending and borrowing, yield farming, data oracles, insurance, prediction markets, and synthetic assets.",
+                "iMethodology": "The index queries the CoinGecko API for the list of top DeFi protocols by market capitalization. Non-Ethereum based protocols, stablecoins, and synthetic assets are excluded from the list. The top eight protocols are selected and equally weighted in the index. The index is rebalanced monthly to include any new tokens and redistribute weights. When DFI tokens are burned, the owner receives the equivalent amount of constituent tokens." ,
                 "iCgId": "dfi",
                 "iAddr": "",
                 "iCmp": [
@@ -137,6 +139,7 @@
                 "iName": "DeFi Pulse Index",
                 "iSym": "DPI",
                 "iDesc": "The DeFi Pulse Index is a capitalization-weighted index that tracks the performance of decentralized financial assets across the market.",
+                "iMethodology": "The DeFi Pulse Index is a digital asset index designed to track the performance of some of the largest protocols in the Decentralized Finance (DeFi) space. DeFi is a blockchain-based implementation of traditional financial services that does not rely on central intermediaries and instead uses smart contracts on blockchains." ,
                 "iCgId": "defipulse-index",
                 "iAddr": "0x1494CA1F11D487c2bBe4543E90080AeBa4BA3C2b",
                 "iCmp": [
@@ -245,10 +248,11 @@
         "Solana": [
             {
                 "chn": "solana",
-                "chnId": 1,
+                "chnId": 2,
                 "iName": "Solana Universe Index",
                 "iSym": "SOLU",
                 "iDesc": "Solana Universe Index (SOLU) is an index  that tracks quality crypto token projects that are primarily focused for the Solana ecosystem.. As one of the leading onchains in Crypto and Web3, EVM projects focus on next-generation applications and infrastructure being built in decentralised technology and Web3.",
+                "iMethodology": "The following criteria have been considered in the iMethodology and evaluation:<br><br><ul><li>Tokens have been listed for at least 6 months<\/li><li>Tokens hold a marketCap of > $350M<\/li><li>Tokens offer an average daily on volume of > $20K  on a decentralised exchange*<\/li><li>Tokens are not wrapped tokens<\/li><li>The weightage between tokens is > $100B is at least 20%<\/li><li>The weightage between remainder tokens is calculated based on weightage of market cap and liquidity on exchanges<\/li><li>Tokens closely track or a part of Ethereum‘s ecosystem <\/li><li>Tokens would be rebalanced quarterly <\/li><\/ul>",
                 "iCgId": "solu",
                 "iAddr": "",
                 "iCmp": [
@@ -295,10 +299,11 @@
             },
             {
                 "chn": "solana",
-                "chnId": 1,
+                "chnId": 2,
                 "iName": "Solana Ecosystem Index",
                 "iSym": "SOLI",
                 "iDesc": "SOLI provides holders with a weighted index containing Solana Native tokens & Staked SOL for users to gain diversified exposure to the Solana Ecosystem.",
+                "iMethodology": "Constituents are rebalanced on a monthly basis and included in the index if they meet Amun’s inclusion criteria. To be included in the index, tokens must be 1) a Solana native project 2) gaining organic adoption in liquidity and market cap 3) listed on Raydium with single pool liquidity over $3M. After reserving 33% of the index for mSol, the allocation percentage for each constituent is calculated based on a weighted average ratio of market capitalization and DEX liquidity. Amun identifies Solana native projects as those that have a majority of their TVL on Solana.",
                 "iCgId": "solu",
                 "iAddr": "",
                 "iCmp": [
@@ -342,10 +347,11 @@
         "Near": [
             {
                 "chn": "near",
-                "chnId": 1,
+                "chnId": 4,
                 "iName": "NEAR Ecosystem Tracker Index",
                 "iSym": "NECO",
                 "iDesc": "NEAR Ecosystem Tracker Index (NECO) is an index that tracks quality crypto token projects that are primarily focused on the NEAR ecosystem. As one of the leading upcoming chains in Crypto and Web3, NEAR projects focus on next-generation applications and infrastructure being built in decentralized technology and Web3.",
+                "iMethodology": "The following criteria have been considered in the iMethodology and evaluation:<br><br><ul><li>Tokens have been listed for at least 3 months<\/li><li>Tokens hold a marketCap of > $1.25M<\/li><li>The weightage of tokens > $10M is at least 25%<\/li><li>The weightage between remainder tokens is calculated based on weightage of market cap and liquidity on exchanges<\/li><li>Tokens closely track or a part of NEAR’ s ecosystem.<\/li><li>Rebalancing tokens: Monthly <\/li><\/ul>",
                 "iCgId": "neco",
                 "iAddr": "",
                 "iCmp": [

@@ -45,7 +45,8 @@ function App() {
                             <Route exact path="/baskets">
                                 <DeFiExchangeContainer />
                             </Route>
-                            <Route exact path="/baskets/:id">
+                            {/* <Route exact path="/baskets/:id"> */}
+                            <Route exact path="/baskets/:chn/:id">
                                 {/* <BasketContainer /> */}
                                 <PortfolioPage />
                             </Route>

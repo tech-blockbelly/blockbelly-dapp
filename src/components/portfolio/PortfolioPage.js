@@ -18,11 +18,15 @@ import axios from 'axios';
 import { ChainId, DAppProvider } from '@usedapp/core';
 import { IoWallet } from 'react-icons/io5';
 
+import evmuLogo from '../../assets/images/indexLogos/EVMU.png';
+import makerLogo from '../../assets/images/indexLogos/EVMU_BB.png';
+import soluLogo from '../../assets/images/indexLogos/SOLU.png';
+import polygonLogo from '../../assets/images/polygon.png';
+import nearLogo from '../../assets/images/near-protocol.svg';
 // A custom hook that builds on useLocation to parse
 // the query string for you.
 function useQuery() {
     const { search } = useLocation();
-
     return React.useMemo(() => new URLSearchParams(search), [search]);
 }
 
@@ -34,9 +38,12 @@ const config = {
     },
 };
 
+const capitalizeFirstLetter = (word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+}
 const PortfolioPage = (props) => {
     let { i } = useQuery();
-    let { id } = useParams();
+    let { chn, id } = useParams();
     const history = useHistory();
 
     const [appState, setAppState] = useState({
@@ -50,15 +57,36 @@ const PortfolioPage = (props) => {
     useEffect(() => {
         setAppState({ ...appState, loading: true });
         axios
-            .get(`https://api.coingecko.com/api/v3/coins/${id}`)
+            // .get(`https://api.coingecko.com/api/v3/coins/${id}`)
+            .get(" http://localhost:3000/indexrepository.json")
             .then((res) => {
-                console.log(res.data);
-                setAppState({ ...appState, loading: false, fund: res.data });
+                let data = res.data[0]
+                let index = data[capitalizeFirstLetter(chn)][id];
+
+                // setAppState({ ...appState, loading: false, fund: res.data });
+                setAppState({ ...appState, loading: false, fund: index });
             })
             .catch((err) => console.log(err));
-    }, [id, i, props]);
+    }, [id]);
+    // }, [id, i, props]);
 
-    console.log(appState);
+    if(!appState.fund.creatorIcon) {
+        appState.fund.creatorIcon = makerLogo;
+    }
+    if (!appState.fund.icon) {
+        if (appState.fund['chn'] == "ethereum") {
+            appState.fund.icon = evmuLogo;
+        }
+        if (appState.fund.chn == "solana") {
+            appState.fund.icon = soluLogo;
+        }
+        if (appState.fund.chn == "near") {
+            appState.fund.icon = nearLogo;
+        }
+        if (appState.fund.chn == "polygon") {
+            appState.fund.icon = polygonLogo;
+        }
+    }
 
     return (
         <Container fluid className="module-container portfolio-page-container">
@@ -79,24 +107,26 @@ const PortfolioPage = (props) => {
                     <Col xl={7} className="information-column">
                         <Row className="title-info-row">
                             <Image
-                                src={appState.fund['image']['large']}
+                                // src={appState.fund['image']['large']}
+                                src={appState.fund['icon']}
                                 roundedCircle
                                 className="icon"
                             />
                             <div className="title-block">
-                                <h2>{appState.fund['name']}</h2>
-                                <h5>{appState.fund['symbol']}</h5>
+                                <h2>{appState.fund['iName']}</h2>
+                                <h5>{appState.fund['iSym']}</h5>
                             </div>
                         </Row>
                         <Row className="general-info-row">
                             <Col className="creator-info-column" xl={4}>
                                 <Image
                                     className="creator-icon"
-                                    src="https://raw.githubusercontent.com/SetProtocol/uniswap-tokenlist/main/assets/managers/bankless_logo.jpeg"
+                                    // src="https://raw.githubusercontent.com/SetProtocol/uniswap-tokenlist/main/assets/managers/bankless_logo.jpeg"
+                                    src={appState.fund['creatorIcon']}
                                     roundedCircle
                                 />
                                 <div>
-                                    <p className="creator-name">Bankless HQ</p>
+                                    <p className="creator-name">{appState.fund['creator']}</p>
                                     <p className="subtext">Creator</p>
                                 </div>
                             </Col>
@@ -104,9 +134,10 @@ const PortfolioPage = (props) => {
                                 <p className="market-cap">
                                     $
                                     {
-                                        appState.fund['market_data'][
-                                            'market_cap'
-                                        ]['usd']
+                                        // appState.fund['market_data'][
+                                        //     'market_cap'
+                                        // ]['usd']
+                                        2221
                                     }
                                 </p>
                                 <p className="subtext">Market Cap</p>
@@ -119,47 +150,26 @@ const PortfolioPage = (props) => {
                                 type={"defi"}
                             /> */}
                             <h4 className="title">Allocations</h4>
-                            <DistributionTable />
+                            <DistributionTable
+                                {...props}
+                                tokens={appState.fund['iCmp']}
+                            />
                         </Row>
                         <Row className="information-row">
                             <h4 className="title">Overview</h4>
                             <div className="information-text">
-                                {appState.fund['description']['en']}
+                                {/* {appState.fund['description']['en']} */}
+                                {appState.fund['iDesc']}
                             </div>
                         </Row>
                         <Row className="information-row">
                             <h4 className="title">Methodology</h4>
-                            <div className="information-text">
-                                The BED index is meant to track crypto’s top 3
-                                investable assets.
-                                <br />
-                                <br />
-                                1. Scope: The index includes the top 3
-                                investable assets with real usage and large
-                                capitalizations around the theme of blockchain:
-                                BTC, ETH, DeFi (DPI). 2. Weighting: Neutral
-                                construction, equal weight 3. Rebalancing: First
-                                Friday of every month
-                                <br />
-                                <br />
-                                The composition is:
-                                <br />
-                                - 33.3% Bitcoin
-                                <br />
-                                - 33.3% Ether
-                                <br />
-                                - 33.3% DPI
-                                <br />
-                                <br />
-                                The underlying index is rebalanced after the
-                                close of trading on the first Friday of each
-                                calendar month. The Fund is rebalanced in
-                                accordance with its Underlying Index.
+                            <div className="information-text" dangerouslySetInnerHTML={{__html:appState.fund['iMethodology']}}>
                             </div>
                         </Row>
                     </Col>
                     <Col xl={5} className="transaction-column">
-                        {/* <div className="fixed-column"> */}
+                        <div className="fixed-column">
                         <Row>
                             <Col className="portfolio-info-container defi-buy">
                                 <ListGroup className="fund-action-list-group">
@@ -248,7 +258,7 @@ const PortfolioPage = (props) => {
                                 </ListGroup.Item>
                             )}
                         </ListGroup>
-                        {/* </div>  */}
+                        </div>
                     </Col>
                 </Row>
             )}

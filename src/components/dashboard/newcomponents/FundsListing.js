@@ -70,14 +70,15 @@ const FundsListing = (props) => {
     const onFundSelect = (eventId) => {
         const index = appState.funds[eventId];
 
-        setEventKey(index['iCgId']);
+        setEventKey(index['chn']);
         setEventId(eventId);
         setShowPage(true);
     };
 
     if (showPage) {
         return (
-            <Redirect to={{ pathname: `/baskets/${eventKey}?i=${eventId}` }} />
+            // <Redirect to={{ pathname: `/baskets/${eventKey}?i=${eventId}` }} />
+            <Redirect to={{ pathname: `/baskets/${eventKey}/${eventId}` }} />
         );
     }
 
