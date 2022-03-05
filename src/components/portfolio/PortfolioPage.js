@@ -88,6 +88,8 @@ const PortfolioPage = (props) => {
         }
     }
 
+    let buyBtnText = (appState.fund.chn === "ethereum") ? 'Buy' : 'Mint'
+
     return (
         <Container fluid className="module-container portfolio-page-container">
             <a onClick={history.goBack}>
@@ -238,7 +240,7 @@ const PortfolioPage = (props) => {
                                         // onClick={handleShow}
                                         className="fund-action-container accent"
                                         eventKey="buy">
-                                        <IoBagCheck /> Buy
+                                        <IoBagCheck /> {buyBtnText}
                                     </ListGroup.Item>
                                     <ListGroup.Item
                                         action

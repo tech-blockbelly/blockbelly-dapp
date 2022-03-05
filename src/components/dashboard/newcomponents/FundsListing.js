@@ -97,7 +97,7 @@ const FundsListing = (props) => {
                         <Row>
                             {appState.funds.map((portfolio, index) => {
                                 return (
-                                    <Col m={3}>
+                                    <Col md={4}>
                                         <FundInfoCard
                                             {...props}
                                             fund={portfolio}

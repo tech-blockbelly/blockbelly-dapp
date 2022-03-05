@@ -84,6 +84,7 @@
 		max-width: 450px;
 		.fixed-column {
 			position: fixed;
+			min-width: 400px;
 			.defi-buy .fund-action-list-group {
 				// padding: 1em;
 				padding: 0;
