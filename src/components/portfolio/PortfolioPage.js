@@ -21,7 +21,7 @@ import { IoWallet } from 'react-icons/io5';
 import evmuLogo from '../../assets/images/indexLogos/EVMU.png';
 import makerLogo from '../../assets/images/indexLogos/EVMU_BB.png';
 import soluLogo from '../../assets/images/indexLogos/SOLU.png';
-import polygonLogo from '../../assets/images/polygon.png';
+import polygonLogo from '../../assets/images/indexLogos/POL.png';
 import nearLogo from '../../assets/images/near-protocol.svg';
 // A custom hook that builds on useLocation to parse
 // the query string for you.

@@ -4,8 +4,8 @@ import { Card } from 'react-bootstrap';
 import evmuLogo from '../../../assets/images/indexLogos/EVMU.png';
 import makerLogo from '../../../assets/images/indexLogos/EVMU_BB.png';
 import soluLogo from '../../../assets/images/indexLogos/SOLU.png';
+import polLogo from '../../../assets/images/indexLogos/POL.png';
 
-import polygonLogo from '../../../assets/images/polygon.png';
 import nearLogo from '../../../assets/images/near-protocol.svg';
 
 const FundInfoCard = (props) => {
@@ -29,7 +29,7 @@ const FundInfoCard = (props) => {
             fund.icon = nearLogo;
         }
         if (fund.chn == "polygon") {
-            fund.icon = polygonLogo;
+            fund.icon = polLogo;
         }
     }
 
