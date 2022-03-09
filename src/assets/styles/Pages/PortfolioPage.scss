@@ -77,6 +77,14 @@
 			.title {
 				margin-bottom: 15px;
 			}
+			.pdf-link {
+				color: $darkgrey;
+				text-decoration: underline;
+				font-weight: bold;
+				&:hover {
+					color: $purple;
+				}
+			}
 		}
 	}
 	.transaction-column {

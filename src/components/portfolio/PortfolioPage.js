@@ -19,10 +19,16 @@ import { ChainId, DAppProvider } from '@usedapp/core';
 import { IoWallet } from 'react-icons/io5';
 
 import evmuLogo from '../../assets/images/indexLogos/EVMU.png';
-import makerLogo from '../../assets/images/indexLogos/EVMU_BB.png';
+import makerLogo from '../../assets/images/indexLogos/BB.png';
 import soluLogo from '../../assets/images/indexLogos/SOLU.png';
 import polygonLogo from '../../assets/images/indexLogos/POL.png';
 import nearLogo from '../../assets/images/near-protocol.svg';
+
+import evmPdf from '../../assets/pdfs/EVM.pdf';
+import necoPdf from '../../assets/pdfs/NECO.pdf';
+import polyPdf from '../../assets/pdfs/Poly.pdf';
+import soluPdf from '../../assets/pdfs/SOLU.pdf';
+
 // A custom hook that builds on useLocation to parse
 // the query string for you.
 function useQuery() {
@@ -45,6 +51,7 @@ const PortfolioPage = (props) => {
     let { i } = useQuery();
     let { chn, id } = useParams();
     const history = useHistory();
+    const [hasPdf, setHasPdf] = useState(false);
 
     const [appState, setAppState] = useState({
         loading: true,
@@ -74,17 +81,25 @@ const PortfolioPage = (props) => {
         appState.fund.creatorIcon = makerLogo;
     }
     if (!appState.fund.icon) {
-        if (appState.fund['chn'] == "ethereum") {
+        if (appState.fund.chn == "ethereum") {
             appState.fund.icon = evmuLogo;
+            appState.fund.pdfLink = evmPdf;
+            setHasPdf(true);
         }
         if (appState.fund.chn == "solana") {
             appState.fund.icon = soluLogo;
+            appState.fund.pdfLink = soluPdf;
+            setHasPdf(true);
         }
         if (appState.fund.chn == "near") {
             appState.fund.icon = nearLogo;
+            appState.fund.pdfLink = necoPdf;
+            setHasPdf(true);
         }
         if (appState.fund.chn == "polygon") {
             appState.fund.icon = polygonLogo;
+            appState.fund.pdfLink = polyPdf;
+            setHasPdf(true);
         }
     }
 
@@ -169,6 +184,16 @@ const PortfolioPage = (props) => {
                             <div className="information-text" dangerouslySetInnerHTML={{__html:appState.fund['iMethodology']}}>
                             </div>
                         </Row>
+                        {/* pdf code fails on non-BB indices. Needs to be rechecked */}
+                        {/* {
+                            hasPdf ? (
+                                <Row className="information-row">
+                                    <div className="information-text">
+                                        Click to view detailed <a href = {appState.fund.pdfLink} target='_blank' className='pdf-link'>factsheet</a>
+                                    </div>
+                                </Row>
+                            ) : {}
+                        } */}
                     </Col>
                     <Col xl={5} className="transaction-column">
                         <div className="fixed-column">
@@ -186,7 +211,7 @@ const PortfolioPage = (props) => {
                                             <Form.Control
                                                 className="pay-with-input form-input"
                                                 type="text"
-                                                placeholder="0.000000 ETH"
+                                                placeholder="0.000000 SOL"
                                                 name="paymentIndex"
                                                 required
                                             />
@@ -203,7 +228,7 @@ const PortfolioPage = (props) => {
                                             <Form.Control
                                                 className="buy-input form-input"
                                                 type="text"
-                                                placeholder="0.000000 BED"
+                                                placeholder="0.000000 SOLU"
                                                 name="buyIndex"
                                                 readOnly
                                             />
@@ -219,11 +244,11 @@ const PortfolioPage = (props) => {
                                     </ListGroupItem>
                                     <ListGroupItem>
                                         Network Fee
-                                        <p>0.000 ETH</p>
+                                        <p>0.000 SOL</p>
                                     </ListGroupItem>
                                     <ListGroupItem>
                                         Platform Fee
-                                        <p>0.000 ETH</p>
+                                        <p>0.000 SOL</p>
                                     </ListGroupItem>
                                 </ListGroup>
                             </Col>

@@ -1,6 +1,8 @@
 import React from 'react';
-import { Container, Button, Row, Col } from 'react-bootstrap';
+import { Container, Button, Row, Col, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+
+import bbLogo from '../../assets/images/indexLogos/BB.png'
 
 const LandingPage = () => {
     return (
@@ -18,6 +20,16 @@ const LandingPage = () => {
                 <Link to={`/baskets`} className="finance-btn">Investor</Link>
                 <Link to={`/create`} className="finance-btn">Index Creator</Link>
             </div> */}
+            <div className='header-block'>
+                <Image
+                    src={bbLogo}
+                    className='bb-logo'
+                />
+                <h3>
+                    Crypto Indices and curated portfolios aggregated across multiple chains in CEFI and DEFI
+                </h3>
+            </div>
+            
             <div className="type-block">
                 <h2>DeFi</h2>
                 <h5>Choose your role</h5>

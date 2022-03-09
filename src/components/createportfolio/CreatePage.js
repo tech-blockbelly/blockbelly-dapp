@@ -19,6 +19,7 @@ const chains = [
     { value: 'Ethereum', label: 'Ethereum', icon: ethLogo },
     { value: 'Solana', label: 'Solana', icon: solLogo },
     { value: 'Polygon', label: 'Polygon', icon: polygonLogo },
+    { value: 'Near', label: 'Near', icon: nearLogo },
 ];
 const exchange = [
     {
@@ -149,6 +150,38 @@ const chainCoins = {
             value: 'LINK',
             label: 'ChainLink',
             icon: 'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x514910771AF9Ca656af840dff83E8264EcF986CA/logo.png',
+        },
+    ],
+    Near: [
+        {
+            value: 'WETH',
+            label: 'Ethereum (WETH)',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png'
+        },
+        {
+            value: 'REF',
+            label: 'Ref Finance',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/11809.png',
+        },
+        {
+            value: 'SKYWARD',
+            label: 'Skyward Finance',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/11798.png',
+        },
+        {
+            value: 'AURORA',
+            label: 'Aurora',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/14803.png',
+        },
+        {
+            value: 'CELO',
+            label: 'Celo',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/5567.png',
+        },
+        {
+            value: 'Octopus',
+            label: 'Octopus Protocol',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/10494.png',
         },
     ],
     Binance: [

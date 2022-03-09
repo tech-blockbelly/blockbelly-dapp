@@ -2,7 +2,7 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 
 import evmuLogo from '../../../assets/images/indexLogos/EVMU.png';
-import makerLogo from '../../../assets/images/indexLogos/EVMU_BB.png';
+import makerLogo from '../../../assets/images/indexLogos/BB.png';
 import soluLogo from '../../../assets/images/indexLogos/SOLU.png';
 import polLogo from '../../../assets/images/indexLogos/POL.png';
 
@@ -43,7 +43,7 @@ const FundInfoCard = (props) => {
                     <Card.Img className="fund-icon" src={fund.icon} />
                     {fund.iName}
                 </Card.Title>
-                <Card.Text className="fund-description">{fund.iDesc}</Card.Text>
+                <Card.Text className="fund-description">{fund.iTagLine}</Card.Text>
             </Card.Body>
             <Card.Footer>
                 <Card.Img className="creator-icon" src={fund.creatorIcon} />
