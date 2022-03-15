@@ -129,6 +129,12 @@ const NearContainer = (props) => {
     );
 };
 
+const TerraContainer = (props) => {
+    return (
+        <FundsListing {...props} />
+    );
+};
+
 
 const DeFiExchangeContainer = () => {
     const [key, setKey] = useState('ethereum');
@@ -216,6 +222,19 @@ const DeFiExchangeContainer = () => {
                     }>
                         <NearContainer funds={fundsRepo.Near} />
                     </Tab>
+                    <Tab 
+                        eventKey="terra" 
+                        title={
+                            <span className="tab-title">
+                                <Image className="tab-logo" src={terraLogo}/>
+                                Terra
+                                <div className="coming-soon-tag">
+                                    <span>Coming soon!</span>
+                                </div>
+                            </span>} 
+                    >
+                        <TerraContainer funds={fundsRepo.Terra} />
+                    </Tab>
                     <Tab
                         eventKey="avalance"
                         title={
@@ -230,9 +249,6 @@ const DeFiExchangeContainer = () => {
                         disabled>
                         <Fragment />
                     </Tab>
-                    {/* <Tab eventKey="terra" title={<span className="tab-title"><Image className="tab-logo" src={terraLogo}/>Terra<div className="coming-soon-tag"><span>Coming soon!</span></div></span>} disabled>
-                        <Fragment />
-                    </Tab> */}
                 </Tabs>
             </Container>
         </Container>

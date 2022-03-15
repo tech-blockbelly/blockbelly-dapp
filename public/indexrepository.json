@@ -76,7 +76,7 @@
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6538.png"
                     }
                 ],
-                "creator": "Blockbelly",
+                "creator": "AlphaGen",
                 "icon": "",
                 "creatorIcon": "",
                 "pdfLink": ""
@@ -339,7 +339,7 @@
                         "cLogo": "https://dynamic-assets.coinbase.com/7706f2473db43128b2b17966ac259d53f127253c7c4a276feea28c8505be21ff37f0de8ff07930b5de01dba1c866f48767eaa34e6abcf363252838abba11021e/asset_icons/6afb21b77505e8de3cfed028ce5c64930baee49a3a282f5ac5063bf72bb182b4.png"
                     }
                 ],
-                "creator": "Blockbelly",
+                "creator": "AlphaGen",
                 "icon": "",
                 "creatorIcon": "",
                 "pdfLink": ""
@@ -459,7 +459,7 @@
                         "cLogo": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x514910771AF9Ca656af840dff83E8264EcF986CA/logo.png"
                     }
                 ],
-                "creator": "Blockbelly",
+                "creator": "AlphaGen",
                 "icon": "",
                 "creatorIcon": "",
                 "pdfLink": ""
@@ -520,7 +520,61 @@
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/10494.png"
                     }
                 ],
-                "creator": "Blockbelly",
+                "creator": "AlphaGen",
+                "icon": "",
+                "creatorIcon": "",
+                "pdfLink": ""
+            }
+        ],
+        "Terra": [
+            {
+                "chn": "terra",
+                "chnId": 5,
+                "iName": "Terra Universe Index",
+                "iSym": "TERO",
+                "iTagLine": "TERO is an index that tracks quality crypto token projects that are primarily focused on the Terra ecosystem",
+                "iDesc": "Terra Universe Index (TERO) is an index that tracks quality crypto token projects that are primarily focused for the Terra ecosystem. As one of the leading onchains in Crypto and Web3, Terra projects focus on next-generation applications and infrastructure being built in decentralised technology and Web3.",
+                "iMethodology": "The following criteria have been considered in the methodology and evaluation:<br><br><ul><li>Tokens have been listed for at least 6 months<\/li><li>Tokens hold a marketCap of > $350M<\/li><li>Tokens offer an average daily on volume of > $20K  on a decentralised exchange*<\/li><li>Tokens are not wrapped tokens<\/li><li>The weightage between tokens is > $100B is at least 20%<\/li><li>The weightage between remainder tokens is calculated based on weightage of market cap and liquidity on exchanges<\/li><li>Tokens closely track or a part of Ethereum‘s ecosystem.<\/li><li>Tokens would be rebalanced quarterly.<\/li><\/ul>",
+                "iCgId": "tero",
+                "iAddr": "",
+                "iCmp": [
+                    {
+                        "addr": "",
+                        "wt": 28.01,
+                        "cId": "luna",
+                        "cName": "Terra",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/4172.png"
+                    },
+                    {
+                        "addr": "",
+                        "wt": 23.36,
+                        "cId": "mir",
+                        "cName": "Mirror Protocol",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/7857.png"
+                    },
+                    {
+                        "addr": "",
+                        "wt": 20.88,
+                        "cId": "anc",
+                        "cName": "Anchor Coin Protocol",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/8857.png"
+                    },
+                    {
+                        "addr": "",
+                        "wt": 17.49,
+                        "cId": "whale",
+                        "cName": "Whale",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6679.png"
+                    },
+                    {
+                        "addr": "",
+                        "wt": 10.27,
+                        "cId": "twd",
+                        "cName": "Terra World Token",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/13886.png"
+                    }
+                ],
+                "creator": "AlphaGen",
                 "icon": "",
                 "creatorIcon": "",
                 "pdfLink": ""
@@ -529,7 +583,7 @@
         "Bitcoin": [
             {
                 "chn": "bitcoin",
-                "chnId": 5,
+                "chnId": 6,
                 "iName": "Multicoin Tracker Index",
                 "iSym": "MCVC",
                 "iTagLine": "",
@@ -595,7 +649,7 @@
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/7455.png"
                     }
                 ],
-                "creator": "Blockbelly",
+                "creator": "AlphaGen",
                 "icon": "",
                 "creatorIcon": ""
             }

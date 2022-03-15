@@ -2,9 +2,10 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 
 import evmuLogo from '../../../assets/images/indexLogos/EVMU.png';
-import makerLogo from '../../../assets/images/indexLogos/BB.png';
+import makerLogo from '../../../assets/images/indexLogos/AlphaGen.png';
 import soluLogo from '../../../assets/images/indexLogos/SOLU.png';
 import polLogo from '../../../assets/images/indexLogos/POL.png';
+import teroLogo from '../../../assets/images/indexLogos/TERO.png';
 
 import nearLogo from '../../../assets/images/near-protocol.svg';
 
@@ -30,6 +31,9 @@ const FundInfoCard = (props) => {
         }
         if (fund.chn == "polygon") {
             fund.icon = polLogo;
+        }
+        if (fund.chn == "terra") {
+            fund.icon = teroLogo;
         }
     }
 

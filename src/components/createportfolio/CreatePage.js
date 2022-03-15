@@ -14,12 +14,14 @@ import ethLogo from '../../assets/images/eth.png';
 import solLogo from '../../assets/images/solana.png';
 import polygonLogo from '../../assets/images/polygon.png';
 import nearLogo from '../../assets/images/near-protocol.svg';
+import terraLogo from '../../assets/images/terraluna.png';
 
 const chains = [
     { value: 'Ethereum', label: 'Ethereum', icon: ethLogo },
     { value: 'Solana', label: 'Solana', icon: solLogo },
     { value: 'Polygon', label: 'Polygon', icon: polygonLogo },
     { value: 'Near', label: 'Near', icon: nearLogo },
+    { value: 'Terra', label: 'Terra', icon: terraLogo },
 ];
 const exchange = [
     {
@@ -183,6 +185,33 @@ const chainCoins = {
             label: 'Octopus Protocol',
             icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/10494.png',
         },
+    ],
+    Terra: [
+        {
+            value: 'LUNA',
+            label: 'Terra',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/4172.png'
+        },
+        {
+            value: 'MIR',
+            label: ' Mirror Protocol',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/7857.png'
+        },
+        {
+            value: 'ANC',
+            label: 'Anchor Coin Protocol',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/8857.png',
+        },
+        {
+            value: 'WHALE',
+            label: 'Whale',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/6679.png',
+        },
+        {
+            value: 'TWD',
+            label: 'Terra World Token',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/13886.png',
+        }
     ],
     Binance: [
         { value: 'ETH', label: 'Ethereum', icon: ethLogo },

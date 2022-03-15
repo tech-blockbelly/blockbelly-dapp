@@ -19,15 +19,18 @@ import { ChainId, DAppProvider } from '@usedapp/core';
 import { IoWallet } from 'react-icons/io5';
 
 import evmuLogo from '../../assets/images/indexLogos/EVMU.png';
-import makerLogo from '../../assets/images/indexLogos/BB.png';
+import makerLogo from '../../assets/images/indexLogos/AlphaGen.png';
 import soluLogo from '../../assets/images/indexLogos/SOLU.png';
 import polygonLogo from '../../assets/images/indexLogos/POL.png';
 import nearLogo from '../../assets/images/near-protocol.svg';
+
+import terraLogo from '../../assets/images/indexLogos/TERO.png';
 
 import evmPdf from '../../assets/pdfs/EVM.pdf';
 import necoPdf from '../../assets/pdfs/NECO.pdf';
 import polyPdf from '../../assets/pdfs/Poly.pdf';
 import soluPdf from '../../assets/pdfs/SOLU.pdf';
+import teroPdf from '../../assets/pdfs/Terra.pdf';
 
 // A custom hook that builds on useLocation to parse
 // the query string for you.
@@ -101,6 +104,11 @@ const PortfolioPage = (props) => {
             appState.fund.pdfLink = polyPdf;
             setHasPdf(true);
         }
+        if (appState.fund.chn == "terra") {
+            appState.fund.icon = terraLogo;
+            appState.fund.pdfLink = teroPdf;
+            setHasPdf(true);
+        }
     }
 
     let buyBtnText = (appState.fund.chn === "ethereum") ? 'Buy' : 'Mint'
@@ -154,7 +162,7 @@ const PortfolioPage = (props) => {
                                         // appState.fund['market_data'][
                                         //     'market_cap'
                                         // ]['usd']
-                                        2221
+                                        3281
                                     }
                                 </p>
                                 <p className="subtext">Market Cap</p>
@@ -189,7 +197,7 @@ const PortfolioPage = (props) => {
                             hasPdf ? (
                                 <Row className="information-row">
                                     <div className="information-text">
-                                        Click to view detailed <a href = {appState.fund.pdfLink} target='_blank' className='pdf-link'>factsheet</a>
+                                        Click to view detailed <a href = {soluPdf} target='_blank' className='pdf-link'>factsheet</a>
                                     </div>
                                 </Row>
                             ) : {}
