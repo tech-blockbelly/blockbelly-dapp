@@ -463,6 +463,308 @@
                 "icon": "",
                 "creatorIcon": "",
                 "pdfLink": ""
+            },
+            {
+                "chn": "polygon",
+                "chnId": 4,
+                "iName": "Polygon Ecosystem Index",
+                "iSym": "PECO",
+                "iTagLine": "Bullish on the Polygon Ecosystem? Whether you’re a Polygon native or 100% on Ethereum, our PECO token gives you exposure to the best projects on Polygon.",
+                "iDesc": "Amun’s Polygon Ecosystem Index (PECO) is composed of the top tokens in the Polygon ecosystem. PECO provides investors with exposure to the leading projects in the Polygon ecosystem through either a Polygon native token or an Ethereum token tied to the Polygon assets. Consisting of 50% Matic, PECO gives holders an alternative to only holding Matic and instead gives them a token that grows with the entire ecosystem, not just the base token. Given Polygon’s low transaction fees and growing ecosystem, we believe that PECO can grow to include a large number of constituents so long as they satisfy Amun’s inclusion criteria.",
+                "iMethodology": "Constituents are rebalanced on a monthly basis and included in the index if they meet Amun’s inclusion criteria.<br><br>To be included in the index, tokens must be:<br><ol><li>Native to the Polygon network and contribute to the Polygon ecosystem<\/li><li>Launched on Polygon over 2 months prior<\/li><li>Gaining organic adoption in liquidity and market cap <\/li><li>Listed on Quickswap and DFYN with liquidity over $5M.<\/li><\/ol><br>After reserving 50% of the index for Matic, the allocation percentage for each constituent is calculated based on a weighted average ratio of market capitalization and DEX liquidity.",
+                "iCgId": "peco",
+                "iAddr": "",
+                "iCmp": [
+                    {
+                        "addr": "",
+                        "cId": "wmatic",
+                        "wt": 44.82,
+                        "cName": "Wrapped MATIC",
+                        "cLogo": "https://cdn.lima.amun.com/matic/0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "QUICK",
+                        "wt": 22.40,
+                        "cName": "Quickswap",
+                        "cLogo": "https://cdn.lima.amun.com/matic/0x831753dd7087cac61ab5644b308642cc1c33dc13.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "GHST",
+                        "wt": 18.99,
+                        "cName": "Aavegotchi GHST (PoS)",
+                        "cLogo": "https://cdn.lima.amun.com/matic/0x385eeac5cb85a38a9a07a70c73e0a3271cfb54a7.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "gns",
+                        "wt": 13.80,
+                        "cName": "Gains Network",
+                        "cLogo": "https://cdn.lima.amun.com/matic/0xe5417af564e4bfda1c483642db72007871397896.png"
+                    }
+                ],
+                "creator": "Amun",
+                "icon": "https://cdn.lima.amun.com/matic/0xa9536b9c75a9e0fae3b56a96ac8edf76abc91978.svg",
+                "creatorIcon": "https://artwork.captivate.fm/3924a107-34ff-438d-89f5-f4c3f40fd938/hbqfupb_V6U9IPXHCAcY4HuF.jpg",
+                "pdfLink": ""
+            },
+            {
+                "chn": "polygon",
+                "chnId": 4,
+                "iName": "BTC 2x Flexible Leverage Index ",
+                "iSym": "BTC2x-FLI-P",
+                "iTagLine": "The BTC 2x Flexible Leverage Index on Polygon (BTC2x-FLI-P) lets you leverage a collateralized debt position in a safe and efficient way, by abstracting its management into a simple index.",
+                "iDesc": "The BTC 2x Flexible Leverage Index on Polygon (BTC2x-FLI-P) lets you leverage a collateralized debt position in a safe and efficient way, by abstracting its management into a simple index. It enables market participants to take on leverage while minimizing the transaction costs and risks associated with maintaining collateralized debt. BTC2x-FLI-P targets a long 2x exposure to BTC and employs a flexible leverage mechanism for optimal rebalancing outcomes.",
+                "iMethodology": "",
+                "iCgId": "btc2x-fli-p",
+                "iAddr": "",
+                "iCmp": [
+                    {
+                        "addr": "",
+                        "cId": "weth",
+                        "wt": 31.6,
+                        "cName": "Wrapped ETH",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "mana",
+                        "wt": 18.4,
+                        "cName": "Decentraland",
+                        "cLogo": "https://dynamic-assets.coinbase.com/e0e4a3520fda10f3955134f55373dbe6f74d286dcc0a7473586f950bdd7ed6db4aa97f89ae79858fb099f41f7136ed679549aa69f3f72e85433a0dce58831378/asset_icons/ef7c6e37d8cb47adc33193e086c8d8e1a01ad7c5666cec3f6484a3e3560da9db.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "uniswap",
+                        "wt": 12.18,
+                        "cName": "Uniswap",
+                        "cLogo": "https://dynamic-assets.coinbase.com/a1f4b7b34069888e313f284b49012a01b3bbc37b5113319c7105170a8fe268de8f60be5a0af7a8dafa8aba31fcc21ef44bc30c1e8bbb8379064ac94965bccf26/asset_icons/aafc2f5fff21664213e2a5a2c6e31aa055f277d1069b16745d54f84c0e94f1f3.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "binance-wrapped-btc",
+                        "wt": 11.31,
+                        "cName": "Wrapper BTC",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3717.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "",
+                        "wt": 10.49,
+                        "cName": "Curve",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6538.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "aave",
+                        "wt": 8.93,
+                        "cName": "Aave",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/7278.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "chainlink",
+                        "wt": 7.08,
+                        "cName": "Chainlink",
+                        "cLogo": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x514910771AF9Ca656af840dff83E8264EcF986CA/logo.png"
+                    }
+                ],
+                "creator": "IndexCoop",
+                "icon": "https://assets.website-files.com/60d237b6ea65be721ff4bbfa/62136d1b84421acf0d25360d_Copy%20of%20BTC2x-FLI_token_logo-p-500.png",
+                "creatorIcon": "https://s2.coinmarketcap.com/static/img/coins/64x64/7336.png",
+                "pdfLink": ""
+            },
+            {
+                "chn": "polygon",
+                "chnId": 4,
+                "iName": "Inverse BTC Flexible Leverage Index",
+                "iSym": "iBTC-FLI-P",
+                "iTagLine": "The Inverse BTC Flexible Leverage Index on Polygon (iBTC-FLI-P) lets you leverage a collateralized debt position in a safe and efficient way, by abstracting its management into a simple index.",
+                "iDesc": "The Inverse BTC Flexible Leverage Index on Polygon (iBTC-FLI-P) lets you leverage a collateralized debt position in a safe and efficient way, by abstracting its management into a simple index. It enables market participants to take on leverage while minimizing the transaction costs and risks associated with maintaining collateralized debt. iBTC-FLI-P targets a short -1x exposure to BTC and employs a flexible leverage mechanism for optimal rebalancing outcomes.",
+                "iMethodology": "",
+                "iCgId": "iBTC-FLI-P",
+                "iAddr": "",
+                "iCmp": [
+                    {
+                        "addr": "",
+                        "cId": "weth",
+                        "wt": 31.6,
+                        "cName": "Wrapped ETH",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "mana",
+                        "wt": 18.4,
+                        "cName": "Decentraland",
+                        "cLogo": "https://dynamic-assets.coinbase.com/e0e4a3520fda10f3955134f55373dbe6f74d286dcc0a7473586f950bdd7ed6db4aa97f89ae79858fb099f41f7136ed679549aa69f3f72e85433a0dce58831378/asset_icons/ef7c6e37d8cb47adc33193e086c8d8e1a01ad7c5666cec3f6484a3e3560da9db.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "uniswap",
+                        "wt": 12.18,
+                        "cName": "Uniswap",
+                        "cLogo": "https://dynamic-assets.coinbase.com/a1f4b7b34069888e313f284b49012a01b3bbc37b5113319c7105170a8fe268de8f60be5a0af7a8dafa8aba31fcc21ef44bc30c1e8bbb8379064ac94965bccf26/asset_icons/aafc2f5fff21664213e2a5a2c6e31aa055f277d1069b16745d54f84c0e94f1f3.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "binance-wrapped-btc",
+                        "wt": 11.31,
+                        "cName": "Wrapper BTC",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3717.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "",
+                        "wt": 10.49,
+                        "cName": "Curve",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6538.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "aave",
+                        "wt": 8.93,
+                        "cName": "Aave",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/7278.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "chainlink",
+                        "wt": 7.08,
+                        "cName": "Chainlink",
+                        "cLogo": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x514910771AF9Ca656af840dff83E8264EcF986CA/logo.png"
+                    }
+                ],
+                "creator": "IndexCoop",
+                "icon": "https://static.coincost.net/logo/cryptocurrency/inverse-btc-flexible-leverage-index.png",
+                "creatorIcon": "https://s2.coinmarketcap.com/static/img/coins/64x64/7336.png",
+                "pdfLink": ""
+            },
+            {
+                "chn": "polygon",
+                "chnId": 4,
+                "iName": "MATIC 2x Flexible Leverage Index",
+                "iSym": "MATIC2x-FLI-P",
+                "iTagLine": "The MATIC 2x Flexible Leverage Index on Polygon (MATIC2x-FLI-P) lets you leverage a collateralized debt position in a safe and efficient way, by abstracting its management into a simple index.",
+                "iDesc": "The MATIC 2x Flexible Leverage Index on Polygon (MATIC2x-FLI-P) lets you leverage a collateralized debt position in a safe and efficient way, by abstracting its management into a simple index. It enables market participants to take on leverage while minimizing the transaction costs and risks associated with maintaining collateralized debt. MATIC2x-FLI-P targets a long 2x exposure to MATIC and employs a flexible leverage mechanism for optimal rebalancing outcomes.",
+                "iMethodology": "",
+                "iCgId": "MATIC2x-FLI-P",
+                "iAddr": "",
+                "iCmp": [
+                    {
+                        "addr": "",
+                        "cId": "weth",
+                        "wt": 31.6,
+                        "cName": "Wrapped ETH",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "mana",
+                        "wt": 18.4,
+                        "cName": "Decentraland",
+                        "cLogo": ""
+                    },
+                    {
+                        "addr": "",
+                        "cId": "uniswap",
+                        "wt": 12.18,
+                        "cName": "Uniswap",
+                        "cLogo": ""
+                    },
+                    {
+                        "addr": "",
+                        "cId": "binance-wrapped-btc",
+                        "wt": 11.31,
+                        "cName": "Wrapper BTC",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3717.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "",
+                        "wt": 10.49,
+                        "cName": "Curve",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6538.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "",
+                        "wt": 7.08,
+                        "cName": "",
+                        "cLogo": ""
+                    }
+                ],
+                "creator": "IndexCoop",
+                "icon": "https://assets.website-files.com/60d237b6ea65be721ff4bbfa/61d30f5d502b66c570b1c8f8_MATIC2x-FLI_token_logo%20(1).svg",
+                "creatorIcon": "https://s2.coinmarketcap.com/static/img/coins/64x64/7336.png",
+                "pdfLink": ""
+            },
+            {
+                "chn": "polygon",
+                "chnId": 4,
+                "iName": "Inverse MATIC Flexible Leverage Index",
+                "iSym": "iMATIC-FLI-P",
+                "iTagLine": "The Inverse MATIC Flexible Leverage Index on Polygon (iMATIC-FLI-P) lets you leverage a collateralized debt position in a safe and efficient way, by abstracting its management into a simple index",
+                "iDesc": "The Inverse MATIC Flexible Leverage Index on Polygon (iMATIC-FLI-P) lets you leverage a collateralized debt position in a safe and efficient way, by abstracting its management into a simple index. It enables market participants to take on leverage while minimizing the transaction costs and risks associated with maintaining collateralized debt. iMATIC-FLI-P targets a short -1x exposure to MATIC and employs a flexible leverage mechanism for optimal rebalancing outcomes.",
+                "iMethodology": "",
+                "iCgId": "iMATIC-FLI-P",
+                "iAddr": "",
+                "iCmp": [
+                    {
+                        "addr": "",
+                        "cId": "weth",
+                        "wt": 31.6,
+                        "cName": "Wrapped ETH",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "mana",
+                        "wt": 18.4,
+                        "cName": "Decentraland",
+                        "cLogo": "https://dynamic-assets.coinbase.com/e0e4a3520fda10f3955134f55373dbe6f74d286dcc0a7473586f950bdd7ed6db4aa97f89ae79858fb099f41f7136ed679549aa69f3f72e85433a0dce58831378/asset_icons/ef7c6e37d8cb47adc33193e086c8d8e1a01ad7c5666cec3f6484a3e3560da9db.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "uniswap",
+                        "wt": 12.18,
+                        "cName": "Uniswap",
+                        "cLogo": "https://dynamic-assets.coinbase.com/a1f4b7b34069888e313f284b49012a01b3bbc37b5113319c7105170a8fe268de8f60be5a0af7a8dafa8aba31fcc21ef44bc30c1e8bbb8379064ac94965bccf26/asset_icons/aafc2f5fff21664213e2a5a2c6e31aa055f277d1069b16745d54f84c0e94f1f3.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "binance-wrapped-btc",
+                        "wt": 11.31,
+                        "cName": "Wrapper BTC",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3717.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "",
+                        "wt": 10.49,
+                        "cName": "Curve",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6538.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "aave",
+                        "wt": 8.93,
+                        "cName": "Aave",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/7278.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "chainlink",
+                        "wt": 7.08,
+                        "cName": "Chainlink",
+                        "cLogo": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x514910771AF9Ca656af840dff83E8264EcF986CA/logo.png"
+                    }
+                ],
+                "creator": "IndexCoop",
+                "icon": "https://assets.website-files.com/60d237b6ea65be721ff4bbfa/6201d64eabcee2086a9fb3a3_iMATIC-FLI-P-512%20(pulse%20red)-p-500.png",
+                "creatorIcon": "https://s2.coinmarketcap.com/static/img/coins/64x64/7336.png",
+                "pdfLink": ""
             }
         ],
         "Near": [

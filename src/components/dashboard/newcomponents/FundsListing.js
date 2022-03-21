@@ -94,10 +94,10 @@ const FundsListing = (props) => {
             ) : (
                 <div>
                     {appState.funds.length ? (
-                        <Row>
+                        <Row className="funds-listing-row">
                             {appState.funds.map((portfolio, index) => {
                                 return (
-                                    <Col md={4}>
+                                    <Col md={4} className="funds-listing-col">
                                         <FundInfoCard
                                             {...props}
                                             fund={portfolio}
