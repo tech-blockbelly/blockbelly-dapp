@@ -42,15 +42,15 @@ function App() {
                                 {/* <Redirect to="/baskets" /> */}
                                 <LandingPage />
                             </Route>
-                            <Route exact path="/baskets">
+                            <Route exact path="/:type/baskets">
                                 <DeFiExchangeContainer />
                             </Route>
                             {/* <Route exact path="/baskets/:id"> */}
-                            <Route exact path="/baskets/:chn/:id">
+                            <Route exact path="/:type/baskets/:chn/:id">
                                 {/* <BasketContainer /> */}
                                 <PortfolioPage />
                             </Route>
-                            <Route exact path="/create">
+                            <Route exact path="/:type/create">
                                 <CreatePage />
                             </Route>
                             {/* <Route exact path="/ledger">

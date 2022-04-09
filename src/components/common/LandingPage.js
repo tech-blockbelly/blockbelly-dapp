@@ -34,10 +34,10 @@ const LandingPage = () => {
                 <h2>DeFi</h2>
                 <h5>Choose your role</h5>
                 <div className="link-wrapper">
-                    <Link to={`/baskets`} className="finance-btn">
+                    <Link to={`defi/baskets`} className="finance-btn">
                         Investor
                     </Link>
-                    <Link to={`/create`} className="finance-btn">
+                    <Link to={`defi/create`} className="finance-btn">
                         Index Creator
                     </Link>
                 </div>
@@ -46,11 +46,11 @@ const LandingPage = () => {
                 <h2>CeFi</h2>
                 <h5>Choose your role</h5>
                 <div className="link-wrapper">
-                    <Link to={`/baskets`} className="finance-btn">
+                    <Link to={`cefi/baskets`} className="finance-btn">
                         Investor
                     </Link>
-                    <Link to={`/create`} className="finance-btn">
-                        Index Creator
+                    <Link to={`cefi/create`} className="finance-btn">
+                        Basket Creator
                     </Link>
                 </div>
             </div>

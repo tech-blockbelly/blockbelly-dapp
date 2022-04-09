@@ -112,6 +112,7 @@ const PortfolioPage = (props) => {
     }
 
     let buyBtnText = (appState.fund.chn === "ethereum") ? 'Buy' : 'Mint'
+    let buyInputPlaceHolder = "0.000000 " + appState.fund['iSym']
 
     return (
         <Container fluid className="module-container portfolio-page-container">
@@ -162,7 +163,7 @@ const PortfolioPage = (props) => {
                                         // appState.fund['market_data'][
                                         //     'market_cap'
                                         // ]['usd']
-                                        3281
+                                        Math.floor(1000 + Math.random() * 9000)
                                     }
                                 </p>
                                 <p className="subtext">Market Cap</p>
@@ -194,13 +195,13 @@ const PortfolioPage = (props) => {
                         </Row>
                         {/* pdf code fails on non-BB indices. Needs to be rechecked */}
                         {/* {
-                            hasPdf ? (
+                            hasPdf ? ( */}
                                 <Row className="information-row">
                                     <div className="information-text">
-                                        Click to view detailed <a href = {soluPdf} target='_blank' className='pdf-link'>factsheet</a>
+                                        Click to view detailed <a href = {necoPdf} target='_blank' className='pdf-link'>factsheet</a>
                                     </div>
                                 </Row>
-                            ) : {}
+                            {/* ) : {}
                         } */}
                     </Col>
                     <Col xl={5} className="transaction-column">
@@ -219,7 +220,7 @@ const PortfolioPage = (props) => {
                                             <Form.Control
                                                 className="pay-with-input form-input"
                                                 type="text"
-                                                placeholder="0.000000 SOL"
+                                                placeholder="0.000000 USDC"
                                                 name="paymentIndex"
                                                 required
                                             />
@@ -236,7 +237,7 @@ const PortfolioPage = (props) => {
                                             <Form.Control
                                                 className="buy-input form-input"
                                                 type="text"
-                                                placeholder="0.000000 SOLU"
+                                                placeholder= {buyInputPlaceHolder}
                                                 name="buyIndex"
                                                 readOnly
                                             />
@@ -252,11 +253,11 @@ const PortfolioPage = (props) => {
                                     </ListGroupItem>
                                     <ListGroupItem>
                                         Network Fee
-                                        <p>0.000 SOL</p>
+                                        <p>0.000 USDC</p>
                                     </ListGroupItem>
                                     <ListGroupItem>
                                         Platform Fee
-                                        <p>0.000 SOL</p>
+                                        <p>0.000 USDC</p>
                                     </ListGroupItem>
                                 </ListGroup>
                             </Col>

@@ -782,9 +782,9 @@
                     {
                         "addr": "",
                         "wt": 26.12,
-                        "cId": "weth",
-                        "cName": "Ethereum (WETH)",
-                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png"
+                        "cId": "near",
+                        "cName": "NEAR",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6535.png"
                     },
                     {
                         "addr": "",

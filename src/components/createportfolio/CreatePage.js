@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import PortfolioForm from './PortfolioForm';
 import { Image, Container, Row, Col, ListGroup } from 'react-bootstrap';
 import Select, { components } from 'react-select';
@@ -30,6 +31,22 @@ const exchange = [
         icon: 'https://www.logo.wine/a/logo/Binance/Binance-Icon-Logo.wine.svg',
     },
 ];
+
+const content = {
+    'defi' : {
+        label : 'Defi',
+        module: 'Index',
+        platform: 'Chain',
+        contents: chains
+    },
+    'cefi' : {
+        label : 'Cefi',
+        module: 'Basket',
+        platform: 'Exchange',
+        contents: exchange
+    }
+}
+
 const chainCoins = {
     Ethereum: [
         {
@@ -280,6 +297,8 @@ const SingleValue = (props) => {
 };
 
 const CreatePage = () => {
+    let { type } = useParams();
+
     const [appState, setAppState] = useState({
         loading: true,
         // coins: [],
@@ -402,19 +421,19 @@ const CreatePage = () => {
         <Container fluid className="module-container create-index-container">
             <Row className="header-row">
                 <Col lg={6} sm={12}>
-                    <h2 className="module-title">Create DeFi Index</h2>
+                    <h2 className="module-title">Create {content[type].label} {content[type].module}</h2>
                 </Col>
                 <Col lg={6} sm={12}>
                     <Row className="chain-selector-wrapper">
                         <Col lg={5} sm={12}>
-                            <h4 className="container-title">Select Chain</h4>
+                            <h4 className="container-title">Select {content[type].platform}</h4>
                         </Col>
                         <Col lg={7} sm={12}>
                             <Select
                                 className="chain-selector"
                                 onChange={onChainSelect}
                                 // options={exchange}
-                                options={chains}
+                                options={content[type].contents}
                                 components={{ Option, SingleValue }}
                                 // isClearable
                                 styles={{
@@ -446,6 +465,7 @@ const CreatePage = () => {
                         min_invest={min_invest}
                         // coins={appState.coins}
                         coins={coins}
+                        content = {content}
                         onFormChange={onFormChange}
                         handleImageChange={handleImageChange}
                     />
