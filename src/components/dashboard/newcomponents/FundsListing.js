@@ -6,6 +6,7 @@ import { ethers } from 'ethers';
 import Broker from '../../../abi/contracts/broker/UniswapBroker.sol/BlockbellyUniswapBroker.json';
 
 const FundsListing = (props) => {
+    let type = props.type;
     const [appState, setAppState] = useState({
         loading: true,
         funds: props.funds,
@@ -78,7 +79,7 @@ const FundsListing = (props) => {
     if (showPage) {
         return (
             // <Redirect to={{ pathname: `/baskets/${eventKey}?i=${eventId}` }} />
-            <Redirect to={{ pathname: `/baskets/${eventKey}/${eventId}` }} />
+            <Redirect to={{ pathname: `/${type}/baskets/${eventKey}/${eventId}` }} />
         );
     }
 

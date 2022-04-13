@@ -43,7 +43,8 @@ function App() {
                                 <LandingPage />
                             </Route>
                             <Route exact path="/:type/baskets">
-                                <DeFiExchangeContainer />
+                                {/* <DeFiExchangeContainer /> */}
+                                <BasketListContainer />
                             </Route>
                             {/* <Route exact path="/baskets/:id"> */}
                             <Route exact path="/:type/baskets/:chn/:id">
