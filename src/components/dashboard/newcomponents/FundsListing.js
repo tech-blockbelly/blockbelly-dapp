@@ -6,6 +6,7 @@ import { ethers } from 'ethers';
 import Broker from '../../../abi/contracts/broker/UniswapBroker.sol/BlockbellyUniswapBroker.json';
 
 const FundsListing = (props) => {
+    let type = props.type;
     const [appState, setAppState] = useState({
         loading: true,
         funds: props.funds,
@@ -70,14 +71,15 @@ const FundsListing = (props) => {
     const onFundSelect = (eventId) => {
         const index = appState.funds[eventId];
 
-        setEventKey(index['iCgId']);
+        setEventKey(index['chn']);
         setEventId(eventId);
         setShowPage(true);
     };
 
     if (showPage) {
         return (
-            <Redirect to={{ pathname: `/baskets/${eventKey}?i=${eventId}` }} />
+            // <Redirect to={{ pathname: `/baskets/${eventKey}?i=${eventId}` }} />
+            <Redirect to={{ pathname: `/${type}/baskets/${eventKey}/${eventId}` }} />
         );
     }
 
@@ -93,10 +95,10 @@ const FundsListing = (props) => {
             ) : (
                 <div>
                     {appState.funds.length ? (
-                        <Row>
+                        <Row className="funds-listing-row">
                             {appState.funds.map((portfolio, index) => {
                                 return (
-                                    <Col m={3}>
+                                    <Col md={4} className="funds-listing-col">
                                         <FundInfoCard
                                             {...props}
                                             fund={portfolio}

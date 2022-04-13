@@ -1,28 +1,12 @@
 import React from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
-import { IoWallet } from 'react-icons/io5';
-import { connect } from 'react-redux';
-import PortfolioModule from '../dashboard/PortfolioModule';
+import { Container } from 'react-bootstrap';
 
 const CeFiExchangeContainer = (props) => {
-    const { canTrade } = props;
-    return canTrade ? (
-        <PortfolioModule type="cefi" title="Explore Baskets" />
-    ) : (
-        <Container className="component-container defi-exchange-page">
-            <Row>
-                <Col>
-                    <Button className="connect-btn">
-                        <IoWallet /> <span>Connect to Binance Account</span>
-                    </Button>
-                </Col>
-            </Row>
+    return (
+        <Container fluid className="module-container">
+            <h2 className="module-title">Explore Baskets</h2>
         </Container>
     );
 };
 
-const mapStateToProps = (state) => ({
-    canTrade: state.auth.canTrade,
-});
-
-export default connect(mapStateToProps)(CeFiExchangeContainer);
+export default CeFiExchangeContainer;

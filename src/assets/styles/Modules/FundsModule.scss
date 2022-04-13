@@ -3,7 +3,8 @@
         margin-top: 0.25em;
         color: $grey;
         font-size: 24px;
-        margin: 10px 10px 0;
+        // margin: 10px 10px 0;
+        margin: 10px 0 0;
         padding: 20px 30px;
         position: relative;
         &.active {
@@ -93,6 +94,10 @@
     .no-funds-container {
         margin: 20px auto;
         border: none;
+    }
+    .funds-listing-row .funds-listing-col {
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
     @media #{$ipadLandscape, $ipadPortrait, $mobile} {
         .funds-type-tab .nav-item {

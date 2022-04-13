@@ -76,7 +76,7 @@ const EthereumContainer = (props) => {
     // }, [account]);
 
     return true ? (
-        <FundsListing {...props} />
+        <FundsListing type="defi" {...props} />
     ) : (
         <Container className="component-container defi-exchange-page">
             <Row>
@@ -100,7 +100,7 @@ const SolanaContainer = (props) => {
     // return wallet.connected ? (
     return (
         // <FundsModule type="defi" title="Explore Indices" />
-        <FundsListing {...props} />
+        <FundsListing type="defi" {...props} />
     );
     //) : (
     //     <Container className="component-container defi-exchange-page">
@@ -119,16 +119,21 @@ const SolanaContainer = (props) => {
 
 const PolygonContainer = (props) => {
     return (
-        <FundsListing {...props} />
+        <FundsListing type="defi" {...props} />
     );
 };
 
 const NearContainer = (props) => {
     return (
-        <FundsListing {...props} />
+        <FundsListing type="defi" {...props} />
     );
 };
 
+const TerraContainer = (props) => {
+    return (
+        <FundsListing type="defi" {...props} />
+    );
+};
 
 const DeFiExchangeContainer = () => {
     const [key, setKey] = useState('ethereum');
@@ -138,9 +143,10 @@ const DeFiExchangeContainer = () => {
     const wallets = useMemo(() => [getPhantomWallet()], [network]);
 
     const fetchRepository = () => {
-        fetch("indexrepository.json")
+        fetch("/indexrepository.json")
             .then(response => {
-                return response.json()})
+                return response.json();
+            })
             .then(data => {
                 setFundsRepo(data[0])
             })
@@ -216,6 +222,19 @@ const DeFiExchangeContainer = () => {
                     }>
                         <NearContainer funds={fundsRepo.Near} />
                     </Tab>
+                    <Tab 
+                        eventKey="terra" 
+                        title={
+                            <span className="tab-title">
+                                <Image className="tab-logo" src={terraLogo}/>
+                                Terra
+                                <div className="coming-soon-tag">
+                                    <span>Coming soon!</span>
+                                </div>
+                            </span>} 
+                    >
+                        <TerraContainer funds={fundsRepo.Terra} />
+                    </Tab>
                     <Tab
                         eventKey="avalance"
                         title={
@@ -230,9 +249,6 @@ const DeFiExchangeContainer = () => {
                         disabled>
                         <Fragment />
                     </Tab>
-                    {/* <Tab eventKey="terra" title={<span className="tab-title"><Image className="tab-logo" src={terraLogo}/>Terra<div className="coming-soon-tag"><span>Coming soon!</span></div></span>} disabled>
-                        <Fragment />
-                    </Tab> */}
                 </Tabs>
             </Container>
         </Container>

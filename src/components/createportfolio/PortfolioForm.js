@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Button, Form, Image } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import deleteIcon from '../../assets/images/delete.png';
 
 const BasketForm = (props) => {
+    let { type } = useParams();
     const [fileUploaded, setFileUploaded] = useState(false);
     const [filename, setFilename] = useState('');
 
@@ -18,12 +19,13 @@ const BasketForm = (props) => {
     };
 
     let coins = props.coins;
+    let content = props.content;
 
     const { onFormChange: onChange } = props;
 
     return (
         <div className="coin-selection-container">
-            <h3 className="container-title">Index Details</h3>
+            <h3 className="container-title">{content[type].module} Details</h3>
             <Form className="Basket-form">
                 <Form.Group controlId="Basket-ticker-input">
                     <Form.Label>Ticker</Form.Label>

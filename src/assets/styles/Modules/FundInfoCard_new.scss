@@ -3,7 +3,7 @@
     border-radius: 10px;
     box-shadow: 0 20px 25px -15px $boxshadowgray;
     max-width: 450px;
-    margin: 20px;
+    margin: 20px 0;
     &:hover {
         box-shadow: 0 20px 25px -15px $boxshadowhover;
         transform: scale(1.01);
@@ -13,6 +13,7 @@
         font-weight: 600;
         align-items: center;
         text-decoration: none;
+        margin-bottom: 20px;
         .fund-icon {
             width: 64px;
             border-radius: 20px;
@@ -24,6 +25,8 @@
         align-items: center;
         text-decoration: none;
         font-weight: normal;
+        font-size: 18px;
+        font-weight: 1.2;
     }
     .card-footer {
         display: flex;

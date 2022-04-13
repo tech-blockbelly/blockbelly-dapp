@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import PortfolioForm from './PortfolioForm';
 import { Image, Container, Row, Col, ListGroup } from 'react-bootstrap';
 import Select, { components } from 'react-select';
@@ -14,11 +15,14 @@ import ethLogo from '../../assets/images/eth.png';
 import solLogo from '../../assets/images/solana.png';
 import polygonLogo from '../../assets/images/polygon.png';
 import nearLogo from '../../assets/images/near-protocol.svg';
+import terraLogo from '../../assets/images/terraluna.png';
 
 const chains = [
     { value: 'Ethereum', label: 'Ethereum', icon: ethLogo },
     { value: 'Solana', label: 'Solana', icon: solLogo },
     { value: 'Polygon', label: 'Polygon', icon: polygonLogo },
+    { value: 'Near', label: 'Near', icon: nearLogo },
+    { value: 'Terra', label: 'Terra', icon: terraLogo },
 ];
 const exchange = [
     {
@@ -27,6 +31,22 @@ const exchange = [
         icon: 'https://www.logo.wine/a/logo/Binance/Binance-Icon-Logo.wine.svg',
     },
 ];
+
+const content = {
+    'defi' : {
+        label : 'Defi',
+        module: 'Index',
+        platform: 'Chain',
+        contents: chains
+    },
+    'cefi' : {
+        label : 'Cefi',
+        module: 'Basket',
+        platform: 'Exchange',
+        contents: exchange
+    }
+}
+
 const chainCoins = {
     Ethereum: [
         {
@@ -151,6 +171,65 @@ const chainCoins = {
             icon: 'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x514910771AF9Ca656af840dff83E8264EcF986CA/logo.png',
         },
     ],
+    Near: [
+        {
+            value: 'WETH',
+            label: 'Ethereum (WETH)',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/2396.png'
+        },
+        {
+            value: 'REF',
+            label: 'Ref Finance',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/11809.png',
+        },
+        {
+            value: 'SKYWARD',
+            label: 'Skyward Finance',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/11798.png',
+        },
+        {
+            value: 'AURORA',
+            label: 'Aurora',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/14803.png',
+        },
+        {
+            value: 'CELO',
+            label: 'Celo',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/5567.png',
+        },
+        {
+            value: 'Octopus',
+            label: 'Octopus Protocol',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/10494.png',
+        },
+    ],
+    Terra: [
+        {
+            value: 'LUNA',
+            label: 'Terra',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/4172.png'
+        },
+        {
+            value: 'MIR',
+            label: ' Mirror Protocol',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/7857.png'
+        },
+        {
+            value: 'ANC',
+            label: 'Anchor Coin Protocol',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/8857.png',
+        },
+        {
+            value: 'WHALE',
+            label: 'Whale',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/6679.png',
+        },
+        {
+            value: 'TWD',
+            label: 'Terra World Token',
+            icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/13886.png',
+        }
+    ],
     Binance: [
         { value: 'ETH', label: 'Ethereum', icon: ethLogo },
         { value: 'SOL', label: 'Solana', icon: solLogo },
@@ -218,6 +297,8 @@ const SingleValue = (props) => {
 };
 
 const CreatePage = () => {
+    let { type } = useParams();
+
     const [appState, setAppState] = useState({
         loading: true,
         // coins: [],
@@ -340,19 +421,19 @@ const CreatePage = () => {
         <Container fluid className="module-container create-index-container">
             <Row className="header-row">
                 <Col lg={6} sm={12}>
-                    <h2 className="module-title">Create DeFi Index</h2>
+                    <h2 className="module-title">Create {content[type].label} {content[type].module}</h2>
                 </Col>
                 <Col lg={6} sm={12}>
                     <Row className="chain-selector-wrapper">
                         <Col lg={5} sm={12}>
-                            <h4 className="container-title">Select Chain</h4>
+                            <h4 className="container-title">Select {content[type].platform}</h4>
                         </Col>
                         <Col lg={7} sm={12}>
                             <Select
                                 className="chain-selector"
                                 onChange={onChainSelect}
                                 // options={exchange}
-                                options={chains}
+                                options={content[type].contents}
                                 components={{ Option, SingleValue }}
                                 // isClearable
                                 styles={{
@@ -384,6 +465,7 @@ const CreatePage = () => {
                         min_invest={min_invest}
                         // coins={appState.coins}
                         coins={coins}
+                        content = {content}
                         onFormChange={onFormChange}
                         handleImageChange={handleImageChange}
                     />
