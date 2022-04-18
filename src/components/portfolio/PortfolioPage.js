@@ -23,7 +23,6 @@ import makerLogo from '../../assets/images/indexLogos/AlphaGen.png';
 import soluLogo from '../../assets/images/indexLogos/SOLU.png';
 import polygonLogo from '../../assets/images/indexLogos/POL.png';
 import nearLogo from '../../assets/images/near-protocol.svg';
-
 import terraLogo from '../../assets/images/indexLogos/TERO.png';
 
 import evmPdf from '../../assets/pdfs/EVM.pdf';
@@ -31,6 +30,7 @@ import necoPdf from '../../assets/pdfs/NECO.pdf';
 import polyPdf from '../../assets/pdfs/Poly.pdf';
 import soluPdf from '../../assets/pdfs/SOLU.pdf';
 import teroPdf from '../../assets/pdfs/Terra.pdf';
+import ConnectExchange from '../connectexchange/ConnectExchange';
 
 // A custom hook that builds on useLocation to parse
 // the query string for you.
@@ -52,9 +52,17 @@ const capitalizeFirstLetter = (word) => {
 }
 const PortfolioPage = (props) => {
     let { i } = useQuery();
-    let { chn, id } = useParams();
+    let { chn, id, type } = useParams();
     const history = useHistory();
+
     const [hasPdf, setHasPdf] = useState(false);
+    let [buyBtnText, setBuyBtnText] = useState('');
+    let [connectBtnText, setConnectBtnText] = useState('');
+    let [buyInputPlaceHolder, setBuyInputPlaceHolder] = useState('');
+
+    const [exchangeModalShow, setExchangeModalShow] = useState(false);
+    const [exchangeStatus, setExchangeStatus] = useState(false);
+    const [txnModalShow, setTxnModalShow] = useState(false);
 
     const [appState, setAppState] = useState({
         loading: true,
@@ -111,8 +119,36 @@ const PortfolioPage = (props) => {
         }
     }
 
-    let buyBtnText = (appState.fund.chn === "ethereum") ? 'Buy' : 'Mint'
-    let buyInputPlaceHolder = "0.000000 " + appState.fund['iSym']
+    const connectToExchange = () => {
+        console.log('Connecting to Exchange ....');
+        setExchangeModalShow(true);
+    }
+
+    const buyTransaction = () => {
+        console.log('Proceed to buy');
+        setTxnModalShow(true);
+    }
+
+    useEffect(() => {
+        if (type === 'cefi') {
+            setBuyBtnText('Invest')
+            setConnectBtnText('Connect to Exchange')
+        } else {
+            if (appState.fund.chn == "ethereum") {
+                setBuyBtnText('Buy')
+                setConnectBtnText('Connect to Metamask')
+            }
+            else {
+                setBuyBtnText('Mint')
+                setConnectBtnText('Connect to Wallet')
+            }
+        }
+        setBuyInputPlaceHolder("0.000000 " + appState.fund['iSym'])
+    }, [type])
+
+    useEffect(() => {
+        console.log(exchangeStatus);
+    }, [exchangeStatus])
 
     return (
         <Container fluid className="module-container portfolio-page-container">
@@ -213,7 +249,7 @@ const PortfolioPage = (props) => {
                                         <Form.Group controlId="pay-with-input">
                                             <Form.Label
                                                 style={{
-                                                    'font-size': 'larger',
+                                                    fontSize: 'larger',
                                                 }}>
                                                 Pay With
                                             </Form.Label>
@@ -230,7 +266,7 @@ const PortfolioPage = (props) => {
                                         <Form.Group controlId="buy-input">
                                             <Form.Label
                                                 style={{
-                                                    'font-size': 'larger',
+                                                    fontSize: 'larger',
                                                 }}>
                                                 Bid
                                             </Form.Label>
@@ -263,7 +299,7 @@ const PortfolioPage = (props) => {
                             </Col>
                         </Row>
                         <ListGroup className="fund-action-list-group">
-                            {account ? (
+                            {(account || exchangeStatus) ? (
                                 <Fragment>
                                     <ListGroup.Item
                                         action
@@ -273,7 +309,11 @@ const PortfolioPage = (props) => {
                                         // }}
                                         // onClick={handleShow}
                                         className="fund-action-container accent"
-                                        eventKey="buy">
+                                        eventKey="buy"
+                                        onClick={
+                                            (type == 'cefi' ? () => buyTransaction() :  () => {console.log('Defi buy');} )
+                                        }
+                                    >
                                         <IoBagCheck /> {buyBtnText}
                                     </ListGroup.Item>
                                     <ListGroup.Item
@@ -288,9 +328,13 @@ const PortfolioPage = (props) => {
                                 <ListGroup.Item
                                     action
                                     className="fund-action-container accent"
-                                    onClick={() => activateBrowserWallet()}>
+                                    // onClick={() => activateBrowserWallet()}
+                                    onClick={
+                                        (type == 'defi' ? () => activateBrowserWallet() : () => connectToExchange())
+                                    }
+                                >
                                     <IoWallet />{' '}
-                                    <span>Connect to Metamask Wallet</span>
+                                    <span>{connectBtnText}</span>
                                 </ListGroup.Item>
                             )}
                         </ListGroup>
@@ -298,6 +342,11 @@ const PortfolioPage = (props) => {
                     </Col>
                 </Row>
             )}
+            <ConnectExchange
+                show={exchangeModalShow}
+                onHide={() => setExchangeModalShow(false)}
+                onSubmit={() => setExchangeStatus(true)}
+            />
         </Container>
     );
 };

@@ -882,16 +882,16 @@
                 "pdfLink": ""
             }
         ],
-        "Bitcoin": [
+        "Binance": [
             {
-                "chn": "bitcoin",
+                "chn": "binance",
                 "chnId": 6,
                 "iName": "Multicoin Tracker Index",
                 "iSym": "MCVC",
-                "iTagLine": "",
+                "iTagLine": "Multicoin Tracker Index (MCVC) is an index basket that tracks portfolio companies that are invested by Multicoin Capital",
                 "iDesc": "Multicoin Tracker Index (MCVC) is an index basket that tracks portfolio companies that are invested by Multicoin Capital. As one of the leading VCs in Crypto and Web3, Multicoin’s investment thesis focuses next-generation applications and infrastructure being built in decentralised technology and Web3 ",
                 "iMethodology": "The following criteria have been considered in the methodology and evaluation:<br><br><ul><li>Tokens have been listed for at least 6 months<\/li><li>Tokens hold a marketCap of > $4.5 Million<\/li><li>Tokens offer an average daily on volume of >  on a centralised exchange*<\/li><li>Tokens are not wrapped tokens<\/li><li>The weightage between tokens is > $4B is at least 50%<\/li><li>The weightage between remainder tokens is calculated based on equal weightage on market cap and liquidity on exchanges<\/li><li>Tokens closely track or a part of Multicoin Capital VC‘s investment thesis<\/li><li>Tokens would be rebalanced quarterly<\/li><\/ul>",
-                "iCgId": "neco",
+                "iCgId": "mcvc",
                 "iAddr": "",
                 "iCmp": [
                     {
@@ -952,7 +952,7 @@
                     }
                 ],
                 "creator": "AlphaGen",
-                "icon": "",
+                "icon": "https://previews.123rf.com/images/outchill/outchill1712/outchill171203105/91290864-example-text-written-on-blue-simple-circle-rubber-vintage-stamp-.jpg",
                 "creatorIcon": ""
             }
         ]
