@@ -31,6 +31,7 @@ import polyPdf from '../../assets/pdfs/Poly.pdf';
 import soluPdf from '../../assets/pdfs/SOLU.pdf';
 import teroPdf from '../../assets/pdfs/Terra.pdf';
 import ConnectExchange from '../connectexchange/ConnectExchange';
+import TransactionPage from '../transaction/TransactionPage';
 
 // A custom hook that builds on useLocation to parse
 // the query string for you.
@@ -346,6 +347,11 @@ const PortfolioPage = (props) => {
                 show={exchangeModalShow}
                 onHide={() => setExchangeModalShow(false)}
                 onSubmit={() => setExchangeStatus(true)}
+            />
+            <TransactionPage
+                show={txnModalShow}
+                onHide={() => setTxnModalShow(false)}
+                action="buy"
             />
         </Container>
     );

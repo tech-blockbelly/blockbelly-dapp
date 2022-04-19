@@ -20,6 +20,9 @@
                     span {
                         color: $red;
                     }
+                    .small-text {
+                        font-size: 14px;
+                    }
                 }
                 .amount-input {
                     text-align: center;
@@ -27,8 +30,8 @@
                     color: $black;
                     font-size: 18px;
                     line-height: 18px;
-                    border: none;
-                    border-radius: 30px;
+                    border: solid 0.5px rgba(104, 100, 100, 0.2);
+                    border-radius: 10px;
                     margin: 0 auto 20px;
                 }
                 .view-details-btn {
