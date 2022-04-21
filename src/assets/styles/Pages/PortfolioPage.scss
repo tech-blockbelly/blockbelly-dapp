@@ -1,41 +1,8 @@
-// .portfolio-page {
-// 	.chart-wrapper, .investment-wrapper {
-// 		border-radius: 20px;
-// 		box-shadow: 0 20px 25px -15px $boxshadowgray;
-// 		border: solid 1px $bordergrey;
-// 		padding: 20px;
-// 		background-color: $bggrey;
-// 	}
-// 	.investment-wrapper {
-// 		background-color: $bggrey;
-// 		.minimum-amt-text {
-// 			margin-bottom: 10px;
-// 		}
-// 		.minimum-amt-value {
-// 			margin-bottom: 10px;
-// 		}
-// 	}
-// }
-
-// .portfolio-amt {
-// 	margin: 1em;
-// 	margin-top: 2em;
-// 	padding: 0 1em;
-// 	background-color: $bggrey;
-// }
-
-// .defi-buy {
-// 	margin: 1em;
-// 	margin-top: 2em;
-// 	padding: 0 1em;
-// }
-
 .portfolio-page-container {
 	padding: 20px 0;
 	.information-column {
 		.title-info-row {
 			display: flex;
-			// border-bottom: solid 1px $bordergrey;
 			.icon {
 				max-width: 64px;
 				max-height: 64px;
@@ -46,7 +13,6 @@
 			}
 		}
 		.general-info-row {
-			// border-bottom: solid 1px $bordergrey;
 			padding: 20px 0;
 			.subtext {
 				font-size: 12px;
@@ -93,14 +59,30 @@
 		.fixed-column {
 			position: fixed;
 			min-width: 400px;
-			.defi-buy .fund-action-list-group {
-				// padding: 1em;
-				padding: 0;
-				.list-group-item {
-					padding: 0.75em 0;
-					input {
-						border: solid 0.5px $boxshadowgray;
-						border-radius: 10px;
+			.defi-buy {
+				.fund-action-list-group {
+					padding: 0;
+					.list-group-item {
+						padding: 0.75em 0;
+						input {
+							border: solid 0.5px $boxshadowgray;
+							border-radius: 10px;
+						}
+					}
+				}
+			}
+			.cefi-buy {
+				.min-invest-block {
+					padding: 0;
+					border-radius: 10px;
+					padding: 10px 0;
+					.list-group-item {
+						padding:.75rem;
+						text-align: center;
+						.min-invest-amount {
+							font-size: 20px;
+							margin-bottom: 5px;
+						}
 					}
 				}
 			}
@@ -116,6 +98,7 @@
 					border: 0;
 					font-weight: 300;
 					padding: 0.25rem .75rem;
+					align-items: baseline;
 					p {
 						font-weight: 600;
 					}

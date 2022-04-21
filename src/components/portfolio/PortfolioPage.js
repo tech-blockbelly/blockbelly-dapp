@@ -14,6 +14,7 @@ import {
 import { IoChevronBack, IoBagCheck, IoCalendar } from 'react-icons/io5';
 import DistributionTable from './DistributionTable';
 import PortfolioFinancials from './PortfolioFinancials';
+import TransactionBlock from './TransactionBlock';
 import axios from 'axios';
 import { ChainId, DAppProvider } from '@usedapp/core';
 import { IoWallet } from 'react-icons/io5';
@@ -244,59 +245,11 @@ const PortfolioPage = (props) => {
                     <Col xl={5} className="transaction-column">
                         <div className="fixed-column">
                         <Row>
-                            <Col className="portfolio-info-container defi-buy">
-                                <ListGroup className="fund-action-list-group">
-                                    <ListGroup.Item style={{ border: '0' }}>
-                                        <Form.Group controlId="pay-with-input">
-                                            <Form.Label
-                                                style={{
-                                                    fontSize: 'larger',
-                                                }}>
-                                                Pay With
-                                            </Form.Label>
-                                            <Form.Control
-                                                className="pay-with-input form-input"
-                                                type="text"
-                                                placeholder="0.000000 USDC"
-                                                name="paymentIndex"
-                                                required
-                                            />
-                                        </Form.Group>
-                                    </ListGroup.Item>
-                                    <ListGroup.Item style={{ border: '0' }}>
-                                        <Form.Group controlId="buy-input">
-                                            <Form.Label
-                                                style={{
-                                                    fontSize: 'larger',
-                                                }}>
-                                                Bid
-                                            </Form.Label>
-                                            <Form.Control
-                                                className="buy-input form-input"
-                                                type="text"
-                                                placeholder= {buyInputPlaceHolder}
-                                                name="buyIndex"
-                                                readOnly
-                                            />
-                                        </Form.Group>
-                                    </ListGroup.Item>
-                                </ListGroup>
-                                <ListGroup
-                                    flush
-                                    className="transaction-breakup-block">
-                                    <ListGroupItem>
-                                        Minimum Receive
-                                        <p>0.00000</p>
-                                    </ListGroupItem>
-                                    <ListGroupItem>
-                                        Network Fee
-                                        <p>0.000 USDC</p>
-                                    </ListGroupItem>
-                                    <ListGroupItem>
-                                        Platform Fee
-                                        <p>0.000 USDC</p>
-                                    </ListGroupItem>
-                                </ListGroup>
+                            <Col className="portfolio-info-container">
+                                <TransactionBlock 
+                                    type={type} 
+                                    buyInputPlaceHolder = {buyInputPlaceHolder}
+                                />
                             </Col>
                         </Row>
                         <ListGroup className="fund-action-list-group">
