@@ -7,6 +7,12 @@ import soluLogo from '../../../assets/images/indexLogos/SOLU.png';
 import polLogo from '../../../assets/images/indexLogos/POL.png';
 import teroLogo from '../../../assets/images/indexLogos/TERO.png';
 
+import mcvcLogo from '../../../assets/images/indexLogos/MCVC.png';
+import bitwLogo from '../../../assets/images/indexLogos/BITW.png';
+import macLogo from '../../../assets/images/indexLogos/MAC.png';
+import lacLogo from '../../../assets/images/indexLogos/LAC.png';
+import mvLogo from '../../../assets/images/indexLogos/MV.png';
+
 import nearLogo from '../../../assets/images/near-protocol.svg';
 
 const FundInfoCard = (props) => {
@@ -34,6 +40,19 @@ const FundInfoCard = (props) => {
         }
         if (fund.chn == "terra") {
             fund.icon = teroLogo;
+        }
+        if (fund.chn == "bitoasis") {
+            if (fund.iSym == "MCVC") {
+                fund.icon = mcvcLogo;
+            } else if (fund.iSym == "BITW") {
+                fund.icon = bitwLogo;
+            } else if (fund.iSym == "MAC") {
+                fund.icon = macLogo;
+            } else if (fund.iSym == "LAC") {
+                fund.icon = lacLogo;
+            } else if (fund.iSym == "MV") {
+                fund.icon = mvLogo;
+            }
         }
     }
 

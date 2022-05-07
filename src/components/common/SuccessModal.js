@@ -10,6 +10,7 @@ const SuccessModal = (props) => {
             aria-labelledby="contained-modal-title-vcenter"
             backdrop="static"
             keyboard={false}
+            className="success-modal"
             centered>
             <Modal.Body className="text-center">
                 <div className="no-selection">

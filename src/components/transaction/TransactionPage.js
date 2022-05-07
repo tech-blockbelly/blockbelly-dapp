@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-// import TransactionBlock from './TransactionBlock';
+import React, { useState, Fragment } from 'react';
 import CalculationTable from './CalculationTable';
 import {
     Container,
@@ -10,11 +9,9 @@ import {
     FormControl,
 } from 'react-bootstrap';
 import { getAPIClient } from '../../httpClient';
-import { Fragment } from 'react';
 
 import { BiBadgeCheck } from 'react-icons/bi';
 import { VscError } from 'react-icons/vsc';
-
 import { Link, NavLink, Redirect } from 'react-router-dom';
 
 const TransactionPage = (props) => {
@@ -31,30 +28,25 @@ const TransactionPage = (props) => {
 
     const [appState, setAppState] = useState({
         loading: true,
-        investDetails: {},
+        // investDetails: {},
         investmentBreakdown: [],
-        coinSymbols: [],
+        // coinSymbols: [],
         fees: {},
     });
 
     const endpoint = type == 'cefi' ? 'portfolio' : 'indices';
+
     const getInvestmentDetails = () => {
-        getAPIClient()
-            .get(`${endpoint}/${id}/invest/?amount=${amount}`)
-            .then((res) => {
-                const investDetails = res.data;
-                setAppState({
-                    loading: false,
-                    investDetails: investDetails || {},
-                    investmentBreakdown: Object.values(investDetails.coins),
-                    coinSymbols: Object.keys(investDetails.coins),
-                    fees: {
-                        platform_fees: investDetails.platform_fees.contrib,
-                        manager_fees: investDetails.manager_fees.contrib,
-                    },
-                });
-                console.log(res.data);
-            });
+        setAppState({
+            loading: false,
+            // investDetails: investDetails || {},
+            investmentBreakdown: Object.values(props.fund['iCmp']),
+            // coinSymbols: Object.keys(props.coins),
+            fees: {
+                platform_fees: props.fund['platform_fee'].toFixed(2) + '%',
+                manager_fees:  props.fund['manager_fee'].toFixed(2) + '%',
+            },
+        });
     };
 
     const [showSuccess, setShowSuccess] = useState(false);
@@ -63,46 +55,25 @@ const TransactionPage = (props) => {
     const [viewLedger, setViewLedger] = useState(null);
 
     const investInFund = (e) => {
-        getAPIClient()
-            .post(`portfolio/${id}/invest/`, { amount: formData.amount })
-            .then((res) => {
-                const { status, ledger_id } = res.data;
-                console.log('Transaction', status, ledgerId);
-                setLedgerId(ledger_id);
-                setShowSuccess(true);
-                setShowError(false);
-                // // setAppState({
-                // //     loading: false,
-                // //     investDetails: investDetails || {},
-                // //     investmentBreakdown: Object.values(investDetails.coins),
-                // //     fees: {
-                // //         platform_fees: investDetails.platform_fees.contrib,
-                // //         manager_fees: investDetails.manager_fees.contrib,
-                // //     },
-                // // });
-                // console.log(res.data);
-            })
-            .catch((err) => {
-                const { status, ledger_id } = err.response.data;
-                setShowSuccess(false);
-                setShowError(true);
-            });
+        setShowSuccess(true);
+        setShowError(false);
     };
 
     const actions = () => {
         let actionView = null;
-        if (showSuccess) {
-            actionView = (
-                <Button
-                    className="proceed-btn btn"
-                    onClick={() => {
-                        setViewLedger(true);
-                    }}
-                >
-                    View
-                </Button>
-            );
-        } else if (showError) {
+        // if (showSuccess) {
+        //     actionView = (
+        //         <Button
+        //             className="proceed-btn btn"
+        //             onClick={() => {
+        //                 setViewLedger(true);
+        //             }}
+        //         >
+        //             View
+        //         </Button>
+        //     );
+        // } else
+        if (showError || showSuccess) {
             actionView = (
                 <Button onClick={props.onHide} className="cancel-btn btn">
                     Close
@@ -156,7 +127,9 @@ const TransactionPage = (props) => {
                                 <div className="transaction-block-wrapper">
                                     <div className="transaction-input-block">
                                         <h2 className="block-title">
-                                            Investment Amount? <span>*</span>
+                                            Investment Amount?
+                                            <span>*</span>
+                                            <small className="small-text">(In USD)</small>
                                         </h2>
                                         <FormControl
                                             placeholder="Enter amount"
@@ -180,14 +153,15 @@ const TransactionPage = (props) => {
                                     calculationData={
                                         appState.investmentBreakdown
                                     }
-                                    coinSymbols={appState.coinSymbols}
                                     fees={appState.fees}
+                                    amount={amount}
                                     className={`${
-                                        Object.keys(appState.investDetails)
+                                        (appState.investmentBreakdown)
                                             .length
                                             ? ''
                                             : 'hide'
                                     }`}
+                                    fundId = {props.fund['iSym']}
                                 />
                             </Col>
                             <Col md={12} className="disclaimer">

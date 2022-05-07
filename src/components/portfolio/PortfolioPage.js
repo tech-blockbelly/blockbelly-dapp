@@ -14,6 +14,7 @@ import {
 import { IoChevronBack, IoBagCheck, IoCalendar } from 'react-icons/io5';
 import DistributionTable from './DistributionTable';
 import PortfolioFinancials from './PortfolioFinancials';
+import TransactionBlock from './TransactionBlock';
 import axios from 'axios';
 import { ChainId, DAppProvider } from '@usedapp/core';
 import { IoWallet } from 'react-icons/io5';
@@ -23,7 +24,6 @@ import makerLogo from '../../assets/images/indexLogos/AlphaGen.png';
 import soluLogo from '../../assets/images/indexLogos/SOLU.png';
 import polygonLogo from '../../assets/images/indexLogos/POL.png';
 import nearLogo from '../../assets/images/near-protocol.svg';
-
 import terraLogo from '../../assets/images/indexLogos/TERO.png';
 
 import evmPdf from '../../assets/pdfs/EVM.pdf';
@@ -31,6 +31,8 @@ import necoPdf from '../../assets/pdfs/NECO.pdf';
 import polyPdf from '../../assets/pdfs/Poly.pdf';
 import soluPdf from '../../assets/pdfs/SOLU.pdf';
 import teroPdf from '../../assets/pdfs/Terra.pdf';
+import ConnectExchange from '../connectexchange/ConnectExchange';
+import TransactionPage from '../transaction/TransactionPage';
 
 // A custom hook that builds on useLocation to parse
 // the query string for you.
@@ -52,9 +54,17 @@ const capitalizeFirstLetter = (word) => {
 }
 const PortfolioPage = (props) => {
     let { i } = useQuery();
-    let { chn, id } = useParams();
+    let { chn, id, type } = useParams();
     const history = useHistory();
+
     const [hasPdf, setHasPdf] = useState(false);
+    let [buyBtnText, setBuyBtnText] = useState('');
+    let [connectBtnText, setConnectBtnText] = useState('');
+    let [buyInputPlaceHolder, setBuyInputPlaceHolder] = useState('');
+
+    const [exchangeModalShow, setExchangeModalShow] = useState(false);
+    const [exchangeStatus, setExchangeStatus] = useState(false);
+    const [txnModalShow, setTxnModalShow] = useState(false);
 
     const [appState, setAppState] = useState({
         loading: true,
@@ -111,8 +121,34 @@ const PortfolioPage = (props) => {
         }
     }
 
-    let buyBtnText = (appState.fund.chn === "ethereum") ? 'Buy' : 'Mint'
-    let buyInputPlaceHolder = "0.000000 " + appState.fund['iSym']
+    const connectToExchange = () => {
+        setExchangeModalShow(true);
+    }
+
+    const buyTransaction = () => {
+        setTxnModalShow(true);
+    }
+
+    useEffect(() => {
+        if (type === 'cefi') {
+            setBuyBtnText('Invest')
+            setConnectBtnText('Connect to Exchange')
+        } else {
+            if (appState.fund.chn == "ethereum") {
+                setBuyBtnText('Buy')
+                setConnectBtnText('Connect to Metamask')
+            }
+            else {
+                setBuyBtnText('Mint')
+                setConnectBtnText('Connect to Wallet')
+            }
+        }
+        setBuyInputPlaceHolder("0.000000 " + appState.fund['iSym'])
+    }, [type])
+
+    useEffect(() => {
+        console.log(exchangeStatus);
+    }, [exchangeStatus])
 
     return (
         <Container fluid className="module-container portfolio-page-container">
@@ -156,7 +192,7 @@ const PortfolioPage = (props) => {
                                     <p className="subtext">Creator</p>
                                 </div>
                             </Col>
-                            <Col className="market-info-column" xl={4}>
+                            {/* <Col className="market-info-column" xl={4}>
                                 <p className="market-cap">
                                     $
                                     {
@@ -167,7 +203,7 @@ const PortfolioPage = (props) => {
                                     }
                                 </p>
                                 <p className="subtext">Market Cap</p>
-                            </Col>
+                            </Col> */}
                         </Row>
                         <Row className="information-row">
                             {/* <PortfolioFinancials 
@@ -196,74 +232,27 @@ const PortfolioPage = (props) => {
                         {/* pdf code fails on non-BB indices. Needs to be rechecked */}
                         {/* {
                             hasPdf ? ( */}
-                                <Row className="information-row">
+                                {/* <Row className="information-row">
                                     <div className="information-text">
                                         Click to view detailed <a href = {necoPdf} target='_blank' className='pdf-link'>factsheet</a>
                                     </div>
-                                </Row>
+                                </Row> */}
                             {/* ) : {}
                         } */}
                     </Col>
                     <Col xl={5} className="transaction-column">
                         <div className="fixed-column">
                         <Row>
-                            <Col className="portfolio-info-container defi-buy">
-                                <ListGroup className="fund-action-list-group">
-                                    <ListGroup.Item style={{ border: '0' }}>
-                                        <Form.Group controlId="pay-with-input">
-                                            <Form.Label
-                                                style={{
-                                                    'font-size': 'larger',
-                                                }}>
-                                                Pay With
-                                            </Form.Label>
-                                            <Form.Control
-                                                className="pay-with-input form-input"
-                                                type="text"
-                                                placeholder="0.000000 USDC"
-                                                name="paymentIndex"
-                                                required
-                                            />
-                                        </Form.Group>
-                                    </ListGroup.Item>
-                                    <ListGroup.Item style={{ border: '0' }}>
-                                        <Form.Group controlId="buy-input">
-                                            <Form.Label
-                                                style={{
-                                                    'font-size': 'larger',
-                                                }}>
-                                                Bid
-                                            </Form.Label>
-                                            <Form.Control
-                                                className="buy-input form-input"
-                                                type="text"
-                                                placeholder= {buyInputPlaceHolder}
-                                                name="buyIndex"
-                                                readOnly
-                                            />
-                                        </Form.Group>
-                                    </ListGroup.Item>
-                                </ListGroup>
-                                <ListGroup
-                                    flush
-                                    className="transaction-breakup-block">
-                                    <ListGroupItem>
-                                        Minimum Receive
-                                        <p>0.00000</p>
-                                    </ListGroupItem>
-                                    <ListGroupItem>
-                                        Network Fee
-                                        <p>0.000 USDC</p>
-                                    </ListGroupItem>
-                                    <ListGroupItem>
-                                        Platform Fee
-                                        <p>0.000 USDC</p>
-                                    </ListGroupItem>
-                                </ListGroup>
+                            <Col className="portfolio-info-container">
+                                <TransactionBlock 
+                                    type={type} 
+                                    buyInputPlaceHolder = {buyInputPlaceHolder}
+                                    fund={appState.fund}
+                                />
                             </Col>
                         </Row>
                         <ListGroup className="fund-action-list-group">
-                            {account ? (
+                            {(account || exchangeStatus) ? (
                                 <Fragment>
                                     <ListGroup.Item
                                         action
@@ -273,7 +262,11 @@ const PortfolioPage = (props) => {
                                         // }}
                                         // onClick={handleShow}
                                         className="fund-action-container accent"
-                                        eventKey="buy">
+                                        eventKey="buy"
+                                        onClick={
+                                            (type == 'cefi' ? () => buyTransaction() :  () => {console.log('Defi buy');} )
+                                        }
+                                    >
                                         <IoBagCheck /> {buyBtnText}
                                     </ListGroup.Item>
                                     <ListGroup.Item
@@ -288,9 +281,13 @@ const PortfolioPage = (props) => {
                                 <ListGroup.Item
                                     action
                                     className="fund-action-container accent"
-                                    onClick={() => activateBrowserWallet()}>
+                                    // onClick={() => activateBrowserWallet()}
+                                    onClick={
+                                        (type == 'defi' ? () => activateBrowserWallet() : () => connectToExchange())
+                                    }
+                                >
                                     <IoWallet />{' '}
-                                    <span>Connect to Metamask Wallet</span>
+                                    <span>{connectBtnText}</span>
                                 </ListGroup.Item>
                             )}
                         </ListGroup>
@@ -298,6 +295,17 @@ const PortfolioPage = (props) => {
                     </Col>
                 </Row>
             )}
+            <ConnectExchange
+                show={exchangeModalShow}
+                onHide={() => setExchangeModalShow(false)}
+                onSubmit={() => setExchangeStatus(true)}
+            />
+            <TransactionPage
+                show={txnModalShow}
+                onHide={() => setTxnModalShow(false)}
+                action="buy"
+                fund={appState.fund}
+            />
         </Container>
     );
 };

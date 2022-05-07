@@ -86,8 +86,8 @@ select:focus {
 }
 
 .btn {
-    border-radius: 30px;
-    background-color: $green;
+    border-radius: 10px;
+    background-color: $purple;
     margin: 0;
     color: $white;
     border: none;
@@ -99,7 +99,7 @@ select:focus {
     display: flex;
     justify-content: center;
     text-decoration: none;
-    min-width: 150px;
+    min-width: 250px;
     font-family: Sofia Pro;
     box-sizing: border-box;
     cursor: pointer;
@@ -108,7 +108,8 @@ select:focus {
     &:focus,
     &:hover {
         outline: none;
-        background-color: $lightgreen;
+        background-color: $purple;
+        opacity: 0.9;
         color: $white;
         border: none;
         box-shadow: 0 20px 25px -15px $boxshadowgray;
@@ -185,13 +186,28 @@ select:focus {
     }
     .accent {
         background-color: $purple;
+        border-color: $purple;
         color: white;
+        &:active,
+        &:focus,
         &:hover {
+            outline: none;
+            background-color: $purple;
             opacity: 0.9;
+            color: $white;
+            border: none;
         }
     }
 }
-
+.success-modal {
+    .modal-footer {
+        justify-content: center;
+    }
+}
+.cancel-btn, .cancel-btn:hover {
+    background-color: #ffffff;
+    color: #333333;
+}
 @media #{$mobile} {
     h1 {
         font-size: 32px;
