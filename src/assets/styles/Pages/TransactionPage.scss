@@ -3,7 +3,7 @@
     max-width: 70vw;
 
     .transaction-container {
-        margin: 50px auto;
+        margin: 30px auto;
         padding: 20px;
         border-radius: 20px;
         box-shadow: 0 20px 25px -15px $boxshadowgray;
@@ -51,9 +51,6 @@
         display: none;
     }
     .ccy-table-container {
-        padding: 20px;
-        border-radius: 20px;
-        box-shadow: 0 20px 25px -15px $boxshadowgray;
         border: solid 1px $bordergrey;
     }
     .button-wrapper {

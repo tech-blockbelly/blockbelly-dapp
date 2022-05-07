@@ -28,15 +28,25 @@ const TransactionPage = (props) => {
 
     const [appState, setAppState] = useState({
         loading: true,
-        investDetails: {},
+        // investDetails: {},
         investmentBreakdown: [],
-        coinSymbols: [],
+        // coinSymbols: [],
         fees: {},
     });
 
     const endpoint = type == 'cefi' ? 'portfolio' : 'indices';
+
     const getInvestmentDetails = () => {
-        console.log('Table should now be visible');
+        setAppState({
+            loading: false,
+            // investDetails: investDetails || {},
+            investmentBreakdown: Object.values(props.fund['iCmp']),
+            // coinSymbols: Object.keys(props.coins),
+            fees: {
+                platform_fees: props.fund['platform_fee'].toFixed(2) + '%',
+                manager_fees:  props.fund['manager_fee'].toFixed(2) + '%',
+            },
+        });
     };
 
     const [showSuccess, setShowSuccess] = useState(false);
@@ -45,23 +55,25 @@ const TransactionPage = (props) => {
     const [viewLedger, setViewLedger] = useState(null);
 
     const investInFund = (e) => {
-        console.log('Invest should happen now');
+        setShowSuccess(true);
+        setShowError(false);
     };
 
     const actions = () => {
         let actionView = null;
-        if (showSuccess) {
-            actionView = (
-                <Button
-                    className="proceed-btn btn"
-                    onClick={() => {
-                        setViewLedger(true);
-                    }}
-                >
-                    View
-                </Button>
-            );
-        } else if (showError) {
+        // if (showSuccess) {
+        //     actionView = (
+        //         <Button
+        //             className="proceed-btn btn"
+        //             onClick={() => {
+        //                 setViewLedger(true);
+        //             }}
+        //         >
+        //             View
+        //         </Button>
+        //     );
+        // } else
+        if (showError || showSuccess) {
             actionView = (
                 <Button onClick={props.onHide} className="cancel-btn btn">
                     Close
@@ -117,7 +129,7 @@ const TransactionPage = (props) => {
                                         <h2 className="block-title">
                                             Investment Amount?
                                             <span>*</span>
-                                            <small className="small-text">(In USDC)</small>
+                                            <small className="small-text">(In USD)</small>
                                         </h2>
                                         <FormControl
                                             placeholder="Enter amount"
@@ -141,14 +153,15 @@ const TransactionPage = (props) => {
                                     calculationData={
                                         appState.investmentBreakdown
                                     }
-                                    coinSymbols={appState.coinSymbols}
                                     fees={appState.fees}
+                                    amount={amount}
                                     className={`${
-                                        Object.keys(appState.investDetails)
+                                        (appState.investmentBreakdown)
                                             .length
                                             ? ''
                                             : 'hide'
                                     }`}
+                                    fundId = {props.fund['iSym']}
                                 />
                             </Col>
                             <Col md={12} className="disclaimer">

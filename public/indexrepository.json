@@ -882,10 +882,155 @@
                 "pdfLink": ""
             }
         ],
+        "Bitoasis": [
+            {
+                "chn": "bitoasis",
+                "chnId": 6,
+                "iName": "King Large Cap Index",
+                "iSym": "LAC",
+                "iTagLine": "An index basket that tracks crypto tokens with market capitalization more than $15 billion and have traded for 3 months.",
+                "iDesc": "King Large Cap Index (LAC) is an index basket that tracks crypto tokens with market capitalization more than $15 billion and have traded for 3 months. The tokens are among the top 50 most liquid cryptocurrencies in terms of circulating market capitalization.",
+                "iMethodology": "The following criteria have been considered in the methodology and evaluation::<br><br><ul><li>Tokens have been listed for at least 6 months<\/li><li>Tokens hold a market cap of > $15 Million<\/li><li>Tokens offer an average daily on volume of >  on a centralized exchange*<\/li><li>Tokens are not wrapped tokens<\/li><li>The weightage between tokens is > $4B is at least 50%<\/li><li>The weightage between remainder tokens is calculated based on equal weightage on market cap and liquidity on exchanges<\/li><li>Tokens having liquidity on BitOasis<\/li><li>Tokens would be rebalanced quarterly<\/li><\/ul>",
+                "iCgId": "lac",
+                "iAddr": "",
+                "iCmp": [
+                    {
+                        "addr": "",
+                        "cId": "BTC",
+                        "wt": 25.30,
+                        "cName": "Bitcoin",
+                        "cLogo": "https://static.bitwiseinvestments.com/assets/coins/BTC.svg"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "SOL",
+                        "wt": 18.50,
+                        "cName": "Solana",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "ETH",
+                        "wt": 14.90,
+                        "cName": "Ethereum",
+                        "cLogo": "https://bitoasis.net/en/assets/images/currencies/light/ETH.svg"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "NEAR",
+                        "wt": 10.00,
+                        "cName": "Near",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6535.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "LUNA",
+                        "wt": 8.50,
+                        "cName": "Terra",
+                        "cLogo": "https://bitoasis.net/en/assets/images/currencies/light/LUNA.svg"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "ADA",
+                        "wt": 8.50,
+                        "cName": "Cardano",
+                        "cLogo": "https://bitoasis.net/en/assets/images/currencies/light/ADA.svg"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "XRP",
+                        "wt": 7.20,
+                        "cName": "XRP",
+                        "cLogo": "https://bitoasis.net/en/assets/images/currencies/light/XRP.svg"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "DOT",
+                        "wt": 4.10,
+                        "cName": "Polkadot",
+                        "cLogo": "https://bitoasis.net/en/assets/images/currencies/light/DOT.svg"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "DAI",
+                        "wt": 3.00,
+                        "cName": "Dai",
+                        "cLogo": "https://bitoasis.net/en/assets/images/currencies/light/DAI.svg"
+                    }
+                ],
+                "creator": "AlphaGen",
+                "icon": "",
+                "creatorIcon": "",
+                "platform_fee": 2.00,
+                "manager_fee": 2.00,
+                "min_invest": 300.00
+            },
+            {
+                "chn": "bitoasis",
+                "chnId": 6,
+                "iName": "Queen Mid Cap Index",
+                "iSym": "MAC",
+                "iTagLine": "An index basket that tracks crypto tokens with market capitalization  greater than $6 billion and less than $15 billion and have traded for 3 months",
+                "iDesc": "Queen Mid Cap Index (MAC) is an index basket that tracks crypto tokens with market capitalization  greater than $6 billion and less than $15 billion and have traded for 3 months. The tokens are among the   most liquid cryptocurrencies in terms of circulating market capitalization. ",
+                "iMethodology": "The following criteria have been considered in the methodology and evaluation:<br><br><ul><li>Tokens have been listed for at least 6 months<\/li><li>Tokens hold a market cap more than $6 billion and less than $15 billion<\/li><li>Tokens offer an average daily on volume of >  on a centralized exchange*<\/li><li>Tokens are not wrapped tokens<\/li><li>The weightage between tokens is > $4B is at least 50%<\/li><li>The weightage between remainder tokens is calculated based on equal weightage on market cap and liquidity on exchanges<\/li><li>Tokens having liquidity on BitOasis<\/li><li>Tokens would be rebalanced quarterly.<\/li><\/ul>",
+                "iCgId": "mac",
+                "iAddr": "",
+                "iCmp": [
+                    {
+                        "addr": "",
+                        "cId": "TRX",
+                        "wt": 25.90,
+                        "cName": "Tron",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1958.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "LINK",
+                        "wt": 19.40,
+                        "cName": "Chainlink",
+                        "cLogo": "https://bitoasis.net/en/assets/images/currencies/light/LINK.svg"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "LTC",
+                        "wt": 16.50,
+                        "cName": "Litecoin",
+                        "cLogo": "https://bitoasis.net/en/assets/images/currencies/light/LTC.svg"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "MATIC",
+                        "wt": 14.90,
+                        "cName": "Polygon",
+                        "cLogo": "https://bitoasis.net/en/assets/images/currencies/light/MATIC.svg"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "UNI",
+                        "wt": 13.60,
+                        "cName": "Uniswap",
+                        "cLogo": "https://bitoasis.net/en/assets/images/currencies/light/UNI.svg"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "ATOM",
+                        "wt": 9.70,
+                        "cName": "Cosmos",
+                        "cLogo": "https://bitoasis.net/en/assets/images/currencies/light/ATOM.svg"
+                    }
+                ],
+                "creator": "AlphaGen",
+                "icon": "",
+                "creatorIcon": "",
+                "platform_fee": 2.00,
+                "manager_fee": 2.00,
+                "min_invest": 140.00
+            }
+        ],
         "Binance": [
             {
                 "chn": "binance",
-                "chnId": 6,
+                "chnId": 7,
                 "iName": "Multicoin Tracker Index",
                 "iSym": "MCVC",
                 "iTagLine": "Multicoin Tracker Index (MCVC) is an index basket that tracks portfolio companies that are invested by Multicoin Capital",
@@ -896,56 +1041,56 @@
                 "iCmp": [
                     {
                         "addr": "",
-                        "cId": "solana",
+                        "cId": "SOL",
                         "wt": 31.00,
                         "cName": "Solana",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png"
                     },
                     {
                         "addr": "",
-                        "cId": "near",
+                        "cId": "NEAR",
                         "wt": 19.00,
                         "cName": "Near",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6535.png"
                     },
                     {
                         "addr": "",
-                        "cId": "",
+                        "cId": "GRT",
                         "wt": 18.53,
                         "cName": "Graph",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/6719.png"
                     },
                     {
                         "addr": "",
-                        "cId": "rune",
+                        "cId": "RUNE",
                         "wt": 8.52,
                         "cName": "Rune",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/9905.png"
                     },
                     {
                         "addr": "",
-                        "cId": "arweave",
+                        "cId": "AR",
                         "wt": 8.50,
                         "cName": "Arweave",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5632.png"
                     },
                     {
                         "addr": "",
-                        "cId": "helium",
+                        "cId": "HNT",
                         "wt": 7.24,
                         "cName": "Helium",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5665.png"
                     },
                     {
                         "addr": "",
-                        "cId": "livepeer",
+                        "cId": "LPT",
                         "wt": 4.10,
                         "cName": "LivePeer",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/3640.png"
                     },
                     {
                         "addr": "",
-                        "cId": "audius",
+                        "cId": "AUDIO",
                         "wt": 3.11,
                         "cName": "Audius",
                         "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/7455.png"
@@ -954,6 +1099,92 @@
                 "creator": "AlphaGen",
                 "icon": "https://previews.123rf.com/images/outchill/outchill1712/outchill171203105/91290864-example-text-written-on-blue-simple-circle-rubber-vintage-stamp-.jpg",
                 "creatorIcon": ""
+            },
+            {
+                "chn": "binance",
+                "chnId": 7,
+                "iName": "Bitwise 10 Crypto Index Fund",
+                "iSym": "BITW",
+                "iTagLine": "A secure way to get diversified exposure to bitcoin and leading cryptocurrencies.",
+                "iDesc": "A secure way to get diversified exposure to bitcoin and leading cryptocurrencies. The Fund seeks to track an Index comprised of the 10 most highly valued cryptocurrencies, screened and monitored for certain risks, weighted by market capitalization, and rebalanced monthly. The fund provides the security and simplicity of a traditional investment vehicle, with shares tradable in brokerage accounts using ticker “BITW.”",
+                "iMethodology": "The Bitwise Crypto Indexes follow clear, rules-based processes to make them both investable and replicable. The methodologies take into account crypto-native factors surrounding liquidity, security, regulatory status, market representation, network distributions, and more to ensure they fully capture the investable crypto asset market opportunity.<br><br><ul><li>The most valuable assets rebalanced monthly<\/li><li>Robust diligence of eligibility criteria<\/li><li>24/7 monitoring for sudden events<\/li><\/ul>",
+                "iCgId": "bitw",
+                "iAddr": "",
+                "iCmp": [
+                    {
+                        "addr": "",
+                        "cId": "BTC",
+                        "wt": 60.00,
+                        "cName": "Bitcoin",
+                        "cLogo": "https://static.bitwiseinvestments.com/assets/coins/BTC.svg"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "ETH",
+                        "wt": 28.7,
+                        "cName": "Ethereum",
+                        "cLogo": "https://static.bitwiseinvestments.com/assets/coins/ETH.svg"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "SOL",
+                        "wt": 2.7,
+                        "cName": "Solana",
+                        "cLogo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "ADA",
+                        "wt": 2.30,
+                        "cName": "Cardano",
+                        "cLogo": "https://bitoasis.net/en/assets/images/currencies/light/ADA.svg"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "DOT",
+                        "wt": 1.6,
+                        "cName": "Polkadot",
+                        "cLogo": "https://static.bitwiseinvestments.com/assets/coins/DOT.svg"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "AVAX",
+                        "wt": 1.6,
+                        "cName": "Avalanche",
+                        "cLogo": "https://static.bitwiseinvestments.com/assets/coins/AVAX.svg"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "POL",
+                        "wt": 0.80,
+                        "cName": "Polygon",
+                        "cLogo": "https://static.bitwiseinvestments.com/assets/coins/MATIC.svg"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "LTC",
+                        "wt": 0.60,
+                        "cName": "Litcoin",
+                        "cLogo": "https://static.bitwiseinvestments.com/assets/coins/LTC.svg"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "ATOM",
+                        "wt": 0.50,
+                        "cName": "Cosmos",
+                        "cLogo": "https://static.bitwiseinvestments.com/assets/coins/ATOM.svg"
+                    },
+                    {
+                        "addr": "",
+                        "cId": "LINK",
+                        "wt": 0.50,
+                        "cName": "ChainLink",
+                        "cLogo": "https://static.bitwiseinvestments.com/assets/coins/LINK.svg"
+                    }
+                ],
+                "creator": "Bitwise",
+                "icon": "",
+                "creatorIcon": "https://lever-client-logos.s3.us-west-2.amazonaws.com/9097df7a-8dc7-4a7d-9910-3f2d3ee86080-1645029265591.png"
             }
         ]
     }

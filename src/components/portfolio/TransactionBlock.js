@@ -6,7 +6,7 @@ import {
 } from 'react-bootstrap';
 
 const BasketListContainer = (props) => {
-    let { type, buyInputPlaceHolder } = props;
+    let { type, buyInputPlaceHolder, fund } = props;
 
     const getContainer = () => {
         if (type === 'cefi') {
@@ -15,7 +15,7 @@ const BasketListContainer = (props) => {
                     <ListGroup
                         className="min-invest-block">
                         <ListGroupItem>
-                            <p className="min-invest-amount">0.00 USDC</p>
+                            <p className="min-invest-amount">{fund['min_invest'].toFixed(2)} USD</p>
                             <p>Minimum Invest</p>
                         </ListGroupItem>
                     </ListGroup>
@@ -23,11 +23,11 @@ const BasketListContainer = (props) => {
                         className="transaction-breakup-block">
                         <ListGroupItem>
                             Platform Fee
-                            <p>0.000 USDC</p>
+                            <p>{fund['platform_fee'].toFixed(2)}%</p>
                         </ListGroupItem>
                         <ListGroupItem>
                             Manager Fee
-                            <p>0.000 USDC</p>
+                            <p>{fund['manager_fee'].toFixed(2)}%</p>
                         </ListGroupItem>
                     </ListGroup>
                 </div>

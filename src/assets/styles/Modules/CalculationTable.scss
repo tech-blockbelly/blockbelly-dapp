@@ -1,5 +1,5 @@
 .ccy-table-container {
-    margin: 20px auto;
+    margin: 10px auto 20px;
     padding: 20px;
     background-color: $white;
     border-radius: 20px;
@@ -10,10 +10,11 @@
             padding: 10px;
             vertical-align: baseline;
             text-align: center;
+            border-top: none;
         }
         .ccy-info,
         .ccy-symbol {
-            margin: 10px;
+            margin: 15px;
             text-align: center;
         }
         .ccy-symbol {
@@ -22,6 +23,7 @@
         .ccy-type-details {
             display: flex;
             align-items: center;
+            margin: 10px;
             .ccy-icon {
                 margin-right: 10px;
                 width: 31px;

@@ -16,6 +16,8 @@ import solLogo from '../../assets/images/solana.png';
 import polygonLogo from '../../assets/images/polygon.png';
 import nearLogo from '../../assets/images/near-protocol.svg';
 import terraLogo from '../../assets/images/terraluna.png';
+import bitoasisLogo from '../../assets/images/bitoasis.jpeg';
+import binanceLogo from '../../assets/images/binance.png';
 
 const chains = [
     { value: 'Ethereum', label: 'Ethereum', icon: ethLogo },
@@ -26,9 +28,14 @@ const chains = [
 ];
 const exchange = [
     {
+        value: 'Bitoasis',
+        label: 'BitOasis',
+        icon: bitoasisLogo,
+    },
+    {
         value: 'Binance',
         label: 'Binance',
-        icon: 'https://www.logo.wine/a/logo/Binance/Binance-Icon-Logo.wine.svg',
+        icon: binanceLogo,
     },
 ];
 
@@ -265,6 +272,55 @@ const chainCoins = {
             icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/3640.png',
         },
     ],
+    Bitoasis: [
+        { value: 'SOL', label: 'Solana', icon: solLogo },
+        { value: 'ETH', label: 'Ethereum', icon: ethLogo },
+        { value: 'NEAR', label: 'Near Protocol', icon: nearLogo },
+        { value: 'MATIC', label: 'Polygon', icon: polygonLogo },
+        { value: 'TRX', label: 'Tron', icon: "https://s2.coinmarketcap.com/static/img/coins/64x64/1958.png" },
+        { value: 'LTC', label: 'Litecoin', icon: "https://bitoasis.net/en/assets/images/currencies/light/LTC.svg" },
+        { value: 'AAVE', label: 'Aave', icon: 'https://s2.coinmarketcap.com/static/img/coins/64x64/7278.png' },
+        {
+            value: 'LINK',
+            label: 'ChainLink',
+            icon: 'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x514910771AF9Ca656af840dff83E8264EcF986CA/logo.png',
+        },
+        {
+            value: 'SUSHI',
+            label: 'Sushi',
+            icon: 'https://bitoasis.net/en/assets/images/currencies/light/SUSHI.svg',
+        },
+        {
+            value: 'FTM',
+            label: 'Fantom',
+            icon: 'https://bitoasis.net/en/assets/images/currencies/light/FTM.svg',
+        },
+        {
+            value: 'UNI',
+            label: 'Uniswap',
+            icon: 'https://bitoasis.net/en/assets/images/currencies/light/UNI.svg',
+        },
+        {
+            value: 'LUNA',
+            label: 'Terra',
+            icon: 'https://bitoasis.net/en/assets/images/currencies/light/LUNA.svg',
+        },
+        {
+            value: 'ATOM',
+            label: 'Cosmos',
+            icon: 'https://bitoasis.net/en/assets/images/currencies/light/ATOM.svg',
+        },
+        {
+            value: 'DOT',
+            label: 'POLKADOT',
+            icon: 'https://bitoasis.net/en/assets/images/currencies/light/DOT.svg',
+        },
+        {
+            value: 'ADA',
+            label: 'Cardano',
+            icon: 'https://bitoasis.net/en/assets/images/currencies/light/ADA.svg',
+        },
+    ]
 };
 
 const Option = (props) => {

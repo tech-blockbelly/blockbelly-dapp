@@ -5,14 +5,14 @@ import FundsListing from '../dashboard/newcomponents/FundsListing';
 import BinanceLogo from '../../assets/images/binance.png';
 import bitoasisLogo from '../../assets/images/bitoasis.jpeg';
 
-const BinanceContainer = (props) => {
+const BitoasisContainer = (props) => {
     return (
         <FundsListing type="cefi" {...props} />
     );
 };
 
 const CeFiExchangeContainer = (props) => {
-    const [key, setKey] = useState('binance');
+    const [key, setKey] = useState('bitoasis');
     const [fundsRepo, setFundsRepo] = useState({});
 
     const fetchRepository = () => {
@@ -43,24 +43,27 @@ const CeFiExchangeContainer = (props) => {
                     onSelect={(k) => setKey(k)}
                     className="funds-type-tab">
                     <Tab
-                        eventKey="binance"
-                        title={
-                            <span className="tab-title">
-                                <Image className="tab-logo" src={BinanceLogo} />
-                                Binance
-                                {/* <div className="coming-soon-tag">
-                                    <span>Coming soon!</span>
-                                </div> */}
-                            </span>
-                        }>
-                        <BinanceContainer funds={fundsRepo.Binance} />
-                    </Tab>
-                    <Tab
                         eventKey="bitoasis"
                         title={
                             <span className="tab-title">
                                 <Image className="tab-logo" src={bitoasisLogo}/>
                                 BitOasis
+                                {/* <div className="coming-soon-tag">
+                                    <span>Coming soon!</span>
+                                </div> */}
+                            </span>
+                        }
+                        // disabled
+                    >
+                        {/* <Fragment /> */}
+                        <BitoasisContainer funds={fundsRepo.Bitoasis} />
+                    </Tab>
+                    <Tab
+                        eventKey="binance"
+                        title={
+                            <span className="tab-title">
+                                <Image className="tab-logo" src={BinanceLogo} />
+                                Binance
                                 <div className="coming-soon-tag">
                                     <span>Coming soon!</span>
                                 </div>
@@ -69,6 +72,7 @@ const CeFiExchangeContainer = (props) => {
                         disabled
                     >
                         <Fragment />
+                        {/* <BinanceContainer funds={fundsRepo.Binance} /> */}
                     </Tab>
                 </Tabs>
             </Container>

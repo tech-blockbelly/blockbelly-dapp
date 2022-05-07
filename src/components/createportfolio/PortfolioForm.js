@@ -63,7 +63,8 @@ const BasketForm = (props) => {
                 <hr></hr>
                 {/* <h3 className="container-title">Fee Structure</h3> */}
                 <Form.Group controlId="min-amount-input">
-                    <Form.Label>Initial Price (0-20)</Form.Label>
+                    {/* <Form.Label>Initial Price (0-20)</Form.Label> */}
+                    <Form.Label>Minimum Investment Amount</Form.Label>
                     <Form.Control
                         className="min-amount-input form-input"
                         type="number"

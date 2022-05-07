@@ -122,12 +122,10 @@ const PortfolioPage = (props) => {
     }
 
     const connectToExchange = () => {
-        console.log('Connecting to Exchange ....');
         setExchangeModalShow(true);
     }
 
     const buyTransaction = () => {
-        console.log('Proceed to buy');
         setTxnModalShow(true);
     }
 
@@ -194,7 +192,7 @@ const PortfolioPage = (props) => {
                                     <p className="subtext">Creator</p>
                                 </div>
                             </Col>
-                            <Col className="market-info-column" xl={4}>
+                            {/* <Col className="market-info-column" xl={4}>
                                 <p className="market-cap">
                                     $
                                     {
@@ -205,7 +203,7 @@ const PortfolioPage = (props) => {
                                     }
                                 </p>
                                 <p className="subtext">Market Cap</p>
-                            </Col>
+                            </Col> */}
                         </Row>
                         <Row className="information-row">
                             {/* <PortfolioFinancials 
@@ -234,11 +232,11 @@ const PortfolioPage = (props) => {
                         {/* pdf code fails on non-BB indices. Needs to be rechecked */}
                         {/* {
                             hasPdf ? ( */}
-                                <Row className="information-row">
+                                {/* <Row className="information-row">
                                     <div className="information-text">
                                         Click to view detailed <a href = {necoPdf} target='_blank' className='pdf-link'>factsheet</a>
                                     </div>
-                                </Row>
+                                </Row> */}
                             {/* ) : {}
                         } */}
                     </Col>
@@ -249,6 +247,7 @@ const PortfolioPage = (props) => {
                                 <TransactionBlock 
                                     type={type} 
                                     buyInputPlaceHolder = {buyInputPlaceHolder}
+                                    fund={appState.fund}
                                 />
                             </Col>
                         </Row>
@@ -305,6 +304,7 @@ const PortfolioPage = (props) => {
                 show={txnModalShow}
                 onHide={() => setTxnModalShow(false)}
                 action="buy"
+                fund={appState.fund}
             />
         </Container>
     );

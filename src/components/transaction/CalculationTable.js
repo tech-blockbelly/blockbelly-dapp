@@ -4,7 +4,30 @@ import { Table, Image } from 'react-bootstrap';
 const CalculationTable = (props) => {
     let calculationData = props.calculationData;
     let fees = props.fees;
-    let coinSymbols = props.coinSymbols;
+    let amount = props.amount;
+
+    let coinValuation = {
+        "LAC": {
+            "BTC": "36039.26",
+            "SOL": "81.16",
+            "ETH": "2686.54",
+            "NEAR": "10.63",
+            "LUNA": "73.30",
+            "ADA": "0.7821",
+            "XRP": "0.5988",
+            "DOT": "14.23",
+            "DAI": "1",
+        },
+        "MAC": {
+            "TRX": "0.08456",
+            "LINK": "10.75",
+            "LTC": "96.27",
+            "MATIC": "1.05",
+            "UNI": "7.45",
+            "ATOM": "16.98"
+        }   
+    }
+    let currFundCoinValuation = coinValuation[props.fundId];
 
     return (
         <div
@@ -39,35 +62,37 @@ const CalculationTable = (props) => {
                             <td>
                                 <div className="ccy-info ccy-type-details">
                                     <Image
-                                        src={currency.ccy_icon}
+                                        src={currency.cLogo}
                                         className="ccy-icon"
                                     ></Image>
-                                    <p className="ccy-name">{currency.name}</p>
+                                    <p className="ccy-name">{currency.cName}</p>
                                 </div>
                             </td>
                             <td>
                                 <p className="ccy-info">
-                                    {currency.allocation_percent}%
+                                    {currency.wt.toFixed(2)}%
                                 </p>
                             </td>
                             <td>
                                 <p className="ccy-info">
-                                    {currency.coin_valuation.toFixed(2)}
+                                    {currFundCoinValuation[currency.cId]}
                                 </p>
                             </td>
                             <td>
                                 <p className="ccy-symbol">
-                                    {coinSymbols[index]}
+                                    {currency.cId}
                                 </p>
                             </td>
                             <td>
                                 <p className="ccy-info">
-                                    {currency.coin_owned}
+                                    {
+                                        (((currency.wt * amount)/100).toFixed(2)/(currFundCoinValuation[currency.cId])).toFixed(2)
+                                    }
                                 </p>
                             </td>
                             <td>
                                 <p className="ccy-info">
-                                    {currency.coin_owned_usd}
+                                    {((currency.wt * amount)/100).toFixed(2)}
                                 </p>
                             </td>
                         </tr>

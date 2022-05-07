@@ -186,13 +186,28 @@ select:focus {
     }
     .accent {
         background-color: $purple;
+        border-color: $purple;
         color: white;
+        &:active,
+        &:focus,
         &:hover {
+            outline: none;
+            background-color: $purple;
             opacity: 0.9;
+            color: $white;
+            border: none;
         }
     }
 }
-
+.success-modal {
+    .modal-footer {
+        justify-content: center;
+    }
+}
+.cancel-btn, .cancel-btn:hover {
+    background-color: #ffffff;
+    color: #333333;
+}
 @media #{$mobile} {
     h1 {
         font-size: 32px;
